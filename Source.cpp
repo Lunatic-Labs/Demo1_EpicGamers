@@ -10,6 +10,8 @@
 int main() {
 
 	std::cout << "Hello\nEPIC\nGAMERS\n";
+	//changes added from myPC
+	std::cout << "HI\n";
 
 	system("pause");
 
