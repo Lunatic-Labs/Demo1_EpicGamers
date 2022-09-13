@@ -13,6 +13,8 @@ int main() {
 	//changes added from myPC
 	std::cout << "HI\n";
 
+	std::cout << "Hello!\n";
+
 	system("pause");
 
 	return 0;
