@@ -9,7 +9,7 @@
 
 int main() {
 
-	std::cout << "Hello\nEPIC\nGAMERS\n";
+	std::cout << "Hello\nEPIC\nGAMER\n";
 
 	system("pause");
 
