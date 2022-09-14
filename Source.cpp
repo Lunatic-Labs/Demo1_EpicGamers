@@ -1,21 +1,24 @@
-#include <iostream>
-
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
 
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
 
-int main() {
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
 
-	std::cout << "Hello\nEPIC\nGAMERS\n";
-	//changes added from myPC
-	std::cout << "HI\n";
+        window.clear();
+        window.draw(shape);
+        window.display();
+    }
 
-	std::cout << "Hello!\n";
-
-	system("pause");
-
-	return 0;
+    return 0;
 }
