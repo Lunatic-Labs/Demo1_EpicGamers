@@ -4,13 +4,13 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1000, 800), "SFML works!");
-    sf::RectangleShape player(sf::Vector2f(250.0f, 220.0f));
+    sf::RectangleShape player(sf::Vector2f(300.0f, 200.0f));
     player.setPosition(100.0f, 250.0f);
     sf::Texture dogPlayer;
-    dogPlayer.loadFromFile("Textures/googleDog.jpg");
+    dogPlayer.loadFromFile("Textures/walkJump.png");
     player.setTexture(&dogPlayer);
 
-    Animation animation(&dogPlayer, sf::Vector2u(6, 2), 0.3f);
+    Animation animation(&dogPlayer, sf::Vector2u(6, 2), 0.09f);
 
     float deltaTime = 0.0f;
     sf::Clock clock;
