@@ -1,8 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 
-static const float VIEW_HEIGHT = 800.0F;
-static const float VIEW_WIDTH = 1000.0F;
+static const float VIEW_WIDTH = 1920.0F;
+static const float VIEW_HEIGHT = 1080.0F;
 
 void resizeView(const sf::RenderWindow& window, sf::View& view)
 {
@@ -12,7 +12,7 @@ void resizeView(const sf::RenderWindow& window, sf::View& view)
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1000, 800), "Dog Dash!");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Dog Dash!");
     sf::View view(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(VIEW_WIDTH,VIEW_HEIGHT));
     // load player
     sf::Texture dogPlayer;
