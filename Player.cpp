@@ -20,16 +20,37 @@ Player::~Player()
 void Player::Update(float  deltaTime)
 {
 	sf::Vector2f movement(0.0f, 0.0f);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-		movement.x += speed * deltaTime;
+	float gravity = 100.0f;
+	float jumpHeight = 400.0f;
 
-	if (movement.x == 0.0f)
+	// check input
+	bool jumpInput = sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
+
+	// jump
+	if (jumpInput) {
+		movement.y -= jumpHeight * deltaTime;
+		movement.x += jumpHeight * deltaTime;
+	}
+
+	// apply gravity
+	movement.y += gravity * deltaTime;
+
+
+	// change sprite row
+	if (movement.x == 0.0f) {
 		row = 0;
-	else
+	}
+	else {
 		row = 1;
-
+	}
+		
+	// update the sprite row
 	animation.Update(row, deltaTime);
+	
+	// set texture
 	body.setTextureRect(animation.uvRect);
+
+	// move the player
 	body.move(movement); 
 }
 
