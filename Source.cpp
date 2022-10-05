@@ -19,7 +19,7 @@ int main()
     dogPlayer.loadFromFile("Textures/walkJump.png");
     Player player(&dogPlayer, sf::Vector2u(6, 2), 0.09f, 100.0f);
 
-    // create time
+    // create deltatime
     float deltaTime = 0.0f; 
     sf::Clock clock;
 
