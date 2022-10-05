@@ -9,10 +9,14 @@ void resizeView(const sf::RenderWindow& window, sf::View& view)
     float aspectRatio = float(window.getSize().x) / float(window.getSize().y);
     view.setSize(VIEW_HEIGHT * aspectRatio, VIEW_HEIGHT);
 }
-
+//main function 
 int main()
 {
+    sf::Image icon;
+    icon.loadFromFile("Textures/LUlogo.jpg");
+
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Dog Dash!");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     sf::View view(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(VIEW_WIDTH,VIEW_HEIGHT));
     // load player
     sf::Texture dogPlayer;
