@@ -31,3 +31,13 @@ void Animation::Update(int row, float deltaTime)
 	uvRect.top = currentImage.y * uvRect.height;
 
 }
+
+//Ground doesn't use a static sprite size like player does. 
+//I'm incrementing it by tile (tile width != spriteWidth) for a scrolling effect
+void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy) 
+{
+		if (uvRect.left >= lastSpriteLeft)
+			uvRect.left = firstSpriteLeft;
+		else
+			uvRect.left += moveBy;
+}
