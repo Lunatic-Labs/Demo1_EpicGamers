@@ -1,3 +1,5 @@
-﻿  Source.cpp
-C:\Users\tubst\source\repos\Demo1_EpicGamers\Source.cpp(52,21): error C2065: 'event': undeclared identifier
-C:\Users\tubst\source\repos\Demo1_EpicGamers\Source.cpp(58,21): error C2065: 'event': undeclared identifier
+﻿Source.obj : error LNK2019: unresolved external symbol "public: __cdecl Ground::Ground(class sf::Texture *,class sf::Vector2<unsigned int>,float,float)" (??0Ground@@QEAA@PEAVTexture@sf@@V?$Vector2@I@2@MM@Z) referenced in function main
+Source.obj : error LNK2019: unresolved external symbol "public: __cdecl Ground::~Ground(void)" (??1Ground@@QEAA@XZ) referenced in function main
+Source.obj : error LNK2019: unresolved external symbol "public: void __cdecl Ground::Update(float)" (?Update@Ground@@QEAAXM@Z) referenced in function main
+Source.obj : error LNK2019: unresolved external symbol "public: void __cdecl Ground::Draw(class sf::RenderWindow &)" (?Draw@Ground@@QEAAXAEAVRenderWindow@sf@@@Z) referenced in function main
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe : fatal error LNK1120: 4 unresolved externals

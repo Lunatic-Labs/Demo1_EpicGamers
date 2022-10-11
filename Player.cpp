@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <iostream>
 Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
 	animation(texture, imageCount, switchTime)
 {
@@ -6,7 +7,7 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	row = 0;
 	faceRight = true;
 
-	body.setSize(sf::Vector2f(250.0f, 160.0f));
+	body.setSize(sf::Vector2f(64.0f, 64.0f));
 	body.setOrigin(300.0f, -100.0f);
 	//body.setPosition(0.0f, 500.0f);
 	body.setTexture(texture); 
@@ -17,17 +18,19 @@ Player::~Player()
 
 }
 
-void Player::Update(float  deltaTime)
+void Player::Update(float  deltaTime, bool jumpInput)
 {
 	sf::Vector2f movement(0.0f, 0.0f);
 	float gravity = 100.0f;
 	float jumpHeight = 400.0f;
+	std::cout << "Player Update: " << jumpInput << std::endl;
 
-	// check input
-	bool jumpInput = sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
+	// check input (Overwriting to be read as function parameter)
+	//bool jumpInput = sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
 
 	// jump
 	if (jumpInput) {
+		std::cout << "Jumping\n";
 		movement.y -= jumpHeight * deltaTime;
 		movement.x += jumpHeight * deltaTime;
 	}

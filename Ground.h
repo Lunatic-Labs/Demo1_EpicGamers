@@ -2,21 +2,18 @@
 #include <SFML/Graphics.hpp>
 #include "Animation.h"
 
-class Player
+//Setting up similarly to the Player class, but only animation functionality. 
+class Ground
 {
 public:
-	Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
-	~Player();
+	Ground(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
+	~Ground();
 
-	void Update(float deltaTime, bool jumpInput);
+	void Update(float deltaTime);
 	void Draw(sf::RenderWindow& window);
 	sf::Vector2f getPosition() { return body.getPosition(); }
-
 private:
 	sf::RectangleShape body;
 	Animation animation;
-	unsigned int row;
 	float speed;
-	bool faceRight;
 };
-
