@@ -45,7 +45,8 @@ void Player::Update(float  deltaTime)
 	}
 		
 	// update the sprite row
-	animation.Update(row, deltaTime);
+	animation.Update(row, 
+					 deltaTime);
 	
 	// set texture
 	body.setTextureRect(animation.uvRect);

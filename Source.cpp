@@ -13,7 +13,7 @@ void resizeView(const sf::RenderWindow& window, sf::View& view)
 int main()
 {
     sf::Image icon;
-    icon.loadFromFile("Textures/LUlogo.jpg");
+    icon.loadFromFile("Textures/LUdLogo.png");
 
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Dog Dash!");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
