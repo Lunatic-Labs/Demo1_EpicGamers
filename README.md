@@ -1,5 +1,4 @@
 # Dog Dash
-----
 ### Epic Gamers
 
 Using SFML with C++, this is our game dev project.
