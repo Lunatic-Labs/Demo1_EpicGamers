@@ -36,7 +36,7 @@ int main()
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds();
-        
+        std::cout << isJumping;
 
         // close window if exited
         sf::Event evnt;
