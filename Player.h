@@ -8,7 +8,7 @@ public:
 	Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
 	~Player();
 
-	void Update(float deltaTime);
+	void Update(float deltaTime, bool jumpInput);
 	void Draw(sf::RenderWindow& window);
 	sf::Vector2f getPosition() { return body.getPosition(); }
 

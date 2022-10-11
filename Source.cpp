@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Player.h"
+#include "Ground.h"
 
 static const float VIEW_WIDTH = 1920.0F;
 static const float VIEW_HEIGHT = 1080.0F;
@@ -21,9 +22,11 @@ int main()
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     sf::View view(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(VIEW_WIDTH,VIEW_HEIGHT));
     // load player
-    sf::Texture dogPlayer;
+    sf::Texture dogPlayer, groundScroll;
     dogPlayer.loadFromFile("Textures/dogRunnerWIP1.jpg");
+    groundScroll.loadFromFile("Textures/SidewalkWIP1.jpg"); //Need to set up as an object with collision
     Player player(&dogPlayer, sf::Vector2u(6, 2), 0.09f, 100.0f);
+    Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
 
     // create deltatime
     float deltaTime = 0.0f; 
@@ -37,9 +40,10 @@ int main()
 
         // close window if exited
         sf::Event evnt;
-        while (window.pollEvent(evnt))
+        while (window.pollEvent(evnt))  //While there are pending events...
         {
-            switch (evnt.type)
+            std::cout << "Window pollEvent: " << isJumping << std::endl; //DEBUG
+            switch (evnt.type)  //Check the type of the event
             {
             case sf::Event::Closed:
                 window.close();
@@ -47,15 +51,18 @@ int main()
             case sf::Event::Resized:
                 resizeView(window, view);
                 break;   
-            //Below: Justin's attempt to handle jumping as an event, 10/9/22
+            //Below: Justin's attempt to handle jumping as an event, 10/9-10/22
             case sf::Event::KeyPressed: //update player immediately if Spacebar's pressed
-                if (Event.Key.Code == sf::Keyboard::Space && isJumping = false)
-                {
-                    player.Update(deltaTime);
+                //Not reading input? Nothing triggered when Space pressed
+                std::cout << "Evnt.key.code: " << evnt.key.code << std::endl;
+                if (evnt.key.code == sf::Keyboard::Space && isJumping == false)
+                {   
                     isJumping = true;
+                    player.Update(deltaTime, isJumping);
+                    std::cout << "keyPressed: " << isJumping << std::endl;
                 }
             case sf::Event::KeyReleased:
-                if (event.key.code == sf::Keyboard::Space)
+                if (evnt.key.code == sf::Keyboard::Space)
                 {
                     isJumping = false;
                 }
@@ -65,12 +72,14 @@ int main()
         }
 
         // process player
-        player.Update(deltaTime);
+        player.Update(deltaTime, isJumping);
+        ground.Update(deltaTime);
         view.setCenter(player.getPosition());
         // clear the window and draw the next frame
         window.clear();
         window.setView(view);
         player.Draw(window);
+        ground.Draw(window);
         window.display();
     }
     return 0;
