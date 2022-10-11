@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Animation.cpp
 C:\Users\alexA\source\repos\Demo1_EpicGamers\Animation.cpp(9,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
@@ -280,3 +281,10 @@ C:\Users\alexA\source\repos\Demo1_EpicGamers\External\include\SFML\System\Utf.hp
 C:\Users\alexA\source\repos\Demo1_EpicGamers\External\include\SFML\System\Utf.inl(65,58): error C3878: syntax error: unexpected token ')' following 'statement_seq'
 C:\Users\alexA\source\repos\Demo1_EpicGamers\External\include\SFML\System\Utf.inl(82,1): fatal  error C1003: error count exceeds 100; stopping compilation
   Generating Code...
+=======
+﻿Source.obj : error LNK2019: unresolved external symbol "public: __cdecl Ground::Ground(class sf::Texture *,class sf::Vector2<unsigned int>,float,float)" (??0Ground@@QEAA@PEAVTexture@sf@@V?$Vector2@I@2@MM@Z) referenced in function main
+Source.obj : error LNK2019: unresolved external symbol "public: __cdecl Ground::~Ground(void)" (??1Ground@@QEAA@XZ) referenced in function main
+Source.obj : error LNK2019: unresolved external symbol "public: void __cdecl Ground::Update(float)" (?Update@Ground@@QEAAXM@Z) referenced in function main
+Source.obj : error LNK2019: unresolved external symbol "public: void __cdecl Ground::Draw(class sf::RenderWindow &)" (?Draw@Ground@@QEAAXAEAVRenderWindow@sf@@@Z) referenced in function main
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe : fatal error LNK1120: 4 unresolved externals
+>>>>>>> 75267b07f639f1a0a39c5f223451415213520092
