@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Player.h"
-#include "Ground.h"
+#include "../include/Player.h"
+#include "../include/Ground.h"
 
 static const float VIEW_WIDTH = 1920.0F;
 static const float VIEW_HEIGHT = 1080.0F;

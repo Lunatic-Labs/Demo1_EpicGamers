@@ -1,4 +1,4 @@
-#include "Ground.h"
+#include "../include/Ground.h"
 #include <iostream>
 //Currently WIP. Hoping to set up scroll functionality similar to Player, by reading a spritesheet
 
