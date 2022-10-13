@@ -55,7 +55,8 @@ int main()
             case sf::Event::KeyPressed: //update player immediately if Spacebar's pressed
                 //Not reading input? Nothing triggered when Space pressed
                 std::cout << "Evnt.key.code: " << evnt.key.code << std::endl;
-                if (evnt.key.code == sf::Keyboard::Space && isJumping == false)
+                
+                if (evnt.key.code == 57 && isJumping == false)
                 {   
                     isJumping = true;
                     player.Update(deltaTime, isJumping);
