@@ -51,11 +51,8 @@ int main()
             case sf::Event::Resized:
                 resizeView(window, view);
                 break;   
-            //Below: Justin's attempt to handle jumping as an event, 10/9-10/22
-            case sf::Event::KeyPressed: //update player immediately if Spacebar's pressed
-                //Not reading input? Nothing triggered when Space pressed
-                std::cout << "Evnt.key.code: " << evnt.key.code << std::endl;
-                
+            case sf::Event::KeyPressed: //update player immediately if key pressed
+                //Key code 57 is Spacebar
                 if (evnt.key.code == 57 && isJumping == false)
                 {   
                     isJumping = true;
@@ -63,12 +60,11 @@ int main()
                     std::cout << "keyPressed: " << isJumping << std::endl;
                 }
             case sf::Event::KeyReleased:
-                if (evnt.key.code == sf::Keyboard::Space)
+                if (evnt.key.code == 57)
                 {
                     isJumping = false;
                 }
-            //End Justin's attempt. Event.Key.Code not working? 
-            //https://www.sfml-dev.org/tutorials/2.5/window-events.php
+            //Triggering events: https://www.sfml-dev.org/tutorials/2.5/window-events.php
             }
         }
 

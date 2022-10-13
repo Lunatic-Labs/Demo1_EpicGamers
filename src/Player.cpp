@@ -23,21 +23,18 @@ void Player::Update(float  deltaTime, bool jumpInput)
 	sf::Vector2f movement(0.0f, 0.0f);
 	float gravity = 100.0f;
 	float jumpHeight = 400.0f;
-	std::cout << "Player Update: " << jumpInput << std::endl;
 
 	// check input (Overwriting to be read as function parameter)
 	//bool jumpInput = sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
 
 	// jump
 	if (jumpInput) {
-		std::cout << "Jumping\n";
 		movement.y -= jumpHeight * deltaTime;
 		movement.x += jumpHeight * deltaTime;
 	}
 
 	// apply gravity
 	movement.y += gravity * deltaTime;
-
 
 	// change sprite row
 	if (movement.x == 0.0f) {
