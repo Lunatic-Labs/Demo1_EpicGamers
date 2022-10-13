@@ -7,7 +7,7 @@ public:
 	~Animation();
 
 	void Update(int row, float deltaTime);
-	void GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy);
+	void GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime);
 private:
 
 public:

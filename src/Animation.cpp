@@ -34,10 +34,15 @@ void Animation::Update(int row, float deltaTime)
 
 //Ground doesn't use a static sprite size like player does. 
 //I'm incrementing it by tile (tile width != spriteWidth) for a scrolling effect
-void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy) 
+void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime) 
 {
+	totalTime += deltaTime;
+
+	if (totalTime >= (switchTime*1.5)) {	//multiplying by 1.5 to slow down animation. *1 is full speed, *2 is halftime
+		totalTime -= (switchTime*1.5);
 		if (uvRect.left >= lastSpriteLeft)
 			uvRect.left = firstSpriteLeft;
 		else
 			uvRect.left += moveBy;
+	}
 }
