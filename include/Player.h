@@ -15,6 +15,7 @@ public:
 private:
 	sf::RectangleShape body;
 	Animation animation;
+	sf::Vector2f movement{ 0.0f, 0.0f };
 	unsigned int row;
 	float speed;
 	bool faceRight;

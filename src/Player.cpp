@@ -20,33 +20,43 @@ Player::~Player()
 
 void Player::Update(float  deltaTime, bool jumpInput)
 {
-	sf::Vector2f movement(0.0f, 0.0f);
 	float gravity = 100.0f;
 	float jumpHeight = 400.0f;
 
-	// check input (Overwriting to be read as function parameter)
-	//bool jumpInput = sf::Keyboard::isKeyPressed(sf::Keyboard::Space);
 
-	// jump
+	// jump and change sprite row
 	if (jumpInput) {
-		movement.y -= jumpHeight * deltaTime;
-		movement.x += jumpHeight * deltaTime;
+		movement.y = 400.0f;	//set jump movement
+		row = 1;
+	}
+	else if (body.getPosition().y > -75.0f && !jumpInput)
+	{
+		movement.y = -400.f;	//set falling movement
+		row = 0;
+	}
+	else if (body.getPosition().y < -75.0f && !jumpInput)
+	{
+		movement.y = 400.f;		//corrective movement, to get back to "ground level"
+		row = 0;
+	}
+	else {
+		movement.y = 0.0f;
+		row = 0;
 	}
 
-	// apply gravity
-	movement.y += gravity * deltaTime;
+	// apply gravity - equates to <= 1, so commenting out
+	//movement.y += gravity * deltaTime;
 
 	// change sprite row
-	if (movement.x == 0.0f) {
+	/*if (movement.x == 0.0f) {
 		row = 0;
 	}
 	else {
 		row = 1;
-	}
+	}*/
 		
 	// update the sprite row
-	animation.Update(row, 
-					 deltaTime);
+	animation.Update(row, deltaTime);
 	
 	// set texture
 	body.setTextureRect(animation.uvRect);

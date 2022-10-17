@@ -23,20 +23,19 @@ int main()
     sf::View view(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(VIEW_WIDTH,VIEW_HEIGHT));
     // load player
     sf::Texture dogPlayer, groundScroll;
-    dogPlayer.loadFromFile("Textures/dogRunnerWIP1.jpg");
+    dogPlayer.loadFromFile("Textures/dogRunnerWIP2.jpg");
     groundScroll.loadFromFile("Textures/SidewalkWIP1.jpg"); //Need to set up as an object with collision
-    Player player(&dogPlayer, sf::Vector2u(10, 1), 0.09f, 100.0f);
+    Player player(&dogPlayer, sf::Vector2u(10, 2), 0.09f, 100.0f);
     Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
 
     // create deltatime
     float deltaTime = 0.0f; 
-    sf::Clock clock;
+    sf::Clock clock, jumpTimer;
     bool isJumping = false;  //Used in switch, prevent multiple space inputs when holding key
     // core game loop
     while (window.isOpen())
     {
         deltaTime = clock.restart().asSeconds();
-        std::cout << isJumping;
 
         // close window if exited
         sf::Event evnt;
@@ -57,11 +56,13 @@ int main()
                     isJumping = true;
                     player.Update(deltaTime, isJumping);
                 }
+                break;
             case sf::Event::KeyReleased:
                 if (evnt.key.code == 57)
                 {
                     isJumping = false;
                 }
+                break;
             //Triggering events: https://www.sfml-dev.org/tutorials/2.5/window-events.php
             }
         }

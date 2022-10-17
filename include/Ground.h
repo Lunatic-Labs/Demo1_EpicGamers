@@ -11,9 +11,9 @@ public:
 
 	void Update(float deltaTime);
 	void Draw(sf::RenderWindow& window);
-	sf::Vector2f getPosition() { return body.getPosition(); }
+	sf::Vector2f getPosition() { return sidewalk.getPosition(); }
 private:
-	sf::RectangleShape body;
+	sf::RectangleShape sidewalk;
 	Animation animation;
 	float speed;
 };
