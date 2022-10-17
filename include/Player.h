@@ -16,8 +16,9 @@ private:
 	sf::RectangleShape body;
 	Animation animation;
 	sf::Vector2f movement{ 0.0f, 0.0f };
+	sf::Clock jumpTimer;
 	unsigned int row;
 	float speed;
-	bool faceRight;
+	bool faceRight, startJump{ false };
 };
 

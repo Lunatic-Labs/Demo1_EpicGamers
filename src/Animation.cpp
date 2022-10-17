@@ -15,10 +15,13 @@ Animation::~Animation()
 
 }
 
-void Animation::Update(int row, float deltaTime) 
+void Animation::Update(int row, float deltaTime, bool startJump) 
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
+	if (row == 1 && startJump == true) {
+		currentImage.x = 0;
+	}
 
 	if (totalTime >= switchTime) {
 		totalTime -= switchTime;

@@ -37,13 +37,12 @@ int main()
     {
         deltaTime = clock.restart().asSeconds();
 
-        // close window if exited
         sf::Event evnt;
         while (window.pollEvent(evnt))  //While there are pending events...
         {
-            switch (evnt.type)  //Check the type of the event
+            switch (evnt.type)          //Check the type of the event
             {
-            case sf::Event::Closed:
+            case sf::Event::Closed:     // close window if exited
                 window.close();
                 break;
             case sf::Event::Resized:
