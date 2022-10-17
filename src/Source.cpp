@@ -27,15 +27,17 @@ int main()
     groundScroll.loadFromFile("Textures/SidewalkWIP1.jpg"); //Need to set up as an object with collision
     Player player(&dogPlayer, sf::Vector2u(10, 2), 0.09f, 100.0f);
     Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
+    float gameSpeed = 1.75;   //determines how fast ground scrolls. Use to speed up obstacle spawning as well?
 
     // create deltatime
-    float deltaTime = 0.0f; 
+    float deltaTime = 0.0f, totalTime = 0.0f;
+    int loop = 1;
     sf::Clock clock, jumpTimer;
-    bool isJumping = false;  //Used in switch, prevent multiple space inputs when holding key
-    // core game loop
-    while (window.isOpen())
+    bool isJumping = false;     //Used in switch, prevent multiple space inputs when holding key
+    while (window.isOpen())     // core game loop
     {
-        deltaTime = clock.restart().asSeconds();
+        totalTime += clock.getElapsedTime().asSeconds();    //Total game time
+        deltaTime = clock.restart().asSeconds();            //Time each loop, < 1.0s
 
         sf::Event evnt;
         while (window.pollEvent(evnt))  //While there are pending events...
@@ -53,7 +55,7 @@ int main()
                 if (evnt.key.code == 57 && isJumping == false)
                 {   
                     isJumping = true;
-                    player.Update(deltaTime, isJumping);
+                    player.Update(deltaTime, isJumping, gameSpeed-0.25);
                 }
                 break;
             case sf::Event::KeyReleased:
@@ -67,8 +69,8 @@ int main()
         }
 
         // process player
-        player.Update(deltaTime, isJumping);
-        ground.Update(deltaTime);
+        player.Update(deltaTime, isJumping, gameSpeed-0.25);
+        ground.Update(deltaTime, gameSpeed);
         view.setCenter(player.getPosition());
         // clear the window and draw the next frame
         window.clear();
@@ -76,6 +78,13 @@ int main()
         player.Draw(window);
         ground.Draw(window);
         window.display();
+
+        if (totalTime > (14*loop) && gameSpeed > 1.25)      //increase speed every 14.0s, with an upper limit
+        {                                                   //(lower speed == faster scroll with this animation functionality)
+            loop++;
+            gameSpeed -= 0.05;
+            std::cout << "Speed increase!\n" << gameSpeed << std::endl;
+        }
     }
     return 0;
 }

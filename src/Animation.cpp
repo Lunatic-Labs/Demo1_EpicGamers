@@ -15,7 +15,7 @@ Animation::~Animation()
 
 }
 
-void Animation::Update(int row, float deltaTime, bool startJump) 
+void Animation::Update(int row, float deltaTime, bool startJump, float speedMultiplier) 
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
@@ -23,8 +23,8 @@ void Animation::Update(int row, float deltaTime, bool startJump)
 		currentImage.x = 0;
 	}
 
-	if (totalTime >= switchTime) {
-		totalTime -= switchTime;
+	if (totalTime >= (switchTime*speedMultiplier)) {
+		totalTime -= (switchTime * speedMultiplier);
 		currentImage.x++;
 		
 		if (currentImage.x >= imageCount.x)
@@ -38,12 +38,12 @@ void Animation::Update(int row, float deltaTime, bool startJump)
 
 //Ground doesn't use a static sprite size like player does. 
 //I'm incrementing it by tile (tile width != spriteWidth) for a scrolling effect
-void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime) 
+void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier) 
 {
 	totalTime += deltaTime;
-
-	if (totalTime >= (switchTime*1.5)) {	//multiplying by 1.5 to slow down animation. *1 is full speed, *2 is halftime
-		totalTime -= (switchTime*1.5);
+	//speedMultiplier determines how fast animation plays. *1.5 is solid speed *1 is full speed, *2 is halftime
+	if (totalTime >= (switchTime*speedMultiplier)) {	
+		totalTime -= (switchTime*speedMultiplier);
 		if (uvRect.left >= lastSpriteLeft)
 			uvRect.left = firstSpriteLeft;
 		else

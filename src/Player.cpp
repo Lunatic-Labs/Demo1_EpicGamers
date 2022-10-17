@@ -18,7 +18,7 @@ Player::~Player()
 
 }
 
-void Player::Update(float  deltaTime, bool jumpInput)
+void Player::Update(float  deltaTime, bool jumpInput, float speedMultiplier)
 {
 	if (jumpInput) {
 		row = 1;
@@ -49,7 +49,7 @@ void Player::Update(float  deltaTime, bool jumpInput)
 	}
 
 	// update the sprite row
-	animation.Update(row, deltaTime, startJump);
+	animation.Update(row, deltaTime, startJump, speedMultiplier);
 	
 	// set texture
 	body.setTextureRect(animation.uvRect);
