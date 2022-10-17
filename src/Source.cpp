@@ -23,10 +23,14 @@ int main()
     sf::View view(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(VIEW_WIDTH,VIEW_HEIGHT));
 
     // init important variables
-    float gameSpeed = 1.75;   //determines how fast ground scrolls. Use to speed up obstacle spawning as well?
+    float gameSpeed = 1.75;                     // lower gameSpeed = faster movement.
+    float gameSpeedLimit = 1.25;                // gameSpeed variable cannot decrease below this limit
+    float gameSpeedModifier = 0.05;             // change the speed by *this* much
+    int incrementWaitTime = 14;                 // increases speed every x seconds
+    int loopCounter = 1;                        // tracks the number of speed increment loops
     float deltaTime = 0.0f, totalTime = 0.0f;
-    int loopCounter = 1;
     
+  
     // load player and ground textures and init objects
     sf::Texture dogPlayer, groundScroll;
     dogPlayer.loadFromFile("Textures/dogRunnerWIP2.jpg");
@@ -35,38 +39,40 @@ int main()
     Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
 
     sf::Clock clock, jumpTimer;
-    bool isJumping = false;     //Used in switch, prevent multiple space inputs when holding key
-    while (window.isOpen())     // core game loop
+    bool isJumping = false;                     // prevents multiple simultaneous jump inputs
+
+
+    // core game loop
+    while (window.isOpen())     
     {
         totalTime += clock.getElapsedTime().asSeconds();    //Total game time
         deltaTime = clock.restart().asSeconds();            //Time each loop, < 1.0s
 
+        // handle events
         sf::Event evnt;
-        while (window.pollEvent(evnt))  //While there are pending events...
-        {
-            switch (evnt.type)          //Check the type of the event
-            {
-            case sf::Event::Closed:     // close window if exited
-                window.close();
-                break;
-            case sf::Event::Resized:
-                resizeView(window, view);
-                break;   
-            case sf::Event::KeyPressed: //update player immediately if key pressed
-                //Key code 57 is Spacebar
-                if (evnt.key.code == 57 && isJumping == false)
-                {   
-                    isJumping = true;
-                    player.Update(deltaTime, isJumping, gameSpeed-0.25);
-                }
-                break;
-            case sf::Event::KeyReleased:
-                if (evnt.key.code == 57)
-                {
-                    isJumping = false;
-                }
-                break;
-            //Triggering events: https://www.sfml-dev.org/tutorials/2.5/window-events.php
+        while (window.pollEvent(evnt)) {
+            //Check the type of the event
+            switch (evnt.type) {
+                // window events
+                case sf::Event::Closed:
+                    window.close();
+                    break;
+                case sf::Event::Resized:
+                    resizeView(window, view);
+                    break;
+                // keyboard input
+                case sf::Event::KeyPressed: 
+                    // spacebar -> jump
+                    if (evnt.key.code == 57 && isJumping == false) {   
+                        isJumping = true;
+                        player.Update(deltaTime, isJumping, gameSpeed-0.25);        // !! question- what is the 0.25 for? Let's use variables (with documentation comments) for these types of things.
+                    }
+                    break;
+                case sf::Event::KeyReleased:
+                    if (evnt.key.code == 57) {
+                        isJumping = false;
+                    }
+                    break;
             }
         }
 
@@ -74,6 +80,7 @@ int main()
         player.Update(deltaTime, isJumping, gameSpeed-0.25);
         ground.Update(deltaTime, gameSpeed);
         view.setCenter(player.getPosition());
+
         // clear the window and draw the next frame
         window.clear();
         window.setView(view);
@@ -81,10 +88,11 @@ int main()
         ground.Draw(window);
         window.display();
 
-        if (totalTime > (14*loopCounter) && gameSpeed > 1.25)      //increase speed every 14.0s, with an upper limit
-        {                                                   //(lower speed == faster scroll with this animation functionality)
+        // increase speed, with an upper limit
+        // lower speed == faster scroll with this animation functionality
+        if (totalTime > (incrementWaitTime*loopCounter) && gameSpeed > gameSpeedLimit) {
             loopCounter++;
-            gameSpeed -= 0.05;
+            gameSpeed -= gameSpeedModifier;
             std::cout << "Speed increase!\n" << gameSpeed << std::endl;
         }
     }
