@@ -21,17 +21,19 @@ int main()
     icon.loadFromFile("Textures/LUlogo.jpg");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     sf::View view(sf::Vector2f(100.0f, 500.0f), sf::Vector2f(VIEW_WIDTH,VIEW_HEIGHT));
-    // load player
+
+    // init important variables
+    float gameSpeed = 1.75;   //determines how fast ground scrolls. Use to speed up obstacle spawning as well?
+    float deltaTime = 0.0f, totalTime = 0.0f;
+    int loopCounter = 1;
+    
+    // load player and ground textures and init objects
     sf::Texture dogPlayer, groundScroll;
     dogPlayer.loadFromFile("Textures/dogRunnerWIP2.jpg");
     groundScroll.loadFromFile("Textures/SidewalkWIP1.jpg"); //Need to set up as an object with collision
     Player player(&dogPlayer, sf::Vector2u(10, 2), 0.09f, 100.0f);
     Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
-    float gameSpeed = 1.75;   //determines how fast ground scrolls. Use to speed up obstacle spawning as well?
 
-    // create deltatime
-    float deltaTime = 0.0f, totalTime = 0.0f;
-    int loop = 1;
     sf::Clock clock, jumpTimer;
     bool isJumping = false;     //Used in switch, prevent multiple space inputs when holding key
     while (window.isOpen())     // core game loop
@@ -79,9 +81,9 @@ int main()
         ground.Draw(window);
         window.display();
 
-        if (totalTime > (14*loop) && gameSpeed > 1.25)      //increase speed every 14.0s, with an upper limit
+        if (totalTime > (14*loopCounter) && gameSpeed > 1.25)      //increase speed every 14.0s, with an upper limit
         {                                                   //(lower speed == faster scroll with this animation functionality)
-            loop++;
+            loopCounter++;
             gameSpeed -= 0.05;
             std::cout << "Speed increase!\n" << gameSpeed << std::endl;
         }
