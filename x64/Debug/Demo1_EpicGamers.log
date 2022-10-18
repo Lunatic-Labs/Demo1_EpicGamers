@@ -20,5 +20,10 @@ C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(49,19): warning C
               T=int
           ]
   Ground.cpp
+  Player.cpp
   Generating Code...
+  Source.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Source.cpp(28,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Source.cpp(65,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Source.cpp(78,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
