@@ -1,22 +1,22 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-class Animation
-{
-public:
-	Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
-	~Animation();
 
-	void Update(int row, float deltaTime, bool startJump, float speedMultiplier);
-	void GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier);
-private:
+class Animation {
+	public:
+		Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
+		~Animation();
 
-public:
-	sf::IntRect uvRect;
+		void Update(int row, float deltaTime, bool startJump, float speedMultiplier);
+		void GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier);
+	private:
 
-private:
-	sf::Vector2u imageCount;
-	sf::Vector2u currentImage;
+	public:
+		sf::IntRect uvRect;
 
-	float totalTime, switchTime;
+	private:
+		sf::Vector2u imageCount;
+		sf::Vector2u currentImage;
+
+		float totalTime, switchTime;
 };
 
