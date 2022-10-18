@@ -20,8 +20,8 @@ Player::~Player() {
 void Player::Update(float  deltaTime, bool jumpInput, float speedMultiplier) {
 	if (jumpInput) {
 		row = 1;
-		if (startJump == false && jumpTimer.getElapsedTime().asSeconds() > 0.90f) {	
-			startJump = true;		// used to play jump animation from beginning. Exactly 1.0s long.
+		if (startJump == false && jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {	
+			startJump = true;		// used to play jump animation from beginning. Exactly 1.0s long, * speed.
 			jumpTimer.restart();	
 			movement.y = 400.0f;	// set jump movement				// !! make this a variable
 		}
@@ -30,18 +30,18 @@ void Player::Update(float  deltaTime, bool jumpInput, float speedMultiplier) {
 	}
 
 	// start falling if above ground and jump animation is halfway completed
-	if (body.getPosition().y > 0.0f && jumpTimer.getElapsedTime().asSeconds() > 0.50f) {	
+	if (body.getPosition().y > 0.0f && jumpTimer.getElapsedTime().asSeconds() > (0.50f*speedMultiplier)) {	
 		movement.y = -400.0f;
 		startJump = false;
 	}
 	// resets player to ground level if below it
-	else if (body.getPosition().y < 0.0f && !jumpInput && jumpTimer.getElapsedTime().asSeconds() > 0.90f) {
+	else if (body.getPosition().y < 0.0f && !jumpInput && jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {
 		movement.y = 400.0f;		
 		row = 0;
 		startJump = false;
 	}
 	// default case, player is on the ground
-	else if (jumpTimer.getElapsedTime().asSeconds() > 0.90f) {
+	else if (jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {
 		movement.y = 0.0f;
 		row = 0;
 		startJump = false;

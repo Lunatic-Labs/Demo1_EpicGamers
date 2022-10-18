@@ -62,7 +62,7 @@ int main()
                     // spacebar -> jump
                     if (evnt.key.code == 57 && isJumping == false) {   
                         isJumping = true;
-                        player.Update(deltaTime, isJumping, gameSpeed-0.25);        // !! question- what is the 0.25 for? Let's use variables (with documentation comments) for these types of things.
+                        player.Update(deltaTime, isJumping, gameSpeed-0.25);        //(gameSpeed-0.25) is exclusive to Player.Update function call and only affects visual speed
                     }
                     break;
                 // process key releases
