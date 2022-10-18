@@ -12,22 +12,19 @@ Ground::Ground(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	sidewalk.setTexture(texture);
 }
 
-Ground::~Ground()
-{
+Ground::~Ground() {
 
 }
 
-void Ground::Update(float deltaTime, float speedMultiplier)
-{
+void Ground::Update(float deltaTime, float speedMultiplier) {
 	//sf::Vector2f movement(0.0f, 0.0f);
 
 	//update the sprite row, set texture, and move the sprite
-	animation.GroundUpdate(383.0f, 0.0f, 16.0f, deltaTime, speedMultiplier);	//all Ground sprites in one row, row always == 0
+	animation.GroundUpdate(383.0f, 0.0f, 16.0f, deltaTime, speedMultiplier);	// all Ground sprites in one row, row always == 0
 	sidewalk.setTextureRect(animation.uvRect);
 	//body.move(movement);
 }
 
-void Ground::Draw(sf::RenderWindow & window)
-{
+void Ground::Draw(sf::RenderWindow & window) {
 	window.draw(sidewalk);
 }
