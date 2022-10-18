@@ -1,28 +1,28 @@
 #include "../include/Animation.h"
 
-Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
-{
-	this->imageCount = imageCount;
-	this->switchTime = switchTime;
-	totalTime = 0.0f;
-	currentImage.x = 0;
-	currentImage.y = 0;
+Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime) {
+	this->imageCount = imageCount;									// !! document variable purpose
+	this->switchTime = switchTime;									// !! document variable purpose
+	totalTime = 0.0f;												// !! document variable purpose
+	currentImage.x = 0;												// !! document variable purpose
+	currentImage.y = 0;												// !! document variable purpose
 	uvRect.width = texture->getSize().x / float(imageCount.x);
 	uvRect.height = texture->getSize().y / float(imageCount.y);
 }
-Animation::~Animation()
-{
+Animation::~Animation() {
 
 }
 
-void Animation::Update(int row, float deltaTime, bool startJump, float speedMultiplier) 
-{
+void Animation::Update(int row, float deltaTime, bool startJump, float speedMultiplier) {
 	currentImage.y = row;
 	totalTime += deltaTime;
+
+	// !! document what exactly this does
 	if (row == 1 && startJump == true) {
 		currentImage.x = 0;
 	}
 
+	// !! document what exactly this does
 	if (totalTime >= (switchTime*speedMultiplier)) {
 		totalTime -= (switchTime * speedMultiplier);
 		currentImage.x++;
@@ -36,12 +36,11 @@ void Animation::Update(int row, float deltaTime, bool startJump, float speedMult
 
 }
 
-//Ground doesn't use a static sprite size like player does. 
-//I'm incrementing it by tile (tile width != spriteWidth) for a scrolling effect
-void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier) 
-{
+// ground doesn't use a static sprite size like player does. 
+// it increments by tile (tile width != spriteWidth) for a scrolling effect
+void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier) {
 	totalTime += deltaTime;
-	//speedMultiplier determines how fast animation plays. *1.5 is solid speed *1 is full speed, *2 is halftime
+	// speedMultiplier determines how fast animation plays. *1.5 is solid speed *1 is full speed, *2 is halftime
 	if (totalTime >= (switchTime*speedMultiplier)) {	
 		totalTime -= (switchTime*speedMultiplier);
 		if (uvRect.left >= lastSpriteLeft)

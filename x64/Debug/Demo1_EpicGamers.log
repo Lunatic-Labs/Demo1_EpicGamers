@@ -1,2 +1,24 @@
-﻿  Player.cpp
+﻿  Animation.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(9,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(10,39): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(47,18): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(49,19): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Ground.cpp
+  Generating Code...
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
