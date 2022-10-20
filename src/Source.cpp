@@ -26,16 +26,16 @@ int main()
     float gameSpeed = 1.75;                     // lower gameSpeed = faster movement
     float gameSpeedLimit = 1.25;                // gameSpeed variable cannot decrease below this limit
     float gameSpeedModifier = 0.05;             // change the speed by *this* much
-    int incrementWaitTime = 14;                 // increases speed every x seconds
+    int incrementWaitTime = 13;                 // increases speed every x seconds
     int loopCounter = 1;                        // tracks the number of speed increment loops
     bool isJumping = false;                     // prevents multiple simultaneous jump inputs
-    float deltaTime = 0.0f, totalTime = 0.0f;
+    float deltaTime = 0.0f, totalTime = 0.0f;   // deltaTime is time of each loop. totalTime is time of all loops.
     sf::Clock clock, jumpTimer;
   
     // load player and ground textures and init objects
     sf::Texture dogPlayer, groundScroll;
-    dogPlayer.loadFromFile("Textures/dogRunnerWIP2.jpg");
-    groundScroll.loadFromFile("Textures/SidewalkWIP1.jpg"); //Need to set up as an object with collision
+    dogPlayer.loadFromFile("Textures/dogRunnerWIP3.jpg");
+    groundScroll.loadFromFile("Textures/SidewalkWIP2.jpg"); //Need to set up as an object with collision
     Player player(&dogPlayer, sf::Vector2u(10, 2), 0.09f, 100.0f);
     Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
 
@@ -61,8 +61,9 @@ int main()
                 case sf::Event::KeyPressed: 
                     // spacebar -> jump
                     if (evnt.key.code == 57 && isJumping == false) {   
-                        isJumping = true;
+                        isJumping = true; 
                         player.Update(deltaTime, isJumping, gameSpeed-0.25);        //(gameSpeed-0.25) is exclusive to Player.Update function call and only affects visual speed
+                        ground.Update(deltaTime, gameSpeed);
                     }
                     break;
                 // process key releases

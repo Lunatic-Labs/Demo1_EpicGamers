@@ -4,12 +4,11 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 	animation(texture, imageCount, switchTime)
 {
 	this->speed = speed;
-	row = 0;															// !! document what "row" is for
+	row = 0;			//determines which sprite row is passed to Animation class. 0 = walk, 1= jump.
 	faceRight = true;
 
 	body.setSize(sf::Vector2f(64.0f, 64.0f));
 	body.setOrigin(300.0f, -75.0f);
-	//body.setPosition(0.0f, 500.0f);									// !! document why this is commented out
 	body.setTexture(texture);
 }
 
@@ -18,25 +17,27 @@ Player::~Player() {
 }
 
 void Player::Update(float  deltaTime, bool jumpInput, float speedMultiplier) {
+	float jumpHeight = 200.0f;
+
 	if (jumpInput) {
 		row = 1;
 		if (startJump == false && jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {	
 			startJump = true;		// used to play jump animation from beginning. Exactly 1.0s long, * speed.
 			jumpTimer.restart();	
-			movement.y = 400.0f;	// set jump movement				// !! make this a variable
+			movement.y = -sqrtf(2.0f * 981.0f * jumpHeight);	// set jump movement
 		}
 		else                        // runs at end of jump cycle if Space is still held. Restarts cycle.
 			startJump = false;
 	}
-
+	
 	// start falling if above ground and jump animation is halfway completed
-	if (body.getPosition().y > 0.0f && jumpTimer.getElapsedTime().asSeconds() > (0.50f*speedMultiplier)) {	
-		movement.y = -400.0f;
+	if (body.getPosition().y < 0.0f && jumpTimer.getElapsedTime().asSeconds() > (0.50f*speedMultiplier)) {	
+		movement.y = sqrtf(2.0f * 981.0f * jumpHeight);
 		startJump = false;
 	}
 	// resets player to ground level if below it
-	else if (body.getPosition().y < 0.0f && !jumpInput && jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {
-		movement.y = 400.0f;		
+	else if (body.getPosition().y > 0.0f && !jumpInput && jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {
+		movement.y = -body.getPosition().y;	//position - 0, which is just position.
 		row = 0;
 		startJump = false;
 	}

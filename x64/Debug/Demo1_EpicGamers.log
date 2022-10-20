@@ -1,5 +1,5 @@
 ﻿  Source.cpp
-C:\Users\tubst\source\repos\Demo1_EpicGamers\src\Source.cpp(28,35): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\tubst\source\repos\Demo1_EpicGamers\src\Source.cpp(65,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\tubst\source\repos\Demo1_EpicGamers\src\Source.cpp(78,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Source.cpp(28,35): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Source.cpp(65,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Source.cpp(79,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Demo1_EpicGamers.vcxproj -> C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
