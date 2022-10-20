@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="src\Animation.cpp" />
     <ClCompile Include="src\Ground.cpp" />
     <ClCompile Include="src\Obstacle.cpp" />
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Animation.h" />
+    <ClInclude Include="include\Collider.h" />
     <ClInclude Include="include\Ground.h" />
     <ClInclude Include="include\Obstacle.h" />
     <ClInclude Include="include\Player.h" />

@@ -12,7 +12,6 @@ void resizeView(const sf::RenderWindow& window, sf::View& view)
     view.setSize(VIEW_HEIGHT * aspectRatio, VIEW_HEIGHT);
 }
 
-
 int main()
 {
     // create and setup window
@@ -35,9 +34,12 @@ int main()
     // load player and ground textures and init objects
     sf::Texture dogPlayer, groundScroll;
     dogPlayer.loadFromFile("Textures/dogRunnerWIP3.jpg");
-    groundScroll.loadFromFile("Textures/SidewalkWIP2.jpg"); //Need to set up as an object with collision
+    groundScroll.loadFromFile("Textures/grass.jpg"); //Need to set up as an object with collision
     Player player(&dogPlayer, sf::Vector2u(10, 2), 0.09f, 100.0f);
-    Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
+    //Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
+
+    Ground floor(&groundScroll, sf::Vector2f(700.0f, 400.0f), sf::Vector2f(0.0f, 0.0f));
+
 
     // core game loop
     while (window.isOpen()) {
@@ -77,15 +79,20 @@ int main()
 
         // process player
         player.Update(deltaTime, isJumping, gameSpeed-0.25);
-        ground.Update(deltaTime, gameSpeed);
+        //floor.getCollider().checkCollision(player.getCollider(), 0.0f);
+
+        //ground.Update(deltaTime, gameSpeed);
         view.setCenter(player.getPosition());
 
         // clear the window and draw the next frame
         window.clear();
         window.setView(view);
+        
+        //ground.draw(window);
+        floor.draw(window);
         player.Draw(window);
-        ground.Draw(window);
         window.display();
+
 
         // increase speed if needed, with an upper limit. Again, lower gameSpeed = faster movement
         if (totalTime > (incrementWaitTime*loopCounter) && gameSpeed > gameSpeedLimit) {
