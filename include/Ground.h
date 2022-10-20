@@ -1,10 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Collider.h"
 #include "Animation.h"
 
 // set up similarly to the Player class, but only animation functionality. 
 class Ground {
-	public:
+	/*public:
 		Ground(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
 		~Ground();
 
@@ -14,5 +15,14 @@ class Ground {
 	private:
 		sf::RectangleShape sidewalk;
 		Animation animation;
-		float speed;
+		float speed;*/
+public:
+	Ground(sf::Texture* texture, sf::Vector2f size, sf::Vector2f position);
+	~Ground();
+
+	void draw(sf::RenderWindow& window);
+	Collider getCollider() { return Collider(body); }
+
+private:
+	sf::RectangleShape body;
 };
