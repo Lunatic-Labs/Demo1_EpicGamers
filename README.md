@@ -3,4 +3,4 @@
 
 Using SFML with C++, this is our game dev project.
 
-Build instructions for Windows and Mac will appear here soon.
+To read more about our design and brainstorming phase, and to look at the non-code artifacts for our project, check out our [Wiki](https://github.com/Lunatic-Labs/Demo1_EpicGamers/wiki/Dog-Dash-Design)!
