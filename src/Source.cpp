@@ -34,7 +34,7 @@ int main()
   
     // load player and ground textures and init objects
     sf::Texture dogPlayer, groundScroll;
-    dogPlayer.loadFromFile("Textures/dogRunnerWIP2.jpg");
+    dogPlayer.loadFromFile("Textures/dogRunnerWIP3.jpg");
     groundScroll.loadFromFile("Textures/SidewalkWIP1.jpg"); //Need to set up as an object with collision
     Player player(&dogPlayer, sf::Vector2u(10, 2), 0.09f, 100.0f);
     Ground ground(&groundScroll, sf::Vector2u(4, 1), 0.09f, 100.0f);
