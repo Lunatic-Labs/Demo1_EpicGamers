@@ -1,2 +1,6 @@
 ﻿  Collider.cpp
+<<<<<<< HEAD
 c1xx : fatal  error C1083: Cannot open source file: 'Collider.cpp': No such file or directory
+=======
+  Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+>>>>>>> 273ec109b746f40c92e4011e148b64a289e1b4c7
