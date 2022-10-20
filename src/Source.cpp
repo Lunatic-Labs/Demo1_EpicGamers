@@ -65,7 +65,7 @@ int main()
                     if (evnt.key.code == 57 && isJumping == false) {   
                         isJumping = true; 
                         player.Update(deltaTime, isJumping, gameSpeed-0.25);        //(gameSpeed-0.25) is exclusive to Player.Update function call and only affects visual speed
-                        ground.Update(deltaTime, gameSpeed);
+                        //ground.Update(deltaTime, gameSpeed);
                     }
                     break;
                 // process key releases
