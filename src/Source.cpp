@@ -40,7 +40,6 @@ int main()
 
     Ground floor(&groundScroll, sf::Vector2f(680.0f, 380.0f), sf::Vector2f(0.0f, 0.0f));
 
-
     // core game loop
     while (window.isOpen()) {
         // manage time since last frame
