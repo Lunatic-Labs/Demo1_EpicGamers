@@ -5,11 +5,13 @@
 
 class Player {
 	public:
-		Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
+		Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, int healthPoints);
 		~Player();
 
 		void Update(float deltaTime, bool jumpInput, float speedMultiplier);
 		void Draw(sf::RenderWindow& window);
+		void TakeDamage();
+
 		sf::Vector2f getPosition() { return body.getPosition(); }
 		Collider getCollider() { return Collider(body); }
 
@@ -20,6 +22,7 @@ class Player {
 		sf::Clock jumpTimer;
 		unsigned int row;
 		float speed;
+		int healthPoints;
 		bool faceRight, startJump{ false };
 };
 
