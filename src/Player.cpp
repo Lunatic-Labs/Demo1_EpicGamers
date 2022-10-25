@@ -1,10 +1,12 @@
 #include "../include/Player.h"
 #include <iostream>
-Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
+Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, int healthPoints) :
 	animation(texture, imageCount, switchTime)
 {
 	this->speed = speed;
-	row = 0;			//determines which sprite row is passed to Animation class. 0 = walk, 1= jump.
+	this->healthPoints = healthPoints;
+
+	row = 0;			// determines which sprite row is passed to Animation class. 0 = walk, 1= jump.
 	faceRight = true;
 
 	body.setSize(sf::Vector2f(64.0f, 64.0f));
@@ -14,7 +16,12 @@ Player::Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, 
 }
 
 Player::~Player() {
+	
+}
 
+void Player::TakeDamage() {
+	healthPoints--;
+	// std::cout << "Player HP: " << healthPoints << "\n";
 }
 
 void Player::Update(float  deltaTime, bool jumpInput, float speedMultiplier) {
