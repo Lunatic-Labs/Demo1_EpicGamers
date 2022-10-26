@@ -1,1 +1,2 @@
-﻿  Demo1_EpicGamers.vcxproj -> C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+﻿Source.obj : error LNK2019: unresolved external symbol "public: __cdecl Player::Player(class sf::Texture *,class sf::Vector2<unsigned int>,float,float)" (??0Player@@QEAA@PEAVTexture@sf@@V?$Vector2@I@2@MM@Z) referenced in function main
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe : fatal error LNK1120: 1 unresolved externals

@@ -53,7 +53,7 @@ void Player::Update(float  deltaTime, bool jumpInput, float speedMultiplier) {
 	
 	// default case, player is on the ground
 	else if (jumpTimer.getElapsedTime().asSeconds() > (0.80f*speedMultiplier)) {
-		movement.y = 0.0f;
+		movement.y = sqrtf(2.0f * 981.0f * jumpHeight);
 		row = 0;
 		startJump = false;
 	}
