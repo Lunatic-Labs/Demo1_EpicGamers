@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe</FullPath>
+=======
+      <FullPath>C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe</FullPath>
+>>>>>>> 87d72c5956ec6b7e5161ec4b10ee2164a563e383
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
