@@ -24,7 +24,7 @@ int main()
     // init important variables
     float gameSpeed = 1.75;                     // lower gameSpeed = faster movement
     float gameSpeedLimit = 1.25;                // gameSpeed variable cannot decrease below this limit
-    float gameSpeedModifier = 0.05;             // change the speed by *this* much
+    float gameSpeedModifier = 0.05f;             // change the speed by *this* much
     int incrementWaitTime = 13;                 // increases speed every x seconds
     int loopCounter = 1;                        // tracks the number of speed increment loops
     bool isJumping = false;                     // prevents multiple simultaneous jump inputs
@@ -63,7 +63,7 @@ int main()
                     // spacebar -> jump
                     if (evnt.key.code == 57 && isJumping == false) {   
                         isJumping = true; 
-                        player.Update(deltaTime, isJumping, gameSpeed-0.25);        //(gameSpeed-0.25) is exclusive to Player.Update function call and only affects visual speed
+                        player.Update(deltaTime, isJumping, gameSpeed-0.25f);        //(gameSpeed-0.25) is exclusive to Player.Update function call and only affects visual speed
                         //ground.Update(deltaTime, gameSpeed);
                     }
                     break;
@@ -77,7 +77,7 @@ int main()
         }
 
         // process player
-        player.Update(deltaTime, isJumping, gameSpeed-0.25);
+        player.Update(deltaTime, isJumping, gameSpeed-0.25f);
         //floor.getCollider().checkCollision(player.getCollider(), 0.0f);
 
         //ground.Update(deltaTime, gameSpeed);

@@ -38,14 +38,14 @@ void Animation::Update(int row, float deltaTime, bool startJump, float speedMult
 
 // ground doesn't use a static sprite size like player does. 
 // it increments by tile (tile width != spriteWidth) for a scrolling effect
-void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier) {
-	totalTime += deltaTime;
-	// speedMultiplier determines how fast animation plays. *1.5 is solid speed *1 is full speed, *2 is halftime
-	if (totalTime >= (switchTime*speedMultiplier)) {	
-		totalTime -= (switchTime*speedMultiplier);
-		if (uvRect.left >= lastSpriteLeft)
-			uvRect.left = firstSpriteLeft;
-		else
-			uvRect.left += moveBy;
-	}
-}
+//void Animation::GroundUpdate(double lastSpriteLeft, double firstSpriteLeft, double moveBy, float deltaTime, float speedMultiplier) {
+//	totalTime += deltaTime;
+//	// speedMultiplier determines how fast animation plays. *1.5 is solid speed *1 is full speed, *2 is halftime
+//	if (totalTime >= (switchTime*speedMultiplier)) {	
+//		totalTime -= (switchTime*speedMultiplier);
+//		if (uvRect.left >= lastSpriteLeft)
+//			uvRect.left = firstSpriteLeft;
+//		else
+//			uvRect.left += moveBy;
+//	}
+//}
