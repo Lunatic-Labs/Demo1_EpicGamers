@@ -1,1 +1,7 @@
-﻿  Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+﻿  GameOverState.cpp
+  GameState.cpp
+  MainMenuState.cpp
+  SplashState.cpp
+  Generating Code...
+  Source.cpp
+  Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe

@@ -1,0 +1,20 @@
+Old----------
+Animation.cpp
+Collider.cpp
+Ground.cpp
+Makefile
+Obstacle.cpp
+Player.cpp
+Source.cpp
+
+New---------
+AssetManager.cpp
+Game.cpp
+GameOverState.cpp
+GameState.cpp
+InputManager.cpp
+MainMenuState.cpp
+Source.cpp -*-*-
+SplashState.cpp
+StateMachine.cpp
+
