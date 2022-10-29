@@ -17,6 +17,18 @@ namespace EpicGamers
 	{
 		std::cout << "Game State" << std::endl;
 		data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
+		data->assets.LoadTexture("Player Frame 1", PLAYER_FRAME_1_FILEPATH);	//load filepath for every Player frame given in DEFINTIONS.h
+		data->assets.LoadTexture("Player Frame 2", PLAYER_FRAME_2_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 3", PLAYER_FRAME_3_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 4", PLAYER_FRAME_4_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 5", PLAYER_FRAME_5_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 6", PLAYER_FRAME_6_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 7", PLAYER_FRAME_7_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 8", PLAYER_FRAME_8_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 9", PLAYER_FRAME_9_FILEPATH);	
+		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
+
+		player = new Player(data);
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
 	}
@@ -36,12 +48,18 @@ namespace EpicGamers
 
 	void GameState::Update(float dt)
 	{
+		//Insert Obstacle functionality here
+
+		player->animate(dt);
 	}
 
 	void GameState::Draw(float dt)
 	{
 		data->window.clear();
 		data->window.draw(background);
+		
+		player->draw();
+
 		data->window.display();
 	}
 }

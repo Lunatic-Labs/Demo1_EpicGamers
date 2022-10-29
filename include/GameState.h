@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "../include/State.h"
 #include "../include/Game.h"
+#include "../include/Player.h"
 
 namespace EpicGamers
 {
@@ -19,6 +20,8 @@ namespace EpicGamers
 	private:
 		GameDataRef data;
 		sf::Sprite background;
+
+		Player *player;
 	};
 
 }

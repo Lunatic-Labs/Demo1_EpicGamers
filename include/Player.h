@@ -1,28 +1,26 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Animation.h"
-#include "Collider.h"
+#include <vector>
+#include "DEFINITIONS.h"
+#include "Game.h"
 
-class Player {
+
+namespace EpicGamers
+{
+	class Player {
 	public:
-		Player(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed, int healthPoints);
-		~Player();
-
-		void Update(float deltaTime, bool jumpInput, float speedMultiplier);
-		void Draw(sf::RenderWindow& window);
-		void TakeDamage();
-
-		sf::Vector2f getPosition() { return body.getPosition(); }
-		Collider getCollider() { return Collider(body); }
+		Player(GameDataRef _data);
+		void draw();
+		void animate(float dt);
 
 	private:
-		sf::RectangleShape body;
-		Animation animation;
-		sf::Vector2f movement{ 0.0f, 0.0f };
-		sf::Clock jumpTimer;
-		unsigned int row;
-		float speed;
-		int healthPoints;
-		bool faceRight, startJump{ false };
-};
+		GameDataRef data;
+		sf::Sprite playerSprite;
+		std::vector<sf::Texture> animationFrames;
+
+		unsigned int animationIterator;		//current frame being displayed
+
+		sf::Clock clock;
+	};
+}
 

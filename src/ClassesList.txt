@@ -17,4 +17,5 @@ MainMenuState.cpp
 Source.cpp -*-*-
 SplashState.cpp
 StateMachine.cpp
+Player.cpp -*-*-
 
