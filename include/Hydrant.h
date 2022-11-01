@@ -19,4 +19,3 @@ namespace EpicGamers
     };
 }
 
-// we will need to include the Hydrant Header into the GameState.h file 
