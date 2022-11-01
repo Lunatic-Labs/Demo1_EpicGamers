@@ -4,7 +4,6 @@
 #include "../include/State.h"
 #include "../include/Game.h"
 #include "../include/Player.h"
-#include "../include/Hydrant.h"
 
 namespace EpicGamers
 {
@@ -23,8 +22,6 @@ namespace EpicGamers
 		sf::Sprite background;
 
 		Player *player;
-
-		Hydrant *hydrant; 
 	};
 
 }

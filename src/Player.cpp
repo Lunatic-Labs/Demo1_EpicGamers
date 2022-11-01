@@ -9,10 +9,6 @@ namespace EpicGamers
 		animationFrames.push_back(data->assets.GetTexture("Player Frame 1"));	//Repeat for every frame of Player animation in DEFINITIONS.h
 
 		playerSprite.setTexture(animationFrames.at(animationIterator));
-		playerSprite.setPosition((data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2),	//set x position
-			(data->window.getSize().y / 2) - (playerSprite.getGlobalBounds().height / 2));						//set y position.
-		
-		playerState = PLAYER_STATE_STILL;
 	}
 
 	void Player::draw()
@@ -33,33 +29,4 @@ namespace EpicGamers
 			clock.restart();
 		}
 	}
-
-	void Player::update(float dt)
-	{
-		if (PLAYER_STATE_STILL == playerState)			//Player is on ground
-		{
-			playerSprite.move(0,0);
-		}
-		else if (PLAYER_STATE_FALLING == playerState)	
-		{
-			playerSprite.move(0, GRAVITY * dt);
-		}
-		else if (PLAYER_STATE_JUMPING == playerState)	//Jump input received
-		{
-			playerSprite.move(0, -JUMP_SPEED * dt);
-		}
-
-		if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)	//NEEDED: && position is above ground level
-		{
-			movementClock.restart();
-			playerState = PLAYER_STATE_FALLING;
-		}
-	}
-
-	void Player::tap()
-	{
-		movementClock.restart();
-		playerState = PLAYER_STATE_JUMPING;
-	}
-
 }
