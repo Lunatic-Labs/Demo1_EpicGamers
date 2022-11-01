@@ -29,7 +29,7 @@ namespace EpicGamers
 		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
 
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
-		Hydrant = new Hydrant(data);
+//		Hydrant = new Hydrant(data);
 
 		data->assets.LoadTexture("Jump Frame 1", JUMP_FRAME_1_FILEPATH);
 		data->assets.LoadTexture("Jump Frame 2", JUMP_FRAME_2_FILEPATH);
@@ -79,7 +79,7 @@ namespace EpicGamers
 	{
 		data->window.clear();
 		data->window.draw(background);
-		Hydrant->drawHydrants( );
+//		Hydrant->drawHydrants( );
 		
 		player->draw();
 

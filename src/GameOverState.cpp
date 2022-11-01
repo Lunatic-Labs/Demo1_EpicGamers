@@ -1,10 +1,9 @@
 #pragma once
 
 #include <sstream>
+#include <iostream>
 #include "../include/GameOverState.h"
 #include "../include/DEFINITIONS.h"
-
-#include <iostream>
 
 namespace EpicGamers
 {
