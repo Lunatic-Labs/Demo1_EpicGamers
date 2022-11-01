@@ -1,4 +1,4 @@
-#include "Hydrant.h"
+#include "../include/Hydrant.h"
 
 namespace EpicGamers
 {
@@ -6,7 +6,7 @@ namespace EpicGamers
 	{
 	}
 
-	void Pipe::DrawHydrants()
+	void Hydrant::DrawHydrants()
 	{
 		for (unsigned short int i = 0; i < HydrantSprites.size(); i++)
 		{

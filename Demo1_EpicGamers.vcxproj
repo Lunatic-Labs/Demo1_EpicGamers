@@ -26,6 +26,7 @@
     <ClCompile Include="src\GameOverState.cpp" />
     <ClCompile Include="src\GameState.cpp" />
     <ClCompile Include="src\Ground.cpp" />
+    <ClCompile Include="src\Hydrant.cpp" />
     <ClCompile Include="src\InputManager.cpp" />
     <ClCompile Include="src\MainMenuState.cpp" />
     <ClCompile Include="src\Obstacle.cpp" />
@@ -45,6 +46,7 @@
     <ClInclude Include="include\GameOverState.h" />
     <ClInclude Include="include\GameState.h" />
     <ClInclude Include="include\Ground.h" />
+    <ClInclude Include="include\Hydrant.h" />
     <ClInclude Include="include\InputManager.h" />
     <ClInclude Include="include\MainMenuState.h" />
     <ClInclude Include="include\Obstacle.h" />

@@ -5,7 +5,7 @@ Ground.h
 Obstacle.h
 Player.h
 
-New-----------
+New----------- Alex
 AssetManager.h
 DEFINITIONS.h
 Game.h
@@ -16,3 +16,6 @@ MainMenuState.h
 SplashState.h
 State.h
 StateMachine.h
+
+New------------ Dominica
+Hydrant.h

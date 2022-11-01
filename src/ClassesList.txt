@@ -7,7 +7,7 @@ Obstacle.cpp
 Player.cpp
 Source.cpp
 
-New---------
+New--------- Alex
 AssetManager.cpp
 Game.cpp
 GameOverState.cpp
@@ -19,3 +19,5 @@ SplashState.cpp
 StateMachine.cpp
 Player.cpp -*-*-
 
+New----------- Dominica
+Hydrant.cpp
