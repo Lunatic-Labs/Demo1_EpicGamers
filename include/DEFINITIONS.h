@@ -27,3 +27,4 @@
 
 #define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
 
+#define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.jpg"

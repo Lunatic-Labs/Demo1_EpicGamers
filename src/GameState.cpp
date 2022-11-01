@@ -28,6 +28,9 @@ namespace EpicGamers
 		data->assets.LoadTexture("Player Frame 9", PLAYER_FRAME_9_FILEPATH);	
 		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
 
+		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
+		Hydrant = new Hydrant(data);
+
 		player = new Player(data);
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
@@ -57,6 +60,7 @@ namespace EpicGamers
 	{
 		data->window.clear();
 		data->window.draw(background);
+		Hydrant->drawHydrants( );
 		
 		player->draw();
 
