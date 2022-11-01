@@ -57,13 +57,6 @@ namespace EpicGamers
 			{
 				data->window.close();
 			}
-			if (sf::Event::KeyPressed == event.type)	//I was missing this statement, probably from an earlier tutorial? Using Space input from our OG code
-			{
-				if (event.key.code == 57)
-				{
-					player->tap();
-				}
-			}
 		}
 	}
 
