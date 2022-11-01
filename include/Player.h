@@ -12,6 +12,8 @@ namespace EpicGamers
 		Player(GameDataRef _data);
 		void draw();
 		void animate(float dt);
+		void update(float dt);
+		void tap();
 
 	private:
 		GameDataRef data;
@@ -21,6 +23,9 @@ namespace EpicGamers
 		unsigned int animationIterator;		//current frame being displayed
 
 		sf::Clock clock;
+		sf::Clock movementClock;
+
+		int playerState;
 	};
 }
 

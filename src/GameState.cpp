@@ -31,6 +31,17 @@ namespace EpicGamers
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
 		Hydrant = new Hydrant(data);
 
+		data->assets.LoadTexture("Jump Frame 1", JUMP_FRAME_1_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 2", JUMP_FRAME_2_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 3", JUMP_FRAME_3_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 4", JUMP_FRAME_4_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 5", JUMP_FRAME_5_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 6", JUMP_FRAME_6_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 7", JUMP_FRAME_7_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 8", JUMP_FRAME_8_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 9", JUMP_FRAME_9_FILEPATH);
+		data->assets.LoadTexture("Jump Frame 10", JUMP_FRAME_10_FILEPATH);
+
 		player = new Player(data);
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
@@ -46,6 +57,13 @@ namespace EpicGamers
 			{
 				data->window.close();
 			}
+			if (sf::Event::KeyPressed == event.type)	//I was missing this statement, probably from an earlier tutorial? Using Space input from our OG code
+			{
+				if (event.key.code == 57)
+				{
+					player->tap();
+				}
+			}
 		}
 	}
 
@@ -54,6 +72,7 @@ namespace EpicGamers
 		//Insert Obstacle functionality here
 
 		player->animate(dt);
+		player->update(dt);
 	}
 
 	void GameState::Draw(float dt)

@@ -1,12 +1,1 @@
-﻿  GameOverState.cpp
-  GameState.cpp
-  Ground.cpp
-  MainMenuState.cpp
-  Obstacle.cpp
-  Player.cpp
-  SplashState.cpp
-  StateMachine.cpp
-  Generating Code...
-  Source.cpp
-  LINK : C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe not found or not built by the last incremental link; performing full link
-  Demo1_EpicGamers.vcxproj -> C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+﻿  Demo1_EpicGamers.vcxproj -> C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
