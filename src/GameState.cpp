@@ -57,6 +57,13 @@ namespace EpicGamers
 			{
 				data->window.close();
 			}
+			if (sf::Event::KeyPressed == event.type)
+			{
+				if (event.key.code == 57)
+				{
+					player->tap();
+				}
+			}
 		}
 	}
 
