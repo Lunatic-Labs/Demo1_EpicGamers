@@ -40,3 +40,11 @@
 
 #define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
 
+#define PLAYER_STATE_STILL 1
+#define PLAYER_STATE_FALLING 2
+#define	PLAYER_STATE_JUMPING 3
+
+#define GRAVITY 350.0f				//Value to pull player down during Falling state.
+#define JUMP_SPEED 350.0f		//Value to jump up by during Jumping state.
+
+#define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
