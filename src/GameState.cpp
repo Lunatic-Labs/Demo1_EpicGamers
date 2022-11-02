@@ -3,6 +3,7 @@
 #include <sstream>
 #include "../include/GameState.h"
 #include "../include/DEFINITIONS.h"
+#include "../include/Hydrant.h"
 
 #include <iostream>
 
@@ -79,7 +80,7 @@ namespace EpicGamers
 	{
 		data->window.clear();
 		data->window.draw(background);
-//		Hydrant->drawHydrants( );
+		//Hydrant->drawHydrants( );
 		
 		player->draw();
 
