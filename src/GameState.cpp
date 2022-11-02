@@ -65,7 +65,7 @@ namespace EpicGamers
 		//Insert Obstacle functionality here
 
 		player->animate(dt);
-		player->update(dt);
+		//player->update(dt);
 	}
 
 	void GameState::Draw(float dt)
