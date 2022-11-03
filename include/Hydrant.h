@@ -3,19 +3,23 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h" 
 #include <vector>
+#include "../include/DEFINITIONS.h"
 
 namespace EpicGamers 
 {
     class Hydrant
     {
     public:
-      Hydrant( GameDataRef data );
+        Hydrant( GameDataRef data );
 
-      void DrawHydrants( );
+        void SpawnHydrant();
+        void MoveHydrants(float dt);
+        void DrawHydrants( );
+        void RandomiseHydrantOffset();
 
     private:
-      GameDataRef _data;
-      std::vector<sf::Sprite> HydrantSprites;
+        GameDataRef data;
+        std::vector<sf::Sprite> hydrantSprites;
     };
 }
 

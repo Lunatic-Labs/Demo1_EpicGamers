@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "../include/State.h"
 #include "../include/Game.h"
+#include "../include/Hydrant.h"
 #include "../include/Player.h"
 
 namespace EpicGamers
@@ -21,7 +22,11 @@ namespace EpicGamers
 		GameDataRef data;
 		sf::Sprite background;
 
+		Hydrant* hydrant;
 		Player *player;
+
+		sf::Clock clock;
+
 	};
 
 }

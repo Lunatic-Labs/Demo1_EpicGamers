@@ -30,7 +30,7 @@ namespace EpicGamers
 		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
 
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
-//		Hydrant = new Hydrant(data);
+		hydrant = new Hydrant(data);
 
 		data->assets.LoadTexture("Jump Frame 1", JUMP_FRAME_1_FILEPATH);
 		data->assets.LoadTexture("Jump Frame 2", JUMP_FRAME_2_FILEPATH);
@@ -71,6 +71,13 @@ namespace EpicGamers
 	void GameState::Update(float dt)
 	{
 		//Insert Obstacle functionality here
+		hydrant->MoveHydrants(dt);
+		if (clock.getElapsedTime().asSeconds() > HYDRANT_SPAWN_FREQUENCY)
+		{
+			hydrant->SpawnHydrant();
+			std::cout << "drawing hyddrant\n";
+			clock.restart();
+		}
 
 		player->animate(dt);
 		player->update(dt);
@@ -80,7 +87,7 @@ namespace EpicGamers
 	{
 		data->window.clear();
 		data->window.draw(background);
-		//Hydrant->drawHydrants( );
+		hydrant->DrawHydrants();
 		
 		player->draw();
 

@@ -36,6 +36,8 @@
 #define JUMP_FRAME_10_FILEPATH "Resources/Player/dogRunner Jump Frame 10.png"
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
+#define HYDRANT_MOVEMENT_SPEED 200.0f
+#define HYDRANT_SPAWN_FREQUENCY 2.0f
 
 
 #define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
