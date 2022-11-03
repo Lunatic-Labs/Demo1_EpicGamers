@@ -10,7 +10,7 @@
 #define GAME_BACKGROUND_FILEPATH "Resources/Textures/LUlogo.jpg"
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources/Textures/LUlogo.jpg"
 
-#define GAME_TITLE_FILEPATH "Resources/Textures/dogWIP2.jpg"
+#define GAME_TITLE_FILEPATH "Resources/Textures/title.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Textures/SFMLPlayButton.png"
 
 #define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner Frame 1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
