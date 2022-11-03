@@ -26,7 +26,6 @@ namespace EpicGamers
 
 		title.setPosition((SCREEN_WIDTH) / 2 - (title.getGlobalBounds().width / 2), title.getGlobalBounds().height / 3);
 		playButton.setPosition((SCREEN_WIDTH) / 2 - (playButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT) / 2 - (playButton.getGlobalBounds().height / 20));
-
 	}
 
 
