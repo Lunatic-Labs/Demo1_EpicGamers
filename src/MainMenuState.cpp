@@ -24,7 +24,7 @@ namespace EpicGamers
 		title.setTexture(this->data->assets.GetTexture("Game Title"));
 		playButton.setTexture(this->data->assets.GetTexture("Play Button"));
 
-		title.setScale((SCREEN_WIDTH/2), (SCREEN_HEIGHT/2));
+		//title.setScale((SCREEN_WIDTH/2), (SCREEN_HEIGHT/2));
 
 		title.setPosition((SCREEN_WIDTH) / 2 - (title.getGlobalBounds().width / 2), title.getGlobalBounds().height / 3);
 		playButton.setPosition((SCREEN_WIDTH) / 2 - (playButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT) / 2 - (playButton.getGlobalBounds().height / 20));
