@@ -1,7 +1,7 @@
 #pragma once
 
-#define SCREEN_WIDTH 2048
-#define SCREEN_HEIGHT 1024
+#define SCREEN_WIDTH 1600
+#define SCREEN_HEIGHT 800
 
 #define SPLASH_STATE_SHOW_TIME 2.0
 
@@ -37,7 +37,7 @@
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
 #define HYDRANT_MOVEMENT_SPEED 200.0f
-#define HYDRANT_SPAWN_FREQUENCY 2.0f
+#define HYDRANT_SPAWN_FREQUENCY 3.0f
 
 
 #define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation

@@ -18,6 +18,7 @@ namespace EpicGamers
 		animationFrames.push_back(data->assets.GetTexture("Player Frame 10"));	//Assuming we'll also need to repeat this for the Jump animation frames.
 
 		playerSprite.setTexture(animationFrames.at(animationIterator));
+		//playerSprite.setScale();
 		playerSprite.setPosition((data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2),
 			(data->window.getSize().y / 2) - (playerSprite.getGlobalBounds().height / 2));
 		
@@ -53,14 +54,18 @@ namespace EpicGamers
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
-			playerSprite.move(0, GRAVITY*dt);
+			playerSprite.move(0, GRAVITY * dt);
 		}
 		else if (PLAYER_STATE_JUMPING == playerState)
 		{
-			playerSprite.move(0, -JUMP_SPEED*dt);
+			playerSprite.move(0, -JUMP_SPEED * dt);
 		}
 
-		if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)
+		if (playerSprite.getPosition().y >= (data->window.getSize().y - playerSprite.getGlobalBounds().height) - 3)
+		{
+			playerState = PLAYER_STATE_STILL;
+		}
+		else if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)
 		{
 			movementClock.restart();
 			playerState = PLAYER_STATE_FALLING;
@@ -70,6 +75,6 @@ namespace EpicGamers
 	void Player::tap()
 	{
 		movementClock.restart();
-		playerState = PLAYER_STATE_FALLING;
+		playerState = PLAYER_STATE_JUMPING;
 	}
 }
