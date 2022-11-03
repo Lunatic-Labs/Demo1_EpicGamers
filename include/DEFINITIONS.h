@@ -3,15 +3,15 @@
 #define SCREEN_WIDTH 2048
 #define SCREEN_HEIGHT 1024
 
-#define SPLASH_STATE_SHOW_TIME 3.0
+#define SPLASH_STATE_SHOW_TIME 2.0
 
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures/LUdLogo.png"
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures/EpicGamers.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Textures/background.png"
-#define GAME_BACKGROUND_FILEPATH "Resources/Textures/LUlogo.jpg"
+#define GAME_BACKGROUND_FILEPATH "Resources/Textures/background.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources/Textures/LUlogo.jpg"
 
-#define GAME_TITLE_FILEPATH "Resources/Textures/title.png"
-#define PLAY_BUTTON_FILEPATH "Resources/Textures/SFMLPlayButton.png"
+#define GAME_TITLE_FILEPATH "Resources/Textures/DogDashTitle.png"
+#define PLAY_BUTTON_FILEPATH "Resources/Textures/PlayButton.png"
 
 #define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner Frame 1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
 #define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner Frame 2.png"
