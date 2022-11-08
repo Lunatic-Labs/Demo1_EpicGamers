@@ -1,46 +1,37 @@
 #include "../include/Ground.h"
-#include <iostream>
-//Currently WIP. Hoping to set up scroll functionality similar to Player, by reading a spritesheet
+#include "../include/DEFINITIONS.h"
 
-//Ground::Ground(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed) :
-//	animation(texture, imageCount, switchTime)
-//{
-//	this->speed = speed;
-//	sf::RectangleShape groundScroll;
-//	sidewalk.setSize(sf::Vector2f(128.0f, 32.0f));	//size of one sprite in pixels?
-//	sidewalk.setOrigin(0.0f, -127.0f);
-//	sidewalk.setTexture(texture);
-//}
-//
-//Ground::~Ground() {
-//
-//}
-//
-//void Ground::Update(float deltaTime, float speedMultiplier) {
-//	//sf::Vector2f movement(0.0f, 0.0f);
-//
-//	//update the sprite row, set texture, and move the sprite
-//	animation.GroundUpdate(383.0f, 0.0f, 16.0f, deltaTime, speedMultiplier);	// all Ground sprites in one row, row always == 0
-//	sidewalk.setTextureRect(animation.uvRect);
-//	//body.move(movement);
-//}
-//
-//void Ground::Draw(sf::RenderWindow & window) {
-//	window.draw(sidewalk);
-//}
+namespace EpicGamers
+{
+	Ground::Ground(GameDataRef data) : data(data)
+	{
+		sf::Sprite sprite(data->assets.GetTexture("Ground"));
+		sf::Sprite sprite2(data->assets.GetTexture("Ground"));
+		sprite.setPosition(0, data->window.getSize().y - sprite.getGlobalBounds().height);
+		sprite2.setPosition(sprite.getLocalBounds().width, data->window.getSize().y - sprite.getGlobalBounds().height);
+		
+		groundSprites.push_back(sprite);
+		groundSprites.push_back(sprite2);
+	}
 
-Ground::Ground(sf::Texture* texture, sf::Vector2f size, sf::Vector2f position)
-{
-	body.setSize(size);
-	body.setOrigin(size / 2.0f);
-	body.setTexture(texture);
-	body.setPosition(position);
-}
-Ground::~Ground()
-{
-
-}
-void Ground::draw(sf::RenderWindow& window)
-{
-	window.draw(body);
+	void Ground::MoveGround(float dt)
+	{
+		for (unsigned short int i = 0; i < groundSprites.size(); i++)
+		{
+			float movement = HYDRANT_MOVEMENT_SPEED * dt;
+			groundSprites.at(i).move(-movement, 0.0f);
+			if (groundSprites.at(i).getPosition().x < 0 - groundSprites.at(i).getGlobalBounds().width)
+			{
+				sf::Vector2f position(data->window.getSize().x, groundSprites.at(i).getPosition().y);
+				groundSprites.at(i).setPosition(position);
+			}
+		}
+	}
+	void Ground::DrawGround()
+	{
+		for (unsigned short int i = 0; i < groundSprites.size(); i++)
+		{
+			data->window.draw(groundSprites.at(i));
+		}
+	}
 }

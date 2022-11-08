@@ -1,28 +1,21 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Collider.h"
-#include "Animation.h"
+#include "Game.h"
+#include <vector>
 
-// set up similarly to the Player class, but only animation functionality. 
-class Ground {
-	/*public:
-		Ground(sf::Texture* texture, sf::Vector2u imageCount, float switchTime, float speed);
-		~Ground();
+namespace EpicGamers
+{
+	class Ground
+	{
+	public: 
+		Ground(GameDataRef data);
+		
+		void MoveGround(float dt);
+		void DrawGround();
 
-		void Update(float deltaTime, float speedMultiplier);
-		void Draw(sf::RenderWindow& window);
-		sf::Vector2f getPosition() { return sidewalk.getPosition(); }
 	private:
-		sf::RectangleShape sidewalk;
-		Animation animation;
-		float speed;*/
-public:
-	Ground(sf::Texture* texture, sf::Vector2f size, sf::Vector2f position);
-	~Ground();
+		GameDataRef data;
 
-	void draw(sf::RenderWindow& window);
-	Collider getCollider() { return Collider(body); }
-
-private:
-	sf::RectangleShape body;
-};
+		std::vector<sf::Sprite> groundSprites;
+	};
+}

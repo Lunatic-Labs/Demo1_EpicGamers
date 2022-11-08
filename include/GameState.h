@@ -1,10 +1,11 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../include/State.h"
-#include "../include/Game.h"
-#include "../include/Hydrant.h"
-#include "../include/Player.h"
+#include "State.h"
+#include "Game.h"
+#include "Hydrant.h"
+#include "Ground.h"
+#include "Player.h"
 
 namespace EpicGamers
 {
@@ -23,6 +24,7 @@ namespace EpicGamers
 		sf::Sprite background;
 
 		Hydrant* hydrant;
+		Ground* ground;
 		Player *player;
 
 		sf::Clock clock;

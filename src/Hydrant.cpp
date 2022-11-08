@@ -10,7 +10,7 @@ namespace EpicGamers
 	void Hydrant::SpawnHydrant()
 	{
 		sf::Sprite sprite(data->assets.GetTexture("Hydrant"));
-		sprite.setPosition(data->window.getSize().x, data->window.getSize().y - sprite.getGlobalBounds().height);
+		sprite.setPosition(data->window.getSize().x, data->window.getSize().y - sprite.getGlobalBounds().height - 130.0f);
 		hydrantSprites.push_back(sprite);
 	}
 
