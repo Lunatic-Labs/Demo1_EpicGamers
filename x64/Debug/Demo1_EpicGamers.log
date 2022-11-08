@@ -1,1 +1,36 @@
-﻿  Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+﻿  Animation.cpp
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\Animation.cpp(10,38): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\Animation.cpp(11,39): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  Game.cpp
+  GameOverState.cpp
+  GameState.cpp
+  Ground.cpp
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\Ground.cpp(25,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  Hydrant.cpp
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\Hydrant.cpp(13,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  MainMenuState.cpp
+  Player.cpp
+  SplashState.cpp
+  Generating Code...
+  Source.cpp
+  Demo1_EpicGamers.vcxproj -> C:\Users\Brett\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe

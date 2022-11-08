@@ -1,6 +1,7 @@
 #include "../include/Animation.h"
 
-Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime) {
+Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
+{
 	this->imageCount = imageCount;									// !! document variable purpose
 	this->switchTime = switchTime;									// !! document variable purpose
 	totalTime = 0.0f;												// !! document variable purpose
@@ -9,20 +10,20 @@ Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switch
 	uvRect.width = texture->getSize().x / float(imageCount.x);
 	uvRect.height = texture->getSize().y / float(imageCount.y);
 }
-Animation::~Animation() {
+Animation::~Animation()
+{
 
 }
 
-void Animation::Update(int row, float deltaTime, bool startJump, float speedMultiplier) {
+void Animation::Update(int row, float deltaTime, bool startJump, float speedMultiplier) 
+{
 	currentImage.y = row;
 	totalTime += deltaTime;
 
-	// !! document what exactly this does
+	// change index on spritesheet
 	if (row == 1 && startJump == true) {
 		currentImage.x = 0;
 	}
-
-	// !! document what exactly this does
 	if (totalTime >= (switchTime*speedMultiplier)) {
 		totalTime -= (switchTime * speedMultiplier);
 		currentImage.x++;
