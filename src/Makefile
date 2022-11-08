@@ -1,18 +1,14 @@
-CC = g++ 
-INCLUDES = -I../include 
-INCLUDES += -I/Users/dominicaleonard/SFMLGame/src/include
-LDFLAGS = $$(pkg-config --libs --cflags sfml-window sfml-system sfml-graphics)
+LIBS=-lsfml-graphics -lsfml-window -lsfml-system
+CXX := g++
 
-main: Source.o Player.o Ground.o Animation.o
-	$(CC) $(CFLAGS) $? $(LDFLAGS) -o $@ $(INCLUDES)
-Source.o: Source.cpp 
-	$(CC) -c $(CFLAGS) $? $(LDFLAGS) -o $@ $(INCLUDES)
-Player.o: Player.cpp 
-	$(CC) -c $(CFLAGS) $? $(LDFLAGS) -o $@ $(INCLUDES)
-Ground.o: Ground.cpp 
-	$(CC) -c $(CFLAGS) $? $(LDFLAGS) -o $@ $(INCLUDES)
-Animation.o: Animation.cpp 
-	$(CC) -c $(CFLAGS) $? $(LDFLAGS) -o $@ $(INCLUDES)
-.PHONY: run 
-run: main
-		cd ../ && ./src/main
+all: thegame
+
+%.o: %.cpp
+	$(CXX) -c $< -o $@
+
+%.o: %.hpp
+	$(CXX) -c $< -o $@
+
+thegame: Source.o Game.o SplashState.o MainMenuState.o GameState.o Hydrant.o StateMachine.o AssetManager.o InputManager.o GameOverState.o Player.o
+	@echo "** Building the game"
+	$(CXX) -o thegame Source.o Game.o SplashState.o MainMenuState.o GameState.o Hydrant.o StateMachine.o AssetManager.o InputManager.o GameOverState.o Player.o $(LIBS)
