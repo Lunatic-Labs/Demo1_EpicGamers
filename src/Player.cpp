@@ -17,6 +17,17 @@ namespace EpicGamers
 		animationFrames.push_back(data->assets.GetTexture("Player Frame 9"));
 		animationFrames.push_back(data->assets.GetTexture("Player Frame 10"));	//Assuming we'll also need to repeat this for the Jump animation frames.
 
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 1"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 2"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 3"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 4"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 5"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 6"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 7"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 8"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 9"));
+		animationFrames.push_back(data->assets.GetTexture("Jump Frame 10"));
+
 		playerSprite.setTexture(animationFrames.at(animationIterator));
 		//playerSprite.setSize(64.0f, 64.0f);
 		playerSprite.setPosition((data->window.getSize().x / 6),
@@ -36,9 +47,27 @@ namespace EpicGamers
 
 	void Player::animate(float dt)
 	{	//if more time has passed than the given frame rate (time spent on current frame compared to total duration)
+		if (PLAYER_STATE_JUMPING == playerState || PLAYER_STATE_FALLING == playerState)
+		{	//if in air (should trigger when Jump/Tap is triggered
+			if (clock.getElapsedTime().asSeconds() > JUMP_DURATION / animationFrames.size())
+			{
+				if (jumping == false)
+				{
+					animationIterator = 10;	//Start jump animation
+					jumping = true;
+				}
+				if (animationIterator < 19)
+					animationIterator++;
+				else
+					jumping = false;
+
+				playerSprite.setTexture(animationFrames.at(animationIterator));
+				clock.restart();
+			}
+		}
 		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / animationFrames.size())
 		{	//move forward in animation
-			if (animationIterator < (animationFrames.size() - 1))
+			if (animationIterator < 9)
 				animationIterator++;
 			else
 				animationIterator = 0;
