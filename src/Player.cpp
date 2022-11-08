@@ -19,9 +19,11 @@ namespace EpicGamers
 
 		playerSprite.setTexture(animationFrames.at(animationIterator));
 		//playerSprite.setSize(64.0f, 64.0f);
-		playerSprite.setPosition((data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2),
+		playerSprite.setPosition((data->window.getSize().x / 6),
 			(data->window.getSize().y / 2) - (playerSprite.getGlobalBounds().height / 2));
 		
+		playerX = (data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2);
+		playerY = (data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f);
 		playerState = PLAYER_STATE_STILL;
 		movementClock.restart();
 	
@@ -48,6 +50,7 @@ namespace EpicGamers
 
 	void Player::update(float dt)
 	{
+		//Movement responses to State Machine 
 		if (PLAYER_STATE_STILL == playerState)
 		{
 			playerSprite.move(0, 0);
@@ -61,7 +64,8 @@ namespace EpicGamers
 			playerSprite.move(0, -JUMP_SPEED * dt);
 		}
 
-		if (playerSprite.getPosition().y >= (data->window.getSize().y - playerSprite.getGlobalBounds().height) - 3)
+		//Update State Machine based on Player's position, after Jumping
+		if (playerSprite.getPosition().y >= playerY)
 		{
 			playerState = PLAYER_STATE_STILL;
 		}
@@ -70,9 +74,14 @@ namespace EpicGamers
 			movementClock.restart();
 			playerState = PLAYER_STATE_FALLING;
 		}
+		//Bring Player from left to desired X, intro functionality
+		if (playerSprite.getPosition().x < playerX)
+		{
+			playerSprite.move(playerX - playerSprite.getPosition().x, 0);
+		}
 	}
 
-	void Player::tap()
+	void Player::tap()	//Update State Machine when input received
 	{
 		if (playerState != PLAYER_STATE_JUMPING && playerState != PLAYER_STATE_FALLING)
 		{

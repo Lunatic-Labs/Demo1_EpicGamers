@@ -1,7 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class Animation {
+class Animation 
+{
 	public:
 		Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime);
 		~Animation();

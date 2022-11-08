@@ -37,17 +37,17 @@
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
 #define GROUND_FILEPATH "Resources/Textures/land.png"
-#define HYDRANT_MOVEMENT_SPEED 200.0f
-#define HYDRANT_SPAWN_FREQUENCY 3.0f
+#define HYDRANT_MOVEMENT_SPEED 400.0f
+#define HYDRANT_SPAWN_FREQUENCY 1.7f
 
 
-#define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
+#define PLAYER_ANIMATION_DURATION 0.8f						//Length of the Player animation
 
 #define PLAYER_STATE_STILL 1
 #define PLAYER_STATE_FALLING 2
 #define	PLAYER_STATE_JUMPING 3
 
-#define GRAVITY 350.0f				//Value to pull player down during Falling state.
-#define JUMP_SPEED 350.0f		//Value to jump up by during Jumping state.
+#define GRAVITY 700.0f			//Value to pull player down during Falling state.
+#define JUMP_SPEED 700.0f		//Value to jump up by during Jumping state.
 
-#define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
+#define JUMP_DURATION 0.4f		//Length of jump animation. Tutorial used 0.25f
