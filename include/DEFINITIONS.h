@@ -13,16 +13,16 @@
 #define GAME_TITLE_FILEPATH "Resources/Textures/DogDashTitle.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Textures/PlayButton.png"
 
-#define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner Frame 1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
-#define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner Frame 2.png"
-#define PLAYER_FRAME_3_FILEPATH "Resources/Player/dogRunner Frame 3.png"
-#define PLAYER_FRAME_4_FILEPATH "Resources/Player/dogRunner Frame 4.png"
-#define PLAYER_FRAME_5_FILEPATH "Resources/Player/dogRunner Frame 5.png"
-#define PLAYER_FRAME_6_FILEPATH "Resources/Player/dogRunner Frame 6.png"
-#define PLAYER_FRAME_7_FILEPATH "Resources/Player/dogRunner Frame 7.png"
-#define PLAYER_FRAME_8_FILEPATH "Resources/Player/dogRunner Frame 8.png"
-#define PLAYER_FRAME_9_FILEPATH "Resources/Player/dogRunner Frame 9.png"
-#define PLAYER_FRAME_10_FILEPATH "Resources/Player/dogRunner Frame 10.png"
+#define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner 2xFrame1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
+#define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner 2xFrame2.png"
+#define PLAYER_FRAME_3_FILEPATH "Resources/Player/dogRunner 2xFrame3.png"
+#define PLAYER_FRAME_4_FILEPATH "Resources/Player/dogRunner 2xFrame4.png"
+#define PLAYER_FRAME_5_FILEPATH "Resources/Player/dogRunner 2xFrame5.png"
+#define PLAYER_FRAME_6_FILEPATH "Resources/Player/dogRunner 2xFrame6.png"
+#define PLAYER_FRAME_7_FILEPATH "Resources/Player/dogRunner 2xFrame7.png"
+#define PLAYER_FRAME_8_FILEPATH "Resources/Player/dogRunner 2xFrame8.png"
+#define PLAYER_FRAME_9_FILEPATH "Resources/Player/dogRunner 2xFrame9.png"
+#define PLAYER_FRAME_10_FILEPATH "Resources/Player/dogRunner 2xFrame10.png"
 
 #define JUMP_FRAME_1_FILEPATH "Resources/Player/dogRunner Jump Frame 1.png"
 #define JUMP_FRAME_2_FILEPATH "Resources/Player/dogRunner Jump Frame 2.png"
@@ -36,7 +36,7 @@
 #define JUMP_FRAME_10_FILEPATH "Resources/Player/dogRunner Jump Frame 10.png"
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
-#define GROUND_FILEPATH "Resources/Textures/land.png"
+#define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
 
@@ -47,7 +47,7 @@
 #define PLAYER_STATE_FALLING 2
 #define	PLAYER_STATE_JUMPING 3
 
-#define GRAVITY 700.0f			//Value to pull player down during Falling state.
-#define JUMP_SPEED 700.0f		//Value to jump up by during Jumping state.
+#define GRAVITY 600.0f			//Value to pull player down during Falling state.
+#define JUMP_SPEED 600.0f		//Value to jump up by during Jumping state.
 
-#define JUMP_DURATION 0.4f		//Length of jump animation. Tutorial used 0.25f
+#define JUMP_DURATION 0.35f		//Length of jump animation. Tutorial used 0.25f
