@@ -41,7 +41,7 @@
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
 
 
-#define PLAYER_ANIMATION_DURATION 0.4f						//Length of the Player animation
+#define PLAYER_ANIMATION_DURATION 0.8f						//Length of the Player animation
 
 #define PLAYER_STATE_STILL 1
 #define PLAYER_STATE_FALLING 2

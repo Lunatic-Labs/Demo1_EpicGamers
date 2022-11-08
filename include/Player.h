@@ -26,6 +26,8 @@ namespace EpicGamers
 		sf::Clock movementClock;
 
 		int playerState;
+		double playerX;			//desired x-value for Player. Using in intro "animation".
+		double playerY;			//desired y-value, using for Jump functionality/State machine.
 	};
 }
 
