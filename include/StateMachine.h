@@ -14,6 +14,8 @@ namespace EpicGamers
 	public:
 		StateMachine() {}
 		~StateMachine() {}
+			//delete StateRef;
+		
 
 		void AddState(StateRef newState, bool isPlacing = true);
 		void RemoveState();

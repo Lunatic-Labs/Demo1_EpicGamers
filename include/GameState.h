@@ -6,6 +6,7 @@
 #include "Hydrant.h"
 #include "Ground.h"
 #include "Player.h"
+#include "HUD.h"
 
 namespace EpicGamers
 {
@@ -23,9 +24,10 @@ namespace EpicGamers
 		GameDataRef data;
 		sf::Sprite background;
 
-		Hydrant* hydrant;
-		Ground* ground;
+		Hydrant *hydrant;
+		Ground *ground;
 		Player *player;
+		HUD *hud; 
 
 		sf::Clock clock;
 
@@ -39,6 +41,7 @@ namespace EpicGamers
 		sf::Sound _landSound;
 		sf::Sound _collectibleSound;*/
 
+		int score;
 	};
 
 }

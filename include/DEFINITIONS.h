@@ -13,6 +13,8 @@
 #define GAME_TITLE_FILEPATH "Resources/Textures/DogDashTitle.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Textures/PlayButton.png"
 
+//#define SCORING_HYDRANT_FILEPATH "Resources/Textures/InvisibleScoringPipe.png"    Part of score video
+//#define DOG_FONT_FILEPATH "Resources/fonts/DogFont.ttf"                        Part of score video
 #define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner 2xFrame1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
 #define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner 2xFrame2.png"
 #define PLAYER_FRAME_3_FILEPATH "Resources/Player/dogRunner 2xFrame3.png"

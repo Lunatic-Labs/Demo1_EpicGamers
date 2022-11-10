@@ -12,14 +12,17 @@ namespace EpicGamers
     public:
         Hydrant( GameDataRef data );
 
-        void SpawnHydrant();
+        void SpawnHydrant( );
+        void SpawnScoringHydrant( );
         void MoveHydrants(float dt);
         void DrawHydrants( );
-        void RandomiseHydrantOffset();
+        void RandomiseHydrantOffset( );
 
+        std::vector<sf::Sprite> &GetScoringSprites( );
     private:
         GameDataRef data;
         std::vector<sf::Sprite> hydrantSprites;
+        std::vector<sf::Sprite> scoringHydrants;
     };
 }
 

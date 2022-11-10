@@ -51,6 +51,9 @@ namespace EpicGamers
 		data->assets.LoadTexture("Player Frame 8", PLAYER_FRAME_8_FILEPATH);	
 		data->assets.LoadTexture("Player Frame 9", PLAYER_FRAME_9_FILEPATH);	
 		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
+		
+		//data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);		Part of score video
+		//data->assets.LoadFont("Dog Font", DOG_FONT_FILEPATH );				Part of score video
 
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
 		hydrant = new Hydrant(data);
@@ -70,8 +73,12 @@ namespace EpicGamers
 		data->assets.LoadTexture("Jump Frame 10", JUMP_FRAME_10_FILEPATH);
 
 		player = new Player(data);
+		hud = new HUD( data );
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
+
+		score = 0;
+		hud->UpdateScore( score );
 	}
 
 	void GameState::HandleInput()
@@ -104,12 +111,32 @@ namespace EpicGamers
 		if (clock.getElapsedTime().asSeconds() > HYDRANT_SPAWN_FREQUENCY)
 		{
 			hydrant->SpawnHydrant();
-			std::cout << "drawing hyddrant\n";
+			hydrant->SpawnScoringHydrant();
+			std::cout << "drawing hydrant\n";
 			clock.restart();
 		}
 
 		player->animate(dt);
 		player->update(dt);
+
+		/*	Part of score video:
+		if ( GameStates::ePlaying == gameState )
+		{
+			std::vector<sf::Sprite> &scoringSprites = hydrant->GetScoringSprites();
+
+			for ( int i = 0; i < scoring.Sprites.size( ); i++ )
+			{
+				if ( collision.CheckSpriteCollision( bird->GetSprite( ) **[unsure what our "bird" is]** , 0.625f, scoringSprites.at( i ), 1.0f ) )
+				{
+					score++;
+					
+					hud->UpdateScore( score );
+					
+					scoringSprites.erase( scoringSprites.begin( ) + i );
+				}
+			}
+		}
+		*/
 	}
 
 	void GameState::Draw(float dt)
@@ -119,6 +146,7 @@ namespace EpicGamers
 		ground->DrawGround();
 		hydrant->DrawHydrants();
 		player->draw();
+		hud->Draw(); 
 
 		data->window.display();
 	}
