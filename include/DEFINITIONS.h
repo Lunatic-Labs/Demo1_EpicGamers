@@ -40,6 +40,10 @@
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
 
+#define SFX_JUMP_FILEPATH "Resources/Sound/jump.wav"
+#define SFX_LAND_FILEPATH "Resources/Sound/land.wav"
+#define SFX_HIT_FILEPATH "Resources/Sound/hit.wav"
+#define SFX_COLLECTIBLE_FILEPATH "Resources/Sound/collectible.wav"
 
 #define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
 
