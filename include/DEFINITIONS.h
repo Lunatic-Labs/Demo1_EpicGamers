@@ -38,6 +38,7 @@
 #define JUMP_FRAME_10_FILEPATH "Resources/Player/dogRunner 2xJump Frame 10.png"
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
+#define BONE_FILEPATH "Resources/Textures/bone.png"
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
