@@ -17,6 +17,29 @@ namespace EpicGamers
 	void GameState::Init()
 	{
 		std::cout << "Game State" << std::endl;
+
+		/*if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
+		{
+			std::cout << "Error loading jump sound." << std::endl;
+		}
+		if (!_landSoundBuffer.loadFromFile(SFX_LAND_FILEPATH))
+		{
+			std::cout << "Error loading land sound." << std::endl;
+		}
+		if (!_deathSoundBuffer.loadFromFile(SFX_DEATH_FILEPATH))
+		{
+			std::cout << "Error loading death sound." << std::endl;
+		}
+		if (!_collectibleSoundBuffer.loadFromFile(SFX_COLLECTIBLE_FILEPATH))
+		{
+			std::cout << "Error loading collectible sound." << std::endl;
+		}
+
+		_jumpSound.setBuffer(_jumpSoundBuffer);
+		_landSound.setBuffer(_landSoundBuffer);
+		_deathSound.setBuffer(_deathSoundBuffer);
+		_collectibleSound.setBuffer(_collectibleSoundBuffer);*/
+
 		data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		data->assets.LoadTexture("Player Frame 1", PLAYER_FRAME_1_FILEPATH);	//load filepath for every Player frame given in DEFINTIONS.h
 		data->assets.LoadTexture("Player Frame 2", PLAYER_FRAME_2_FILEPATH);	
@@ -66,6 +89,8 @@ namespace EpicGamers
 				if (event.key.code == 57)
 				{
 					player->tap();
+
+					//_jumpSound.play();
 				}
 			}
 		}

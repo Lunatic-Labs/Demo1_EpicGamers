@@ -29,6 +29,16 @@ namespace EpicGamers
 
 		sf::Clock clock;
 
+		/*sf::SoundBuffer _jumpSoundBuffer;
+		sf::SoundBuffer _deathSoundBuffer;
+		sf::SoundBuffer _landSoundBuffer;
+		sf::SoundBuffer _collectibleSoundBuffer;*/
+
+		/*sf::Sound _jumpSound;
+		sf::Sound _deathSound;
+		sf::Sound _landSound;
+		sf::Sound _collectibleSound;*/
+
 	};
 
 }
