@@ -1,3 +1,6 @@
+CC = g++ 
+INCLUDES = -I../include 
+INCLUDES += -I/Users/dominicaleonard/Repo/Demo1_EpicGamers/src/include
 LIBS=-lsfml-graphics -lsfml-window -lsfml-system
 CXX := g++
 
