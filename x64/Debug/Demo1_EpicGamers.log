@@ -1,32 +1,4 @@
-﻿  Game.cpp
-  GameOverState.cpp
-  GameState.cpp
-  Ground.cpp
-C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Ground.cpp(25,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-  Hydrant.cpp
-C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Hydrant.cpp(13,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-  MainMenuState.cpp
-  Player.cpp
-C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Player.cpp(22,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Player.cpp(80,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  SplashState.cpp
-  StateMachine.cpp
-  Generating Code...
-  Source.cpp
-  Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+﻿GameState.obj : error LNK2019: unresolved external symbol "public: __cdecl EpicGamers::HUD::HUD(class std::shared_ptr<struct EpicGamers::GameData>)" (??0HUD@EpicGamers@@QEAA@V?$shared_ptr@UGameData@EpicGamers@@@std@@@Z) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Init(void)" (?Init@GameState@EpicGamers@@UEAAXXZ)
+GameState.obj : error LNK2019: unresolved external symbol "public: void __cdecl EpicGamers::HUD::Draw(void)" (?Draw@HUD@EpicGamers@@QEAAXXZ) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Draw(float)" (?Draw@GameState@EpicGamers@@UEAAXM@Z)
+GameState.obj : error LNK2019: unresolved external symbol "public: void __cdecl EpicGamers::HUD::UpdateScore(int)" (?UpdateScore@HUD@EpicGamers@@QEAAXH@Z) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Init(void)" (?Init@GameState@EpicGamers@@UEAAXXZ)
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe : fatal error LNK1120: 3 unresolved externals
