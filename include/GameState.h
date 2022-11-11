@@ -1,12 +1,12 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "State.h"
-#include "Game.h"
-#include "Hydrant.h"
-#include "Ground.h"
-#include "Player.h"
-#include "HUD.h"
+#include "../include/State.h"
+#include "../include/Game.h"
+#include "../include/Hydrant.h"
+#include "../include/Ground.h"
+#include "../include/Player.h"
+#include "../include/HUD.h"
 
 namespace EpicGamers
 {
@@ -31,7 +31,7 @@ namespace EpicGamers
 
 		sf::Clock clock;
 
-		/*sf::SoundBuffer _jumpSoundBuffer;
+		/*sf::SoundBuffer _jumpSoundBuffer;				//What is all this? Why is it commented out?
 		sf::SoundBuffer _deathSoundBuffer;
 		sf::SoundBuffer _landSoundBuffer;
 		sf::SoundBuffer _collectibleSoundBuffer;*/

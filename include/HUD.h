@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "DEFINITIONS.h"
-#include "Game.h"
+#include "../include/DEFINITIONS.h"
+#include "../include/Game.h"
 
 namespace EpicGamers
 {

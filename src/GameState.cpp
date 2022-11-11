@@ -18,7 +18,7 @@ namespace EpicGamers
 	{
 		std::cout << "Game State" << std::endl;
 
-		/*if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
+		/*if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))				//What is all this? Why is it commented out?
 		{
 			std::cout << "Error loading jump sound." << std::endl;
 		}

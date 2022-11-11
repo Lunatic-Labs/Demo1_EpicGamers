@@ -1,4 +1,14 @@
-﻿GameState.obj : error LNK2019: unresolved external symbol "public: __cdecl EpicGamers::HUD::HUD(class std::shared_ptr<struct EpicGamers::GameData>)" (??0HUD@EpicGamers@@QEAA@V?$shared_ptr@UGameData@EpicGamers@@@std@@@Z) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Init(void)" (?Init@GameState@EpicGamers@@UEAAXXZ)
+﻿  GameState.cpp
+  MainMenuState.cpp
+  Player.cpp
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Player.cpp(34,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Player.cpp(137,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+GameState.obj : error LNK2019: unresolved external symbol "public: __cdecl EpicGamers::HUD::HUD(class std::shared_ptr<struct EpicGamers::GameData>)" (??0HUD@EpicGamers@@QEAA@V?$shared_ptr@UGameData@EpicGamers@@@std@@@Z) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Init(void)" (?Init@GameState@EpicGamers@@UEAAXXZ)
 GameState.obj : error LNK2019: unresolved external symbol "public: void __cdecl EpicGamers::HUD::Draw(void)" (?Draw@HUD@EpicGamers@@QEAAXXZ) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Draw(float)" (?Draw@GameState@EpicGamers@@UEAAXM@Z)
 GameState.obj : error LNK2019: unresolved external symbol "public: void __cdecl EpicGamers::HUD::UpdateScore(int)" (?UpdateScore@HUD@EpicGamers@@QEAAXH@Z) referenced in function "public: virtual void __cdecl EpicGamers::GameState::Init(void)" (?Init@GameState@EpicGamers@@UEAAXXZ)
 C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe : fatal error LNK1120: 3 unresolved externals
