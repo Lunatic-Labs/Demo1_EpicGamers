@@ -1,3 +1,4 @@
+#include "../include/DEFINITIONS.h"
 #include "../include/Bone.h"
 #include <stdlib.h>
 
