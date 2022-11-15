@@ -14,6 +14,7 @@ namespace EpicGamers
 		void animate(float dt);
 		void update(float dt);
 		void tap();
+		const sf::Sprite& GetSprite() const;
 
 	private:
 		GameDataRef data;

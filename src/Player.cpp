@@ -146,4 +146,9 @@ namespace EpicGamers
 			playerState = PLAYER_STATE_JUMPING;
 		}
 	}
+	
+	const sf::Sprite &Player::GetSprite() const
+	{
+		return playerSprite;
+	}
 }

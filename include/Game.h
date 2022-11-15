@@ -11,7 +11,7 @@
 namespace EpicGamers
 {
 	struct GameData
-	{
+	{	
 		StateMachine machine;
 		sf::RenderWindow window;
 		AssetManager assets;

@@ -1,59 +1,23 @@
 #include "../include/Collider.h"
 
-Collider::Collider(sf::RectangleShape& body) :
-	body(body)
+namespace EpicGamers
 {
-
-}
-Collider::~Collider()
-{
-
-}
-
-bool Collider::checkCollision(Collider& other, float push) 
-{
-	sf::Vector2f otherPosition = other.getPosition();
-	sf::Vector2f otherHalfSize = other.getHalfSize();
-	sf::Vector2f thisPosition = getPosition();
-	sf::Vector2f thisHalfSize = getHalfSize();
-
-	float deltaX = otherPosition.x - thisPosition.x;
-	float deltaY = otherPosition.y - thisPosition.y;
-
-	float intersectX = abs(deltaX) - (otherHalfSize.x + thisHalfSize.x);
-	float intersectY = abs(deltaY) - (otherHalfSize.y + thisHalfSize.y);
-
-	if (intersectX < 0.0f && intersectY < 0.0f) 
+	Collider::Collider()
 	{
-		push = std::min(std::max(push, 0.0f), 1.0f);
-		if (abs(intersectX) > abs(intersectY))
+	}
+
+	bool Collider::CheckSpriteCollider(sf::Sprite sprite1, sf::Sprite sprite2)
+	{
+		sf::Rect<float> rect1 = sprite1.getGlobalBounds();
+		sf::Rect<float> rect2 = sprite2.getGlobalBounds();
+
+		if (rect1.intersects(rect2))
 		{
-			if (deltaX > 0.0f) 
-			{
-				move(intersectX * (1.0f - push), 0.0f);
-				other.move(-intersectX * push, 0.0f);
-			}
-			else 
-			{
-				move(-intersectX * (1.0f - push), 0.0f);
-				other.move(intersectX * push, 0.0f);
-			}
+			return true;
 		}
 		else
 		{
-			if (deltaY > 0.0f)
-			{
-				move(0.0f, intersectY * (1.0f - push));
-				other.move(0.0f, -intersectY * push);
-			}
-			else
-			{
-				move(0.0f, -intersectY * (1.0f - push));
-				other.move(0.0f, intersectY * push);
-			}
+			return false;
 		}
-		return true;
 	}
-
-	return false;
 }

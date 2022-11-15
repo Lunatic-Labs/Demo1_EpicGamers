@@ -6,6 +6,7 @@
 #include "Hydrant.h"
 #include "Ground.h"
 #include "Player.h"
+#include "Collider.h"
 
 namespace EpicGamers
 {
@@ -26,8 +27,10 @@ namespace EpicGamers
 		Hydrant* hydrant;
 		Ground* ground;
 		Player *player;
-
+		Collider collider;
 		sf::Clock clock;
+
+		int gameState;
 
 		/*sf::SoundBuffer _jumpSoundBuffer;
 		sf::SoundBuffer _deathSoundBuffer;
