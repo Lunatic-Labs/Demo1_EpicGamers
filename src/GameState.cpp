@@ -74,12 +74,12 @@ namespace EpicGamers
 		data->assets.LoadTexture("Jump Frame 10", JUMP_FRAME_10_FILEPATH);
 
 		player = new Player(data);
-		hud = new HUD( data );
+		//hud = new HUD( data );
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
 
-		score = 0;
-		hud->UpdateScore( score );
+		//score = 0;
+		//hud->UpdateScore( score );
 	}
 
 	void GameState::HandleInput()
@@ -112,7 +112,7 @@ namespace EpicGamers
 		if (clock.getElapsedTime().asSeconds() > HYDRANT_SPAWN_FREQUENCY)
 		{
 			hydrant->SpawnHydrant();
-			hydrant->SpawnScoringHydrant();
+			//hydrant->SpawnScoringHydrant();
 			std::cout << "drawing hydrant\n";
 			clock.restart();
 		}
@@ -147,7 +147,7 @@ namespace EpicGamers
 		ground->DrawGround();
 		hydrant->DrawHydrants();
 		player->draw();
-		hud->Draw(); 
+		//hud->Draw(); 
 
 		data->window.display();
 	}

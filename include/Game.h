@@ -5,9 +5,9 @@
 //#include <../External/include/SFML/Graphics.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include "../include/StateMachine.h"
-#include "../include/AssetManager.h"
-#include "../include/InputManager.h"
+#include "StateMachine.h"
+#include "AssetManager.h"
+#include "InputManager.h"
 
 namespace EpicGamers
 {

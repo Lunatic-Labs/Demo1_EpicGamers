@@ -7,7 +7,7 @@
 #include "Ground.h"
 #include "Player.h"
 #include "Collider.h"
-#include "HUD.h"
+//#include "HUD.h"
 
 namespace EpicGamers
 {
@@ -28,21 +28,21 @@ namespace EpicGamers
 		Hydrant *hydrant;
 		Ground *ground;
 		Player *player;
-		HUD* hud;
+		//HUD* hud;
 		Collider collider;
 		sf::Clock clock;
 
 		int gameState;
 
-		/*sf::SoundBuffer _jumpSoundBuffer;				//What is all this? Why is it commented out?
-		sf::SoundBuffer _deathSoundBuffer;
-		sf::SoundBuffer _landSoundBuffer;
-		sf::SoundBuffer _collectibleSoundBuffer;*/
+		/*sf::soundbuffer _jumpsoundbuffer;				//what is all this? why is it commented out?
+		sf::soundbuffer _deathsoundbuffer;
+		sf::soundbuffer _landsoundbuffer;
+		sf::soundbuffer _collectiblesoundbuffer;*/
 
-		/*sf::Sound _jumpSound;
-		sf::Sound _deathSound;
-		sf::Sound _landSound;
-		sf::Sound _collectibleSound;*/
+		/*sf::sound _jumpsound;
+		sf::sound _deathsound;
+		sf::sound _landsound;
+		sf::sound _collectiblesound;*/
 
 		int score;
 	};

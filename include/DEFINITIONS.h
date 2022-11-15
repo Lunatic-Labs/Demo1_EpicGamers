@@ -39,6 +39,7 @@
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
 #define BONE_FILEPATH "Resources/Textures/bone.png"
+#define BONE_MOVEMENT_SPEED 800.0f
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f

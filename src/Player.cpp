@@ -46,7 +46,7 @@ namespace EpicGamers
 		data->window.draw(playerSprite);
 
 
-		if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
+		/*if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
 		{
 			std::cout << "Error loading jump sound." << std::endl;
 		}
@@ -66,7 +66,7 @@ namespace EpicGamers
 		_jumpSound.setBuffer(_jumpSoundBuffer);
 		_landSound.setBuffer(_landSoundBuffer);
 		_deathSound.setBuffer(_deathSoundBuffer);
-		_collectibleSound.setBuffer(_collectibleSoundBuffer);
+		_collectibleSound.setBuffer(_collectibleSoundBuffer);*/
 	}
 
 	void Player::animate(float dt)
@@ -108,7 +108,7 @@ namespace EpicGamers
 		{
 			playerSprite.move(0, 0);
 
-			_landSound.play();
+			//_landSound.play();
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
@@ -118,7 +118,7 @@ namespace EpicGamers
 		{
 			playerSprite.move(0, -JUMP_SPEED * dt);
 
-			_jumpSound.play();
+			//_jumpSound.play();
 		}
 
 		//Update State Machine based on Player's position, after Jumping

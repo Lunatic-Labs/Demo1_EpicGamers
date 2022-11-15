@@ -23,7 +23,7 @@ namespace EpicGamers
 
 		unsigned int animationIterator;		//current frame being displayed
 		
-		sf::SoundBuffer _jumpSoundBuffer;
+		/*sf::SoundBuffer _jumpSoundBuffer;
 		sf::SoundBuffer _deathSoundBuffer;
 		sf::SoundBuffer _landSoundBuffer;
 		sf::SoundBuffer _collectibleSoundBuffer;
@@ -31,7 +31,7 @@ namespace EpicGamers
 		sf::Sound _jumpSound;
 		sf::Sound _deathSound;
 		sf::Sound _landSound;
-		sf::Sound _collectibleSound;
+		sf::Sound _collectibleSound;*/
 
 		sf::Clock clock;
 		sf::Clock movementClock;
