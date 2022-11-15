@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="src\Animation.cpp" />
     <ClCompile Include="src\AssetManager.cpp" />
+    <ClCompile Include="src\Bone.cpp" />
     <ClCompile Include="src\Collider.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameOverState.cpp" />
@@ -41,6 +42,7 @@
   <ItemGroup>
     <ClInclude Include="include\Animation.h" />
     <ClInclude Include="include\AssetManager.h" />
+    <ClInclude Include="include\Bone.h" />
     <ClInclude Include="include\Collider.h" />
     <ClInclude Include="include\DEFINITIONS.h" />
     <ClInclude Include="include\Game.h" />
