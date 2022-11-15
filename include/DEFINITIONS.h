@@ -43,6 +43,7 @@
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
+#define BONE_MOVEMENT_SPEED 800.0f
 
 #define SFX_JUMP_FILEPATH "Resources/Sound/jump.wav"
 #define SFX_LAND_FILEPATH "Resources/Sound/land.wav"
