@@ -55,6 +55,14 @@
     <ClInclude Include="include\State.h" />
     <ClInclude Include="include\StateMachine.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\background.png" />
+    <Image Include="Resources\DependencyDiagram.png" />
+    <Image Include="Resources\DogDashTitle.png" />
+    <Image Include="Resources\EpicGamers.png" />
+    <Image Include="Resources\PlayButton.png" />
+    <Image Include="Resources\UMLClassDiagram.jpg" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

@@ -111,4 +111,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\DependencyDiagram.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\DogDashTitle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\EpicGamers.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\PlayButton.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\UMLClassDiagram.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
