@@ -60,6 +60,9 @@
     <ClCompile Include="src\Hydrant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\HUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Animation.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Hydrant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HUD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,7 @@
 #include "Ground.h"
 #include "Player.h"
 #include "Collider.h"
+#include "HUD.h"
 
 namespace EpicGamers
 {
@@ -27,6 +28,7 @@ namespace EpicGamers
 		Hydrant *hydrant;
 		Ground *ground;
 		Player *player;
+		HUD* hud;
 		Collider collider;
 		sf::Clock clock;
 
