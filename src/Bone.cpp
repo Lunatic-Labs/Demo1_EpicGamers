@@ -51,7 +51,7 @@ namespace EpicGamers
 				scoringBones.at(i).move(-movement, 0);
 			}
 		}
-		//std::cout << pipeSprites.size() << std::endl;
+		//std::cout << boneSprites.size() << std::endl;
 	}
 
 	void Bone::DrawBones()
