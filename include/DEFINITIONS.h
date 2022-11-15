@@ -8,11 +8,13 @@
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures/EpicGamers.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Textures/background.png"
 #define GAME_BACKGROUND_FILEPATH "Resources/Textures/background.png"
-#define GAME_OVER_BACKGROUND_FILEPATH "Resources/Textures/LUlogo.jpg"
+#define GAME_OVER_BACKGROUND_FILEPATH "Resources/Textures/background.png"
 
 #define GAME_TITLE_FILEPATH "Resources/Textures/DogDashTitle.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Textures/PlayButton.png"
 
+//#define SCORING_HYDRANT_FILEPATH "Resources/Textures/InvisibleScoringPipe.png"    Part of score video
+//#define DOG_FONT_FILEPATH "Resources/fonts/DogFont.ttf"                        Part of score video
 #define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner 2xFrame1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
 #define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner 2xFrame2.png"
 #define PLAYER_FRAME_3_FILEPATH "Resources/Player/dogRunner 2xFrame3.png"
@@ -36,6 +38,7 @@
 #define JUMP_FRAME_10_FILEPATH "Resources/Player/dogRunner 2xJump Frame 10.png"
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
+#define BONE_FILEPATH "Resources/Textures/bone.png"
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
