@@ -37,7 +37,9 @@ namespace EpicGamers
 		playerX = (data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2);
 		playerY = (data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f);
 		playerState = PLAYER_STATE_STILL;
+		ySpeed = 0.0f;
 		movementClock.restart();
+
 	
 	}
 
@@ -89,6 +91,8 @@ namespace EpicGamers
 				clock.restart();
 			}
 		}
+
+
 		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / animationFrames.size())
 		{	//move forward in animation
 			if (animationIterator < 9)
@@ -112,11 +116,13 @@ namespace EpicGamers
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
-			playerSprite.move(0, GRAVITY * dt);
+			ySpeed += GRAVITY;
+			playerSprite.move(0, ySpeed * dt);
 		}
 		else if (PLAYER_STATE_JUMPING == playerState)
 		{
-			playerSprite.move(0, -JUMP_SPEED * dt);
+			ySpeed = -JUMP_SPEED;
+			playerSprite.move(0, ySpeed * dt);			
 
 			//_jumpSound.play();
 		}
@@ -128,7 +134,6 @@ namespace EpicGamers
 		}
 		else if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)
 		{
-			movementClock.restart();
 			playerState = PLAYER_STATE_FALLING;
 		}
 		//Bring Player from left to desired X, intro functionality
@@ -142,7 +147,7 @@ namespace EpicGamers
 	{
 		if (playerState != PLAYER_STATE_JUMPING && playerState != PLAYER_STATE_FALLING)
 		{
-			movementClock.restart();
+			//movementClock.restart();
 			playerState = PLAYER_STATE_JUMPING;
 		}
 	}
