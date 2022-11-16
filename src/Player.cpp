@@ -75,7 +75,7 @@ namespace EpicGamers
 	{	//if more time has passed than the given frame rate (time spent on current frame compared to total duration)
 		if (PLAYER_STATE_JUMPING == playerState || PLAYER_STATE_FALLING == playerState)
 		{	//if in air (should trigger when Jump/Tap is triggered
-			if (clock.getElapsedTime().asSeconds() > JUMP_DURATION / animationFrames.size())
+			if (clock.getElapsedTime().asSeconds() > JUMP_DURATION / (animationFrames.size() / 2) )
 			{
 				if (jumping == false)
 				{
@@ -84,16 +84,22 @@ namespace EpicGamers
 				}
 				if (animationIterator < 19)
 					animationIterator++;
-				else
-					jumping = false;
+				/*else
+					jumping = false;*/
+				else if (playerState != PLAYER_STATE_STILL)	//hold on last jump frame while still in air.
+				{
+					animationIterator = 18;
+				}
 
 				playerSprite.setTexture(animationFrames.at(animationIterator));
 				clock.restart();
 			}
 		}
+		
+		else 
+			jumping = false;
 
-
-		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / animationFrames.size())
+		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / (animationFrames.size() / 2) )
 		{	//move forward in animation
 			if (animationIterator < 9)
 				animationIterator++;
@@ -101,7 +107,7 @@ namespace EpicGamers
 				animationIterator = 0;
 			
 			playerSprite.setTexture(animationFrames.at(animationIterator));
-			clock.restart();
+			clock.restart();	
 		}
 	}
 
@@ -149,7 +155,9 @@ namespace EpicGamers
 		{
 			//movementClock.restart();
 			playerState = PLAYER_STATE_JUMPING;
+			//animationIterator = 0;	//Attempted to reset the iterator immediately when ground's touched so JumpAnim called again. Caused the RunAnim to play.
 		}
+			
 	}
 	
 	const sf::Sprite &Player::GetSprite() const

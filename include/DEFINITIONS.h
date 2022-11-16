@@ -59,4 +59,4 @@
 #define GRAVITY 10.0f			//Value to pull player down during Falling state.
 #define JUMP_SPEED 375.0f		//Value to jump up by during Jumping state.
 
-#define JUMP_DURATION 1.2f		//Length of jump animation. Tutorial used 0.25f
+#define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
