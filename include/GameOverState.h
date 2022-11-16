@@ -19,6 +19,8 @@ namespace EpicGamers
 	private:
 		GameDataRef data;
 		sf::Sprite background;
+		//sf::Sprite gameOverTitle; 	 Cole #28 Video
+		//sf::Sprite gameOverContainer;  Cole #28 Video
+		//sf::Sprite retryButton;		 Cole #28 Video
 	};
-
 }
