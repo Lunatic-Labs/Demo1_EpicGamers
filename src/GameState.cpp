@@ -115,7 +115,6 @@ namespace EpicGamers
 		{
 			hydrant->SpawnHydrant();
 			//hydrant->SpawnScoringHydrant();
-			std::cout <<  spawnFrequency <<"  drawing hydrant\n";
 			clock.restart();
 		}
 		player->animate(dt);
