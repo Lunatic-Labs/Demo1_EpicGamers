@@ -4,6 +4,7 @@
 #include "../include/GameState.h"
 #include "../include/DEFINITIONS.h"
 #include "../include/Hydrant.h"
+#include <stdlib.h>
 
 
 #include <iostream>
@@ -106,17 +107,17 @@ namespace EpicGamers
 
 	void GameState::Update(float dt)
 	{
-		//Insert Obstacle functionality here
+		srand(time(0));
+		float spawnFrequency = rand() % 3 + 1.4;
 		hydrant->MoveHydrants(dt);
 		ground->MoveGround(dt);
-		if (clock.getElapsedTime().asSeconds() > HYDRANT_SPAWN_FREQUENCY)
+		if (clock.getElapsedTime().asSeconds() > spawnFrequency)
 		{
 			hydrant->SpawnHydrant();
 			//hydrant->SpawnScoringHydrant();
-			std::cout << "drawing hydrant\n";
+			std::cout <<  spawnFrequency <<"  drawing hydrant\n";
 			clock.restart();
 		}
-
 		player->animate(dt);
 		player->update(dt);
 
