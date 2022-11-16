@@ -33,6 +33,21 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+# Debug folder
+x64/Debug/Demo1_EpicGamers.exe
+x64/Debug/Demo1_EpicGamers.ilk
+x64/Debug/Demo1_EpicGamers.log
+x64/Debug/Demo1_EpicGamers.pdb
+x64/Debug/Demo1_EpicGamers.tlog/CL.command.1.tlog
+x64/Debug/Demo1_EpicGamers.tlog/CL.read.1.tlog
+x64/Debug/Demo1_EpicGamers.tlog/CL.write.1.tlog
+x64/Debug/Demo1_EpicGamers.tlog/link.read.1.tlog
+x64/Debug/Demo1_EpicGamers.tlog/link.write.1.tlog
+x64/Debug/Player.obj
+x64/Debug/Source.obj
+x64/Debug/vc143.idb
+x64/Debug/vc143.pdb
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
