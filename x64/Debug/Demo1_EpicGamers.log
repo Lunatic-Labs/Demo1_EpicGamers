@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 ﻿  Bone.cpp
 C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Bone.cpp(14,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+=======
+﻿  Player.cpp
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Player.cpp(34,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+>>>>>>> JumpPhysics
           with
           [
               T=unsigned int
           ]
+<<<<<<< HEAD
 C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Bone.cpp(22,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
@@ -32,3 +38,7 @@ C:\Users\alexA\source\repos\Demo1_EpicGamers\src\Hydrant.cpp(13,44): warning C42
   Generating Code...
   LINK : C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe not found or not built by the last incremental link; performing full link
   Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+=======
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Player.cpp(148,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Demo1_EpicGamers.vcxproj -> C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+>>>>>>> JumpPhysics

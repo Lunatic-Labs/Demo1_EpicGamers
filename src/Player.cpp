@@ -37,7 +37,9 @@ namespace EpicGamers
 		playerX = (data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2);
 		playerY = (data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f);
 		playerState = PLAYER_STATE_STILL;
+		ySpeed = 0.0f;
 		movementClock.restart();
+
 	
 	}
 
@@ -73,7 +75,7 @@ namespace EpicGamers
 	{	//if more time has passed than the given frame rate (time spent on current frame compared to total duration)
 		if (PLAYER_STATE_JUMPING == playerState || PLAYER_STATE_FALLING == playerState)
 		{	//if in air (should trigger when Jump/Tap is triggered
-			if (clock.getElapsedTime().asSeconds() > JUMP_DURATION / animationFrames.size())
+			if (clock.getElapsedTime().asSeconds() > JUMP_DURATION / (animationFrames.size() / 2) )
 			{
 				if (jumping == false)
 				{
@@ -82,14 +84,22 @@ namespace EpicGamers
 				}
 				if (animationIterator < 19)
 					animationIterator++;
-				else
-					jumping = false;
+				/*else
+					jumping = false;*/
+				else if (playerState != PLAYER_STATE_STILL)	//hold on last jump frame while still in air.
+				{
+					animationIterator = 18;
+				}
 
 				playerSprite.setTexture(animationFrames.at(animationIterator));
 				clock.restart();
 			}
 		}
-		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / animationFrames.size())
+		
+		else 
+			jumping = false;
+
+		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / (animationFrames.size() / 2) )
 		{	//move forward in animation
 			if (animationIterator < 9)
 				animationIterator++;
@@ -97,7 +107,7 @@ namespace EpicGamers
 				animationIterator = 0;
 			
 			playerSprite.setTexture(animationFrames.at(animationIterator));
-			clock.restart();
+			clock.restart();	
 		}
 	}
 
@@ -112,11 +122,13 @@ namespace EpicGamers
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
-			playerSprite.move(0, GRAVITY * dt);
+			ySpeed += GRAVITY;
+			playerSprite.move(0, ySpeed * dt);
 		}
 		else if (PLAYER_STATE_JUMPING == playerState)
 		{
-			playerSprite.move(0, -JUMP_SPEED * dt);
+			ySpeed = -JUMP_SPEED;
+			playerSprite.move(0, ySpeed * dt);			
 
 			//_jumpSound.play();
 		}
@@ -128,7 +140,6 @@ namespace EpicGamers
 		}
 		else if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)
 		{
-			movementClock.restart();
 			playerState = PLAYER_STATE_FALLING;
 		}
 		//Bring Player from left to desired X, intro functionality
@@ -142,9 +153,11 @@ namespace EpicGamers
 	{
 		if (playerState != PLAYER_STATE_JUMPING && playerState != PLAYER_STATE_FALLING)
 		{
-			movementClock.restart();
+			//movementClock.restart();
 			playerState = PLAYER_STATE_JUMPING;
+			//animationIterator = 0;	//Attempted to reset the iterator immediately when ground's touched so JumpAnim called again. Caused the RunAnim to play.
 		}
+			
 	}
 	
 	const sf::Sprite &Player::GetSprite() const

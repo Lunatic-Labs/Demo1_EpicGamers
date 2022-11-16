@@ -40,7 +40,9 @@ namespace EpicGamers
 		double playerX;			//desired x-value for Player. Using in intro "animation".
 		double playerY;			//desired y-value, using for Jump functionality/State machine.
 
-		bool jumping = false;
+		float ySpeed;					//used in Jump movement functionality
+		bool jumping = false;			//used in Jump animation functionality
+		bool playedJumpAnim = false;		//used in Jump animation functionality
 	};
 }
 
