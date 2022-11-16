@@ -15,6 +15,10 @@
 
 //#define SCORING_HYDRANT_FILEPATH "Resources/Textures/InvisibleScoringPipe.png"    Part of score video
 //#define DOG_FONT_FILEPATH "Resources/fonts/DogFont.ttf"                        Part of score video
+#define GAME_OVER_TITLE_FILEPATH "Resources/Textures/GameOverTitle.png"
+#define GAME_OVER_BODY_FILEPATH "Resources/Textures/GameOverBody.png"
+
+
 #define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner 2xFrame1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
 #define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner 2xFrame2.png"
 #define PLAYER_FRAME_3_FILEPATH "Resources/Player/dogRunner 2xFrame3.png"
@@ -60,3 +64,5 @@
 #define JUMP_SPEED 375.0f		//Value to jump up by during Jumping state.
 
 #define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
+
+#define TIME_BEFORE_GAME_OVER_APPEARS 1.5f
