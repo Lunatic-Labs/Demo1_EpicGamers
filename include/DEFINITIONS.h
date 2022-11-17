@@ -8,7 +8,7 @@
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/Textures/EpicGamers.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Textures/background.png"
 #define GAME_BACKGROUND_FILEPATH "Resources/Textures/background.png"
-#define GAME_OVER_BACKGROUND_FILEPATH "Resources/Textures/cat.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "Resources/Textures/background.png"
 
 #define GAME_TITLE_FILEPATH "Resources/Textures/DogDashTitle.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Textures/PlayButton.png"
@@ -66,7 +66,7 @@
 
 #define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
 
-#define TIME_BEFORE_GAME_OVER_APPEARS 1.5f
+#define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
 enum GameStates
 {

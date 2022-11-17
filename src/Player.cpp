@@ -46,29 +46,6 @@ namespace EpicGamers
 	void Player::draw()
 	{
 		data->window.draw(playerSprite);
-
-
-		/*if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
-		{
-			std::cout << "Error loading jump sound." << std::endl;
-		}
-		if (!_landSoundBuffer.loadFromFile(SFX_LAND_FILEPATH))
-		{
-			std::cout << "Error loading land sound." << std::endl;
-		}
-		if (!_deathSoundBuffer.loadFromFile(SFX_DEATH_FILEPATH))
-		{
-			std::cout << "Error loading death sound." << std::endl;
-		}
-		if (!_collectibleSoundBuffer.loadFromFile(SFX_COLLECTIBLE_FILEPATH))
-		{
-			std::cout << "Error loading collectible sound." << std::endl;
-		}
-
-		_jumpSound.setBuffer(_jumpSoundBuffer);
-		_landSound.setBuffer(_landSoundBuffer);
-		_deathSound.setBuffer(_deathSoundBuffer);
-		_collectibleSound.setBuffer(_collectibleSoundBuffer);*/
 	}
 
 	void Player::animate(float dt)
@@ -117,8 +94,6 @@ namespace EpicGamers
 		if (PLAYER_STATE_STILL == playerState)
 		{
 			playerSprite.move(0, 0);
-
-			//_landSound.play();
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
@@ -136,6 +111,10 @@ namespace EpicGamers
 		//Update State Machine based on Player's position, after Jumping
 		if (playerSprite.getPosition().y >= playerY)
 		{
+			// play landing sound only on the 1st frame of the Still state
+			if (playerState != PLAYER_STATE_STILL)
+				data->assets.PlaySound("land");
+
 			playerState = PLAYER_STATE_STILL;
 		}
 		else if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)

@@ -22,21 +22,11 @@ namespace EpicGamers
 		std::vector<sf::Texture> animationFrames;
 
 		unsigned int animationIterator;		//current frame being displayed
-		
-		/*sf::SoundBuffer _jumpSoundBuffer;
-		sf::SoundBuffer _deathSoundBuffer;
-		sf::SoundBuffer _landSoundBuffer;
-		sf::SoundBuffer _collectibleSoundBuffer;
-
-		sf::Sound _jumpSound;
-		sf::Sound _deathSound;
-		sf::Sound _landSound;
-		sf::Sound _collectibleSound;*/
 
 		sf::Clock clock;
 		sf::Clock movementClock;
 
-		int playerState;
+		int playerState = PLAYER_STATE_FALLING;
 		double playerX;			//desired x-value for Player. Using in intro "animation".
 		double playerY;			//desired y-value, using for Jump functionality/State machine.
 
