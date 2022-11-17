@@ -127,14 +127,14 @@ namespace EpicGamers
 
 		
 
-		/*	Part of score video:
-		if ( GameStates::ePlaying == gameState )
+			//Part of score video:
+		/*if ( GameStates::ePlaying == gameState )
 		{
 			std::vector<sf::Sprite> &scoringSprites = hydrant->GetScoringSprites();
 
 			for ( int i = 0; i < scoring.Sprites.size( ); i++ )
 			{
-				if ( collision.CheckSpriteCollision( bird->GetSprite( ) **[unsure what our "bird" is]** , 0.625f, scoringSprites.at( i ), 1.0f ) )
+				if ( collision.CheckSpriteCollision( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) )
 				{
 					score++;
 					
@@ -143,8 +143,8 @@ namespace EpicGamers
 					scoringSprites.erase( scoringSprites.begin( ) + i );
 				}
 			}
-		}
-		*/
+		}*/
+		
 
 		if (GameStates::eGameOver == gameState)
 		{
