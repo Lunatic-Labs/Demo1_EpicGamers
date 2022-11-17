@@ -18,10 +18,9 @@ namespace EpicGamers
 		void LoadFont(std::string name, std::string fileName);
 		sf::Font& GetFont(std::string name);
 
+		void InitAudio();
 
-	private:
-		std::map<std::string, sf::Texture> textures;
-		std::map<std::string, sf::Font> fonts;
+		void PlaySound(std::string soundName);
 
 		sf::SoundBuffer _jumpSoundBuffer;
 		sf::SoundBuffer _deathSoundBuffer;
@@ -33,8 +32,8 @@ namespace EpicGamers
 		sf::Sound _landSound;
 		sf::Sound _collectibleSound;
 
-		void InitAudio();
-
-		void PlaySound(sf::Sound sound);
+	private:
+		std::map<std::string, sf::Texture> textures;
+		std::map<std::string, sf::Font> fonts;
 	};
 }

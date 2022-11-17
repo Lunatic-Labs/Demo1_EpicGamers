@@ -130,7 +130,7 @@ namespace EpicGamers
 			ySpeed = -JUMP_SPEED;
 			playerSprite.move(0, ySpeed * dt);			
 
-			//_jumpSound.play();
+			data->assets.PlaySound("jump");
 		}
 
 		//Update State Machine based on Player's position, after Jumping

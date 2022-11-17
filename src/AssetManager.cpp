@@ -58,7 +58,15 @@ namespace EpicGamers
 		_collectibleSound.setBuffer(_collectibleSoundBuffer);
 	}
 
-	void PlaySound(sf::Sound sound) {
-		sound.play();
-	}
+	void AssetManager::PlaySound(std::string soundName) {
+		if (soundName=="jump")
+			_jumpSound.play();
+		if (soundName == "death")
+			_deathSound.play();
+		if (soundName == "land")
+			_landSound.play();
+		if (soundName == "collectible")
+			_collectibleSound.play();
+
+	}		
 }
