@@ -2,6 +2,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <fstream>
 #include "../include/GameOverState.h"
 #include "../include/DEFINITIONS.h"
 #include "../include/GameState.h"
@@ -16,6 +17,31 @@ namespace EpicGamers
 	void GameOverState::Init()
 	{
 		std::cout << "Game Over State" << std::endl;
+
+		//std::ifstream readFile;						Cole #30 Video
+		//readFile.open(HIGH_SCORE_FILEPATH);			Cole #30 Video
+
+		/* Cole #30 Video:
+		if (readFile.is_open())
+		{
+			while (!readFile.eof())
+			{
+				readFile >> highScore;
+			}
+		}
+		readFile.close();
+		std::ofstream writeFile(HIGH_SCORE_FILEPATH);
+		if (writeFile.is_open())
+		{
+			if (score > highScore)
+			{
+				highScore = score;
+			}
+			writeFile << highScore;
+		}
+		writeFile.close();
+		*/
+	
 		data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 		//data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);	Cole #28 Video
 		//data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);		Cole #28 Video
