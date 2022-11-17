@@ -1,4 +1,10 @@
-#include "..\include\AssetManager.h"
+#include "../include/AssetManager.h"
+
+#include <sstream>
+#include "../include/DEFINITIONS.h"
+#include <stdlib.h>
+
+#include <iostream>
 
 namespace EpicGamers
 {
@@ -27,4 +33,40 @@ namespace EpicGamers
 	{
 		return this->fonts.at(name);
 	}
+
+	void AssetManager::InitAudio() {
+		if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
+		{
+			std::cout << "Error loading jump sound." << std::endl;
+		}
+		if (!_landSoundBuffer.loadFromFile(SFX_LAND_FILEPATH))
+		{
+			std::cout << "Error loading land sound." << std::endl;
+		}
+		if (!_deathSoundBuffer.loadFromFile(SFX_DEATH_FILEPATH))
+		{
+			std::cout << "Error loading death sound." << std::endl;
+		}
+		if (!_collectibleSoundBuffer.loadFromFile(SFX_COLLECTIBLE_FILEPATH))
+		{
+			std::cout << "Error loading collectible sound." << std::endl;
+		}
+
+		_jumpSound.setBuffer(_jumpSoundBuffer);
+		_landSound.setBuffer(_landSoundBuffer);
+		_deathSound.setBuffer(_deathSoundBuffer);
+		_collectibleSound.setBuffer(_collectibleSoundBuffer);
+	}
+
+	void AssetManager::PlaySound(std::string soundName) {
+		if (soundName=="jump")
+			_jumpSound.play();
+		if (soundName == "death")
+			_deathSound.play();
+		if (soundName == "land")
+			_landSound.play();
+		if (soundName == "collectible")
+			_collectibleSound.play();
+
+	}		
 }

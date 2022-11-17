@@ -2,6 +2,7 @@
 
 #include <map>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 namespace EpicGamers
 {
@@ -17,6 +18,19 @@ namespace EpicGamers
 		void LoadFont(std::string name, std::string fileName);
 		sf::Font& GetFont(std::string name);
 
+		void InitAudio();
+
+		void PlaySound(std::string soundName);
+
+		sf::SoundBuffer _jumpSoundBuffer;
+		sf::SoundBuffer _deathSoundBuffer;
+		sf::SoundBuffer _landSoundBuffer;
+		sf::SoundBuffer _collectibleSoundBuffer;
+
+		sf::Sound _jumpSound;
+		sf::Sound _deathSound;
+		sf::Sound _landSound;
+		sf::Sound _collectibleSound;
 
 	private:
 		std::map<std::string, sf::Texture> textures;
