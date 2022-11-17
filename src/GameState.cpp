@@ -120,6 +120,15 @@ namespace EpicGamers
 		player->animate(dt);
 		player->update(dt);
 
+		std::vector<sf::Sprite> hydrantSprites = hydrant->GetSprites();
+		for (int i = 0; i < hydrantSprites.size(); i++)
+		{
+			if (collider.CheckSpriteCollider(player->GetSprite(), hydrantSprites.at(i)))
+			{
+				gameState =GameState::
+			}
+		}
+
 		/*	Part of score video:
 		if ( GameStates::ePlaying == gameState )
 		{

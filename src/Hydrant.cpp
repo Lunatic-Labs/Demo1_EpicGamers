@@ -61,6 +61,11 @@ namespace EpicGamers
 		}
 	} 
 
+	const std::vector<sf::Sprite>& Hydrant::GetSprites() const
+	{
+		return hydrantSprites;
+	}
+
 	std::vector<sf::Sprite> &Hydrant::GetScoringSprites( )
 	{
 		return scoringHydrants; 

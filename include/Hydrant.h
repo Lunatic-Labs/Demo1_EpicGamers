@@ -18,6 +18,8 @@ namespace EpicGamers
         void DrawHydrants( );
         void RandomiseHydrantOffset( );
 
+        const std::vector<sf::Sprite>& GetSprites() const;
+
         std::vector<sf::Sprite> &GetScoringSprites( );
     private:
         GameDataRef data;
