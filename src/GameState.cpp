@@ -4,6 +4,7 @@
 #include "../include/GameState.h"
 #include "../include/DEFINITIONS.h"
 #include "../include/Hydrant.h"
+#include "../include/GameOverState.h"
 #include <stdlib.h>
 
 
@@ -79,6 +80,8 @@ namespace EpicGamers
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
 
+		gameState = GameStates::eReady;
+
 		//score = 0;
 		//hud->UpdateScore( score );
 	}
@@ -97,8 +100,11 @@ namespace EpicGamers
 			{
 				if (event.key.code == 57)
 				{
-					player->tap();
-
+					if (GameStates::eGameOver != gameState)
+					{
+						gameState = GameStates::ePlaying;
+						player->tap();
+					}
 					//_jumpSound.play();
 				}
 			}
@@ -107,27 +113,38 @@ namespace EpicGamers
 
 	void GameState::Update(float dt)
 	{
-		srand(time(0));
-		float spawnFrequency = rand() % 3 + 1.4;
-		hydrant->MoveHydrants(dt);
-		ground->MoveGround(dt);
-		if (clock.getElapsedTime().asSeconds() > spawnFrequency)
+		if (GameStates::eGameOver != gameState)
 		{
-			hydrant->SpawnHydrant();
-			//hydrant->SpawnScoringHydrant();
-			clock.restart();
+			
+			ground->MoveGround(dt);
+			player->animate(dt);
 		}
-		player->animate(dt);
-		player->update(dt);
-
-		std::vector<sf::Sprite> hydrantSprites = hydrant->GetSprites();
-		for (int i = 0; i < hydrantSprites.size(); i++)
+		if (GameStates::ePlaying == gameState)
 		{
-			if (collider.CheckSpriteCollider(player->GetSprite(), hydrantSprites.at(i)))
+			hydrant->MoveHydrants(dt);
+			srand(time(0));
+			float spawnFrequency = rand() % 3 + 1.4;
+			if (clock.getElapsedTime().asSeconds() > spawnFrequency)
 			{
-				gameState =GameState::
+				hydrant->SpawnHydrant();
+				//hydrant->SpawnScoringHydrant();
+				clock.restart();
+			}
+			player->update(dt);
+			std::vector<sf::Sprite> hydrantSprites = hydrant->GetSprites();
+			for (int i = 0; i < hydrantSprites.size(); i++)
+			{
+				if (collider.CheckSpriteCollider(player->GetSprite(), 0.6f, hydrantSprites.at(i), 0.4f))
+				{
+					gameState = GameStates::eGameOver;
+					clock.restart();
+				}
 			}
 		}
+
+		
+
+		
 
 		/*	Part of score video:
 		if ( GameStates::ePlaying == gameState )
@@ -147,6 +164,14 @@ namespace EpicGamers
 			}
 		}
 		*/
+
+		if (GameStates::eGameOver == gameState)
+		{
+			if (clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS)
+			{
+				data->machine.AddState(StateRef(new GameOverState(data)), true);
+			}
+		}
 	}
 
 	void GameState::Draw(float dt)
