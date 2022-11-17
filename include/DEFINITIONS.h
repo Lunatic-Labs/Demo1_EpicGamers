@@ -15,6 +15,7 @@
 
 //#define SCORING_HYDRANT_FILEPATH "Resources/Textures/InvisibleScoringPipe.png"    Part of score video
 //#define DOG_FONT_FILEPATH "Resources/fonts/DogFont.ttf"                        Part of score video
+//#define HIGH_SCORE_FILEPATH "Resources/Highscore.txt"     Cole #30 Video
 #define GAME_OVER_TITLE_FILEPATH "Resources/Textures/GameOverTitle.png"
 #define GAME_OVER_BODY_FILEPATH "Resources/Textures/GameOverBody.png"
 
