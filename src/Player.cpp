@@ -117,8 +117,6 @@ namespace EpicGamers
 		if (PLAYER_STATE_STILL == playerState)
 		{
 			playerSprite.move(0, 0);
-
-			//_landSound.play();
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
@@ -136,6 +134,10 @@ namespace EpicGamers
 		//Update State Machine based on Player's position, after Jumping
 		if (playerSprite.getPosition().y >= playerY)
 		{
+			// play landing sound only on the 1st frame of the Still state
+			if (playerState != PLAYER_STATE_STILL)
+				data->assets.PlaySound("land");
+
 			playerState = PLAYER_STATE_STILL;
 		}
 		else if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)

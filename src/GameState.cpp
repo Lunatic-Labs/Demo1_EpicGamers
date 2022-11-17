@@ -107,7 +107,6 @@ namespace EpicGamers
 						gameState = GameStates::ePlaying;
 						player->tap();
 					}
-					//_jumpSound.play();
 				}
 			}
 		}
@@ -136,8 +135,10 @@ namespace EpicGamers
 			std::vector<sf::Sprite> hydrantSprites = hydrant->GetSprites();
 			for (int i = 0; i < hydrantSprites.size(); i++)
 			{
+				// collision with obstacle
 				if (collider.CheckSpriteCollider(player->GetSprite(), 0.6f, hydrantSprites.at(i), 0.4f))
 				{
+					data->assets.PlaySound("death");
 					gameState = GameStates::eGameOver;
 					clock.restart();
 				}
