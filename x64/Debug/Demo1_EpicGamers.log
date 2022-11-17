@@ -1,4 +1,14 @@
-﻿  GameState.cpp
-C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\GameState.cpp(126,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\GameState.cpp(127,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+﻿  GameOverState.cpp
+  GameState.cpp
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\GameState.cpp(104,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\GameState.cpp(105,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  MainMenuState.cpp
+  Player.cpp
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\Player.cpp(34,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Brett\Source\Repos\Demo1_EpicGamers\src\Player.cpp(127,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe

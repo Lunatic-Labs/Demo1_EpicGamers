@@ -33,17 +33,6 @@ namespace EpicGamers
 		sf::Clock clock;
 
 		int gameState;
-
-		/*sf::soundbuffer _jumpsoundbuffer;				//what is all this? why is it commented out?
-		sf::soundbuffer _deathsoundbuffer;
-		sf::soundbuffer _landsoundbuffer;
-		sf::soundbuffer _collectiblesoundbuffer;*/
-
-		/*sf::sound _jumpsound;
-		sf::sound _deathsound;
-		sf::sound _landsound;
-		sf::sound _collectiblesound;*/
-
 		int score;
 	};
 
