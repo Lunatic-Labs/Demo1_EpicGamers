@@ -31,8 +31,8 @@ namespace EpicGamers
 
 		playerSprite.setTexture(animationFrames.at(animationIterator));
 		//playerSprite.setSize(64.0f, 64.0f);
-		playerSprite.setPosition((data->window.getSize().x / 6),
-			(data->window.getSize().y / 2) - (playerSprite.getGlobalBounds().height / 2));
+		playerSprite.setPosition(0.0f,
+			(data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f));
 		
 		playerX = (data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2);
 		playerY = (data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f);
@@ -124,7 +124,7 @@ namespace EpicGamers
 		//Bring Player from left to desired X, intro functionality
 		if (playerSprite.getPosition().x < playerX)
 		{
-			playerSprite.move(playerX - playerSprite.getPosition().x, 0);
+			playerSprite.move(2.5, 0);
 		}
 	}
 

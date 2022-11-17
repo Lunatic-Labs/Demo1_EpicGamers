@@ -60,7 +60,7 @@ namespace EpicGamers
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
 
-		gameState = GameStates::eReady;
+		gameState = GameStates::ePlaying;
 
 		//score = 0;
 		//hud->UpdateScore( score );
