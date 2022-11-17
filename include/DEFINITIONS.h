@@ -66,7 +66,7 @@
 
 #define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
 
-#define TIME_BEFORE_GAME_OVER_APPEARS 1.5f
+#define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
 enum GameStates
 {
