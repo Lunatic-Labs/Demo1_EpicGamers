@@ -1,1 +1,8 @@
-﻿  Demo1_EpicGamers.vcxproj -> C:\Users\alexA\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
+﻿  Player.cpp
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Player.cpp(34,54): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\tubst\Source\Repos\Demo1_EpicGamers\src\Player.cpp(148,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Demo1_EpicGamers.vcxproj -> C:\Users\tubst\Source\Repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
