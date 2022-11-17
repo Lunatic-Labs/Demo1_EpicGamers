@@ -8,6 +8,7 @@
 
 namespace EpicGamers
 {
+	// textures and fonts
 	void AssetManager::LoadTexture(std::string name, std::string fileName)
 	{
 		sf::Texture tex;
@@ -34,6 +35,7 @@ namespace EpicGamers
 		return this->fonts.at(name);
 	}
 
+	// audio
 	void AssetManager::InitAudio() {
 		if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
 		{
