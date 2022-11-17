@@ -1,10 +1,10 @@
 #pragma once
 
-#include <sstream>
 #include "../include/GameState.h"
 #include "../include/DEFINITIONS.h"
 #include "../include/Hydrant.h"
 #include "../include/GameOverState.h"
+#include <sstream>
 #include <stdlib.h>
 
 
