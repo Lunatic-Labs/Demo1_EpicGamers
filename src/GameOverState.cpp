@@ -53,7 +53,9 @@ namespace EpicGamers
 		//gameOverContainer.setPosition((data->window.getSize().x / 2) - (gameOverContainer.getGlobalBounds().width / 2),(data->window.getSize().y / 2) - (gameOverContainer.getGlobalBounds().height / 2));		//Cole #28 Video
 		//gameOverTitle.setPosition((data->window.getSize().x / 2) - (gameOverTitle.getGlobalBounds().width / 2), gameOverContainer.getPosition().y - (gameOverTitle.getGlobalBounds().height * 1.2));			//Cole #28 Video
 		//retryButton.setPosition((data->window.getSize().x / 2) - (retryButton.getGlobalBounds().width / 2), gameOverContainer.getPosition().y + gameOverContainer.getGlobalBounds().height + (retryButton.getGlobalBounds().height * 0.2));	//Cole #28 Video
-	
+		retryButton.setPosition((SCREEN_WIDTH) / 2 - (retryButton.getGlobalBounds().width / 2), data->window.getSize().y - retryButton.getGlobalBounds().height - 70.0f);
+								//data->window.getSize().y - sprite.getGlobalBounds().height - 130.0f
+
 		//scoreText.setFont(data->assets.GetFont("Dog Font"));		Cole #29 Video
 		//scoreText.setString(std::to_string(score));				//Cole #29 Video
 		//scoreText.setCharacterSize(56);							Cole #29 Video
