@@ -35,8 +35,8 @@ namespace EpicGamers
 		data->assets.LoadTexture("Player Frame 9", PLAYER_FRAME_9_FILEPATH);	
 		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
 		
-		//data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);		Part of score video
-		//data->assets.LoadFont("Dog Font", DOG_FONT_FILEPATH );				Part of score video
+		data->assets.LoadTexture("Scoring Pipe", SCORING_HYDRANT_FILEPATH);		//Part of score video
+		data->assets.LoadFont("Dog Font", DOG_FONT_FILEPATH );				//Part of score video
 
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
 		hydrant = new Hydrant(data);
@@ -62,7 +62,7 @@ namespace EpicGamers
 
 		gameState = GameStates::ePlaying;
 
-		//score = 0;
+		score = 0;
 		//hud->UpdateScore( score );
 	}
 
@@ -106,7 +106,7 @@ namespace EpicGamers
 			if (clock.getElapsedTime().asSeconds() > spawnFrequency)
 			{
 				hydrant->SpawnHydrant();
-				//hydrant->SpawnScoringHydrant();
+				hydrant->SpawnScoringHydrant();
 				clock.restart();
 			}
 			player->update(dt);
@@ -128,22 +128,22 @@ namespace EpicGamers
 		
 
 			//Part of score video:
-		/*if ( GameStates::ePlaying == gameState )
+		if ( GameStates::ePlaying == gameState )
 		{
 			std::vector<sf::Sprite> &scoringSprites = hydrant->GetScoringSprites();
 
-			for ( int i = 0; i < scoring.Sprites.size( ); i++ )
+			for ( int i = 0; i < scoringSprites.size( ); i++ )
 			{
 				if ( collision.CheckSpriteCollision( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) )
 				{
 					score++;
 					
-					hud->UpdateScore( score );
+					//hud->UpdateScore( score );
 					
 					scoringSprites.erase( scoringSprites.begin( ) + i );
 				}
 			}
-		}*/
+		}
 		
 
 		if (GameStates::eGameOver == gameState)

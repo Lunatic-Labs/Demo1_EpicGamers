@@ -23,10 +23,10 @@ namespace EpicGamers
 		sf::Sprite gameOverContainer;	//Cole #28 Video
 		sf::Sprite retryButton;			//Cole #28 Video
 	
-		//sf::Text scoreText;			//Cole #29 Video
-		//sf::Text highScoreText;		//Cole #29 Video
+		sf::Text scoreText;			//Cole #29 Video
+		sf::Text highScoreText;		//Cole #29 Video
 
-		//int score;					//Cole #29 Video
-		//int highScore;				//Cole #29 Video
+		int score;					//Cole #29 Video
+		int highScore;				//Cole #29 Video
 	};
 }
