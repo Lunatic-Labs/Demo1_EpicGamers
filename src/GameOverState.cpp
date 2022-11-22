@@ -59,14 +59,14 @@ namespace EpicGamers
 		scoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
 		scoreText.setString(std::to_string(score));				//Cole #29 Video
 		scoreText.setCharacterSize(56);							//Cole #29 Video
-		scoreText.setFillColor(sf::Color::White);
+		scoreText.setFillColor(sf::Color::Black);
 		scoreText.setOrigin(scoreText.getGlobalBounds().width / 2, scoreText.getGlobalBounds().height / 2);		//Cole #29 Video
 		scoreText.setPosition(data->window.getSize().x / 10 * 7.25f, data->window.getSize().y / 2.15f);				//Cole #29 Video
 	
 		highScoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
 		highScoreText.setString(std::to_string(highScore));				//Cole #29 Video
 		highScoreText.setCharacterSize(56);							//Cole #29 Video
-		highScoreText.setFillColor(sf::Color::White);
+		highScoreText.setFillColor(sf::Color::Black);
 		highScoreText.setOrigin(highScoreText.getGlobalBounds().width / 2, highScoreText.getGlobalBounds().height / 2);		//Cole #29 Video
 		highScoreText.setPosition(data->window.getSize().x / 10 * 7.25f, data->window.getSize().y / 1.78f);				//Cole #29 Video
 	}
