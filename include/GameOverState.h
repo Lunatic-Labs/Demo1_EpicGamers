@@ -9,7 +9,7 @@ namespace EpicGamers
 	class GameOverState : public State
 	{
 	public:
-		GameOverState(GameDataRef data); // add parameter int score);	Cole #29 Video
+		GameOverState(GameDataRef data, int score); // add parameter int score);	Cole #29 Video
 
 		void Init();
 		void HandleInput();

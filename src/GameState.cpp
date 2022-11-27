@@ -134,10 +134,9 @@ namespace EpicGamers
 
 			for ( int i = 0; i < scoringSprites.size( ); i++ )
 			{
-				if ( collider.CheckSpriteCollider( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) )
+				if ( collider.CheckSpriteCollider( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) && GameStates::eGameOver != gameState)
 				{
 					score++;
-					std::cout << "Score: " << score << std::endl;
 					
 					hud->UpdateScore( score );
 					
@@ -151,7 +150,7 @@ namespace EpicGamers
 		{
 			if (clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS)
 			{
-				data->machine.AddState(StateRef(new GameOverState(data)), true);
+				data->machine.AddState(StateRef(new GameOverState(data, score)), true);
 			}
 		}
 	}

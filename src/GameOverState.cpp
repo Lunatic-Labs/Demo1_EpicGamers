@@ -9,15 +9,15 @@
 
 namespace EpicGamers
 {				//int score parameter to function call  Cole #29 Video
-	GameOverState::GameOverState(GameDataRef data) : data(data)//, score(score)	//Cole #29 Video
+	GameOverState::GameOverState(GameDataRef data, int score) : data(data)	//Cole #29 Video
 	{
-
+		GameOverState::score = score;
 	}
 
 	void GameOverState::Init()
 	{
 		std::cout << "Game Over State" << std::endl;
-
+		std::cout << "Game Over Score :" << score << std::endl;
 		std::ifstream readFile;						//Cole #30 Video
 		readFile.open(HIGH_SCORE_FILEPATH);			//Cole #30 Video
 
@@ -59,14 +59,14 @@ namespace EpicGamers
 		scoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
 		scoreText.setString(std::to_string(score));				//Cole #29 Video
 		scoreText.setCharacterSize(56);							//Cole #29 Video
-		scoreText.setFillColor(sf::Color::Black);
+		scoreText.setFillColor(sf::Color(210, 111, 93));
 		scoreText.setOrigin(scoreText.getGlobalBounds().width / 2, scoreText.getGlobalBounds().height / 2);		//Cole #29 Video
 		scoreText.setPosition(data->window.getSize().x / 16 * 7.25f, data->window.getSize().y / 1.41f);				//Cole #29 Video
 	
 		highScoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
 		highScoreText.setString(std::to_string(highScore));				//Cole #29 Video
 		highScoreText.setCharacterSize(56);							//Cole #29 Video
-		highScoreText.setFillColor(sf::Color::Black);
+		highScoreText.setFillColor(sf::Color(210, 111, 93));
 		highScoreText.setOrigin(highScoreText.getGlobalBounds().width / 2, highScoreText.getGlobalBounds().height / 2);		//Cole #29 Video
 		highScoreText.setPosition(data->window.getSize().x / 11 * 7.25f, data->window.getSize().y / 1.41f);				//Cole #29 Video
 	}

@@ -9,7 +9,7 @@ namespace EpicGamers
         scoreText.setFont( data->assets.GetFont( "Dog Font" ) );
         scoreText.setString( "0" );
         scoreText.setCharacterSize( 128 );
-        scoreText.setFillColor( sf::Color::White );
+        scoreText.setFillColor( sf::Color(185,246,231));
         scoreText.setOrigin( scoreText.getGlobalBounds( ).width / 2, scoreText.getGlobalBounds( ).height / 2);
         scoreText.setPosition( data->window.getSize( ).x / 2, data->window.getSize( ).y / 10 );
     }
