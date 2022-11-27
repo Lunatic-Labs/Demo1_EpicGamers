@@ -18,6 +18,7 @@ namespace EpicGamers
 	{
 		sf::Sprite sprite( data->assets.GetTexture( "Scoring Pipe" ) );
 
+		//sprite.setScale(sprite.getScale().x, data->window.getSize().y);	//Scoring system depends on Scoring collider overlapping with Player collider, so set height to whole window
 		sprite.setPosition( data->window.getSize( ).x, 0 );
 
 		scoringHydrants.push_back( sprite );

@@ -111,7 +111,7 @@ namespace EpicGamers
 		//Update State Machine based on Player's position, after Jumping
 		if (playerSprite.getPosition().y >= playerY)
 		{
-			playerSprite.setPosition(playerSprite.getPosition().x, playerY);	//if belpw PlayerY (in ground), set to PlayerY
+			playerSprite.setPosition(playerSprite.getPosition().x, playerY);	//if below PlayerY (in ground), set to PlayerY
 			// play landing sound only on the 1st frame of the Still state
 			if (playerState != PLAYER_STATE_STILL)
 				data->assets.PlaySound("land");

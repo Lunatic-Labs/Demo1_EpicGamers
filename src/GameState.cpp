@@ -56,14 +56,14 @@ namespace EpicGamers
 		data->assets.LoadTexture("Jump Frame 10", JUMP_FRAME_10_FILEPATH);
 
 		player = new Player(data);
-		//hud = new HUD( data );
+		hud = new HUD( data );
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
 
 		gameState = GameStates::ePlaying;
 
 		score = 0;
-		//hud->UpdateScore( score );
+		hud->UpdateScore( score );
 	}
 
 	void GameState::HandleInput()
@@ -137,8 +137,9 @@ namespace EpicGamers
 				if ( collider.CheckSpriteCollider( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) )
 				{
 					score++;
+					std::cout << "Score: " << score << std::endl;
 					
-					//hud->UpdateScore( score );
+					hud->UpdateScore( score );
 					
 					scoringSprites.erase( scoringSprites.begin( ) + i );
 				}
@@ -162,7 +163,7 @@ namespace EpicGamers
 		ground->DrawGround();
 		hydrant->DrawHydrants();
 		player->draw();
-		//hud->Draw(); 
+		hud->Draw(); 
 
 		data->window.display();
 	}
