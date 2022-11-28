@@ -14,14 +14,15 @@ namespace EpicGamers
 		hydrantSprites.push_back(sprite);
 	}
 
-	/*void Hydrant::SpawnScoringHydrant( )
+	void Hydrant::SpawnScoringHydrant( )
 	{
 		sf::Sprite sprite( data->assets.GetTexture( "Scoring Pipe" ) );
 
+		//sprite.setScale(sprite.getScale().x, data->window.getSize().y);	//Scoring system depends on Scoring collider overlapping with Player collider, so set height to whole window
 		sprite.setPosition( data->window.getSize( ).x, 0 );
 
 		scoringHydrants.push_back( sprite );
-	}*/
+	}
 
 	void Hydrant::MoveHydrants(float dt)
 	{
@@ -38,7 +39,7 @@ namespace EpicGamers
 			}
 		}
 
-		/*for (unsigned short int i = 0; i < scoringHydrants.size(); i++)
+		for (unsigned short int i = 0; i < scoringHydrants.size(); i++)
 		{
 			if (scoringHydrants.at(i).getPosition().x < 0 - scoringHydrants.at(i).getGlobalBounds().width)
 			{
@@ -49,7 +50,7 @@ namespace EpicGamers
 				float movement = HYDRANT_MOVEMENT_SPEED * dt;
 				scoringHydrants.at(i).move(-movement, 0);
 			}
-		}*/
+		}
 		//std::cout << pipeSprites.size() << std::endl;
 	}
 

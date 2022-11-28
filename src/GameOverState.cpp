@@ -9,20 +9,20 @@
 
 namespace EpicGamers
 {				//int score parameter to function call  Cole #29 Video
-	GameOverState::GameOverState(GameDataRef data) : data(data)//, score(score)	//Cole #29 Video
+	GameOverState::GameOverState(GameDataRef data, int score) : data(data)	//Cole #29 Video
 	{
-
+		GameOverState::score = score;
 	}
 
 	void GameOverState::Init()
 	{
 		std::cout << "Game Over State" << std::endl;
-
+		std::cout << "Game Over Score :" << score << std::endl;
 		std::ifstream readFile;						//Cole #30 Video
 		readFile.open(HIGH_SCORE_FILEPATH);			//Cole #30 Video
 
 		// Cole #30 Video:
-		/*if (readFile.is_open())
+		if (readFile.is_open())
 		{
 			while (!readFile.eof())
 			{
@@ -39,7 +39,7 @@ namespace EpicGamers
 			}
 			writeFile << highScore;
 		}
-		writeFile.close();*/
+		writeFile.close();
 		
 	
 		data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
@@ -56,19 +56,19 @@ namespace EpicGamers
 		retryButton.setPosition((SCREEN_WIDTH) / 2 - (retryButton.getGlobalBounds().width / 2), data->window.getSize().y - retryButton.getGlobalBounds().height - 70.0f);
 								//data->window.getSize().y - sprite.getGlobalBounds().height - 130.0f
 
-		//scoreText.setFont(data->assets.GetFont("Dog Font"));		Cole #29 Video
-		//scoreText.setString(std::to_string(score));				//Cole #29 Video
-		//scoreText.setCharacterSize(56);							Cole #29 Video
-		//scoreText.setFillColor(sf::Color::White);
-		//scoreText.setOrigin(scoreText.getGlobalBounds().width / 2, scoreText.getGlobalBounds().height / 2);		//Cole #29 Video
-		//scoreText.setPosition(data->window.getSize().x / 10 * 7.25f, data->window.getSize().y / 2.15f);				//Cole #29 Video
+		scoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
+		scoreText.setString(std::to_string(score));				//Cole #29 Video
+		scoreText.setCharacterSize(56);							//Cole #29 Video
+		scoreText.setFillColor(sf::Color(210, 111, 93));
+		scoreText.setOrigin(scoreText.getGlobalBounds().width / 2, scoreText.getGlobalBounds().height / 2);		//Cole #29 Video
+		scoreText.setPosition(data->window.getSize().x / 16 * 7.25f, data->window.getSize().y / 1.41f);				//Cole #29 Video
 	
-		//highScoreText.setFont(data->assets.GetFont("Dog Font"));		Cole #29 Video
-		//highScoreText.setString(std::to_string(highScore));				//Cole #29 Video
-		//highScoreText.setCharacterSize(56);							Cole #29 Video
-		//highScoreText.setFillColor(sf::Color::White);
-		//highScoreText.setOrigin(highScoreText.getGlobalBounds().width / 2, highScoreText.getGlobalBounds().height / 2);		//Cole #29 Video
-		//highScoreText.setPosition(data->window.getSize().x / 10 * 7.25f, data->window.getSize().y / 1.78f);				//Cole #29 Video
+		highScoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
+		highScoreText.setString(std::to_string(highScore));				//Cole #29 Video
+		highScoreText.setCharacterSize(56);							//Cole #29 Video
+		highScoreText.setFillColor(sf::Color(210, 111, 93));
+		highScoreText.setOrigin(highScoreText.getGlobalBounds().width / 2, highScoreText.getGlobalBounds().height / 2);		//Cole #29 Video
+		highScoreText.setPosition(data->window.getSize().x / 11 * 7.25f, data->window.getSize().y / 1.41f);				//Cole #29 Video
 	}
 
 	void GameOverState::HandleInput()
@@ -102,8 +102,8 @@ namespace EpicGamers
 		data->window.draw(gameOverTitle);		//Cole #28 Video
 		data->window.draw(gameOverContainer);	//Cole #28 Video
 		data->window.draw(retryButton);			//Cole #28 Video
-		//data->window.draw(scoreText);			//Cole #29 Video
-		//data->window.draw(highScoreText);		//Cole #29 Video
+		data->window.draw(scoreText);			//Cole #29 Video
+		data->window.draw(highScoreText);		//Cole #29 Video
 		data->window.display();
 	}
 }
