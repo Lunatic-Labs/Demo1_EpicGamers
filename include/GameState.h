@@ -34,6 +34,12 @@ namespace EpicGamers
 
 		int gameState;
 		int score;
+
+		float currentSpeed = STARTING_SPEED;
+		float jumpDuration = JUMP_DURATION;
+		float jumpSpeed = JUMP_SPEED;
+		float gravity = GRAVITY;
+		sf::Clock speedClock;
 	};
 
 }

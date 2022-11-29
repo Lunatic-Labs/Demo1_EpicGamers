@@ -69,6 +69,13 @@
 
 #define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
+#define STARTING_SPEED 1.0f		
+#define INCREMENT_SPEED_BY 0.15f				//Used to gradually increment Speed every TBSI
+#define TIME_BEFORE_SPEED_INCREMENT 5.0f		//Time in seconds, TBSI
+#define INCREMENT_JUMP_TIME_BY 0.05				//Used to gradually decrease Jump time every TBSI
+#define INCREMENT_JUMP_SPEED_BY 17.75			//Used to gradually increase Jump Speed (compensating for decreased time) every TBSI
+#define MAX_SPEED 5.5f	
+
 enum GameStates
 {
 	eReady,

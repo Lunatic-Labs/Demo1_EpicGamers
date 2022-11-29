@@ -10,7 +10,7 @@ namespace EpicGamers
 	public: 
 		Ground(GameDataRef data);
 		
-		void MoveGround(float dt);
+		void MoveGround(float dt, float currentSpeed);
 		void DrawGround();
 
 	private:

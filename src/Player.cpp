@@ -39,7 +39,6 @@ namespace EpicGamers
 		playerState = PLAYER_STATE_STILL;
 		ySpeed = 0.0f;
 		movementClock.restart();
-
 	
 	}
 
@@ -52,7 +51,7 @@ namespace EpicGamers
 	{	//if more time has passed than the given frame rate (time spent on current frame compared to total duration)
 		if (PLAYER_STATE_JUMPING == playerState || PLAYER_STATE_FALLING == playerState)
 		{	//if in air (should trigger when Jump/Tap is triggered
-			if (clock.getElapsedTime().asSeconds() > JUMP_DURATION / (animationFrames.size() / 2) )
+			if (clock.getElapsedTime().asSeconds() > (JUMP_DURATION) / (animationFrames.size() / 2) )
 			{
 				if (jumping == false)
 				{
@@ -97,12 +96,12 @@ namespace EpicGamers
 		}
 		else if (PLAYER_STATE_FALLING == playerState)
 		{
-			ySpeed += GRAVITY;
+			ySpeed += gravity;
 			playerSprite.move(0, ySpeed * dt);
 		}
 		else if (PLAYER_STATE_JUMPING == playerState)
 		{
-			ySpeed = -JUMP_SPEED;
+			ySpeed = -jumpSpeed;
 			playerSprite.move(0, ySpeed * dt);			
 
 			data->assets.PlaySound("jump");
@@ -118,7 +117,7 @@ namespace EpicGamers
 
 			playerState = PLAYER_STATE_STILL;
 		}
-		else if (movementClock.getElapsedTime().asSeconds() > JUMP_DURATION)
+		else if (movementClock.getElapsedTime().asSeconds() > jumpHeight)
 		{
 			playerState = PLAYER_STATE_FALLING;
 		}
@@ -129,11 +128,15 @@ namespace EpicGamers
 		}
 	}
 
-	void Player::tap()	//Update State Machine when input received
+	void Player::tap(float currentSpeed, float jumpDuration, float speedJump, float speedGravity)	//Update State Machine when input received
 	{
 		if (playerState != PLAYER_STATE_JUMPING && playerState != PLAYER_STATE_FALLING)
 		{
 			//movementClock.restart();
+			speed = currentSpeed;		//update Player's Speed reference to match the value tracked in GameState.
+			jumpHeight = jumpDuration;
+			jumpSpeed = speedJump;
+			gravity = speedGravity;
 			playerState = PLAYER_STATE_JUMPING;
 			//animationIterator = 0;	//Attempted to reset the iterator immediately when ground's touched so JumpAnim called again. Caused the RunAnim to play.
 		}

@@ -14,7 +14,7 @@ namespace EpicGamers
 
         void SpawnHydrant( );
         void SpawnScoringHydrant( );
-        void MoveHydrants(float dt);
+        void MoveHydrants(float dt, float currentSpeed);
         void DrawHydrants( );
         void RandomiseHydrantOffset( );
 

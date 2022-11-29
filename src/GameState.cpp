@@ -20,6 +20,8 @@ namespace EpicGamers
 	void GameState::Init()
 	{
 		std::cout << "Game State" << std::endl;
+		currentSpeed = STARTING_SPEED;			//initializing speed variables to reset them when game is restart? Maybe?
+		speedClock.restart();
 
 		data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		data->assets.LoadTexture("Player Frame 1", PLAYER_FRAME_1_FILEPATH);	//load filepath for every Player frame given in DEFINTIONS.h
@@ -81,7 +83,7 @@ namespace EpicGamers
 					if (GameStates::eGameOver != gameState)
 					{
 						gameState = GameStates::ePlaying;
-						player->tap();
+						player->tap(currentSpeed, jumpDuration, jumpSpeed, gravity);
 					}
 				}
 			}
@@ -93,15 +95,15 @@ namespace EpicGamers
 		if (GameStates::eGameOver != gameState)
 		{
 			
-			ground->MoveGround(dt);
+			ground->MoveGround(dt, currentSpeed);
 			player->animate(dt);
 		}
 		if (GameStates::ePlaying == gameState)
 		{
-			hydrant->MoveHydrants(dt);
+			hydrant->MoveHydrants(dt, currentSpeed);
 			srand(time(0));
 			float spawnFrequency = rand() % 3 + 1.4;
-			if (clock.getElapsedTime().asSeconds() > spawnFrequency)
+			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
 				hydrant->SpawnHydrant();
 				hydrant->SpawnScoringHydrant();
@@ -121,10 +123,6 @@ namespace EpicGamers
 			}
 		}
 
-		
-
-		
-
 			//Part of score video:
 		if ( GameStates::ePlaying == gameState )
 		{
@@ -141,6 +139,19 @@ namespace EpicGamers
 					scoringSprites.erase( scoringSprites.begin( ) + i );
 				}
 			}
+			//if totalTime % TIME_BEFORE..., but they're floats so % operator doesn't work
+			if (speedClock.getElapsedTime().asSeconds() >= TIME_BEFORE_SPEED_INCREMENT)
+			{
+				if (currentSpeed <= MAX_SPEED)
+				{
+					currentSpeed += INCREMENT_SPEED_BY;
+					jumpDuration -= INCREMENT_JUMP_TIME_BY;
+					jumpSpeed += INCREMENT_JUMP_SPEED_BY;
+					gravity += (INCREMENT_JUMP_TIME_BY * 10);
+					std::cout << "Speed Up! New Speed: " << currentSpeed << std::endl;
+					speedClock.restart();
+				}
+			}
 		}
 		
 
@@ -151,6 +162,8 @@ namespace EpicGamers
 				data->machine.AddState(StateRef(new GameOverState(data, score)), true);
 			}
 		}
+
+		
 	}
 
 	void GameState::Draw(float dt)

@@ -24,7 +24,7 @@ namespace EpicGamers
 		scoringHydrants.push_back( sprite );
 	}
 
-	void Hydrant::MoveHydrants(float dt)
+	void Hydrant::MoveHydrants(float dt, float currentSpeed)
 	{
 		for (unsigned short int i = 0; i < hydrantSprites.size(); i++)
 		{
@@ -34,7 +34,7 @@ namespace EpicGamers
 			}
 			else
 			{
-				float movement = HYDRANT_MOVEMENT_SPEED * dt;
+				float movement = ((HYDRANT_MOVEMENT_SPEED * dt) + currentSpeed);
 				hydrantSprites.at(i).move(-movement, 0);
 			}
 		}
@@ -47,7 +47,7 @@ namespace EpicGamers
 			}
 			else
 			{
-				float movement = HYDRANT_MOVEMENT_SPEED * dt;
+				float movement = ((HYDRANT_MOVEMENT_SPEED * dt) + currentSpeed);
 				scoringHydrants.at(i).move(-movement, 0);
 			}
 		}

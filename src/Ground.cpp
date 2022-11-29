@@ -14,11 +14,11 @@ namespace EpicGamers
 		groundSprites.push_back(sprite2);
 	}
 
-	void Ground::MoveGround(float dt)
+	void Ground::MoveGround(float dt, float currentSpeed)
 	{
 		for (unsigned short int i = 0; i < groundSprites.size(); i++)
 		{
-			float movement = HYDRANT_MOVEMENT_SPEED * dt;
+			float movement = ((HYDRANT_MOVEMENT_SPEED * dt) + currentSpeed) ;
 			groundSprites.at(i).move(-movement, 0.0f);
 			if (groundSprites.at(i).getPosition().x < 0 - groundSprites.at(i).getGlobalBounds().width)
 			{

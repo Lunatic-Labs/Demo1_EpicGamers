@@ -13,7 +13,7 @@ namespace EpicGamers
 		void draw();
 		void animate(float dt);
 		void update(float dt);
-		void tap();
+		void tap(float currentSpeed, float jumpDuration, float speedJump, float speedGravity);
 		const sf::Sprite& GetSprite() const;
 
 	private:
@@ -33,6 +33,11 @@ namespace EpicGamers
 		float ySpeed;					//used in Jump movement functionality
 		bool jumping = false;			//used in Jump animation functionality
 		bool playedJumpAnim = false;		//used in Jump animation functionality
+		
+		float speed = STARTING_SPEED;	//updated in tap(), incremented in GameState.cpp
+		float jumpHeight = JUMP_DURATION;
+		float jumpSpeed = JUMP_SPEED;
+		float gravity = GRAVITY;
 	};
 }
 
