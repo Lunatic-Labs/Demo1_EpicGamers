@@ -21,8 +21,6 @@ namespace EpicGamers
 	{
 		std::cout << "Game State" << std::endl;
 
-		data->assets.InitAudio();
-
 		data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		data->assets.LoadTexture("Player Frame 1", PLAYER_FRAME_1_FILEPATH);	//load filepath for every Player frame given in DEFINTIONS.h
 		data->assets.LoadTexture("Player Frame 2", PLAYER_FRAME_2_FILEPATH);	

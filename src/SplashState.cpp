@@ -19,6 +19,8 @@ namespace EpicGamers
 		data->assets.LoadTexture("Splash State Background", SPLASH_SCENE_BACKGROUND_FILEPATH);
 		
 		background.setTexture(this->data->assets.GetTexture("Splash State Background"));
+
+		data->assets.InitAudio();
 	}
 
 	void SplashState::HandleInput()
