@@ -22,6 +22,8 @@ namespace EpicGamers
 
 		void PlaySound(std::string soundName);
 
+		void PlayMusic(std::string musicName);
+
 		sf::SoundBuffer _jumpSoundBuffer;
 		sf::SoundBuffer _deathSoundBuffer;
 		sf::SoundBuffer _landSoundBuffer;
@@ -31,6 +33,8 @@ namespace EpicGamers
 		sf::Sound _deathSound;
 		sf::Sound _landSound;
 		sf::Sound _collectibleSound;
+
+		sf::Music _levelMusic;
 
 	private:
 		std::map<std::string, sf::Texture> textures;

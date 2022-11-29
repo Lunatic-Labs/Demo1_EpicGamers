@@ -1,6 +1,2 @@
-﻿  GameState.cpp
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(104,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(105,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  SplashState.cpp
-  Generating Code...
+﻿  AssetManager.cpp
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe

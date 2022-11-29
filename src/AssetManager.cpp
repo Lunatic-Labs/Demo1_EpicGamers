@@ -38,21 +38,16 @@ namespace EpicGamers
 	// audio
 	void AssetManager::InitAudio() {
 		if (!_jumpSoundBuffer.loadFromFile(SFX_JUMP_FILEPATH))
-		{
 			std::cout << "Error loading jump sound." << std::endl;
-		}
 		if (!_landSoundBuffer.loadFromFile(SFX_LAND_FILEPATH))
-		{
 			std::cout << "Error loading land sound." << std::endl;
-		}
 		if (!_deathSoundBuffer.loadFromFile(SFX_DEATH_FILEPATH))
-		{
 			std::cout << "Error loading death sound." << std::endl;
-		}
 		if (!_collectibleSoundBuffer.loadFromFile(SFX_COLLECTIBLE_FILEPATH))
-		{
 			std::cout << "Error loading collectible sound." << std::endl;
-		}
+
+		if (!_levelMusic.openFromFile(LEVEL_MUSIC_FILEPATH))
+			std::cout << "Error loading music." << std::endl;
 
 		_jumpSound.setBuffer(_jumpSoundBuffer);
 		_landSound.setBuffer(_landSoundBuffer);
@@ -69,6 +64,13 @@ namespace EpicGamers
 			_landSound.play();
 		if (soundName == "collectible")
 			_collectibleSound.play();
-
 	}		
+
+	void AssetManager::PlayMusic(std::string musicName) {
+		if (musicName == "levelMusic") {
+			_levelMusic.play();
+			_levelMusic.setLoop(true);
+		}
+			
+	}
 }
