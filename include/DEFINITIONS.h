@@ -69,12 +69,13 @@
 
 #define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
-#define STARTING_SPEED 1.0f		
+#define STARTING_SPEED 1.0f				//Starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
 #define INCREMENT_SPEED_BY 0.15f				//Used to gradually increment Speed every TBSI
 #define TIME_BEFORE_SPEED_INCREMENT 5.0f		//Time in seconds, TBSI
-#define INCREMENT_JUMP_TIME_BY 0.05				//Used to gradually decrease Jump time every TBSI
-#define INCREMENT_JUMP_SPEED_BY 17.75			//Used to gradually increase Jump Speed (compensating for decreased time) every TBSI
-#define MAX_SPEED 5.5f	
+#define INCREMENT_JUMP_TIME_BY 0.03f			//Used to gradually decrease Jump time every TBSI
+#define INCREMENT_JUMP_SPEED_BY 11.25f			//Used to gradually increase Jump Speed (compensating for decreased time) every TBSI
+#define INCREMENT_GRAVITY_BY 0.5f				//Used to gradually increase Gravity (countering increased Jump Speed) every TBSI. Approximate number based on (INCREMENT_JUMP_TIME_BY * 15)
+#define MAX_SPEED 9.0f					//Max game speed multiplier (should be pretty fast)
 
 enum GameStates
 {

@@ -147,7 +147,7 @@ namespace EpicGamers
 					currentSpeed += INCREMENT_SPEED_BY;
 					jumpDuration -= INCREMENT_JUMP_TIME_BY;
 					jumpSpeed += INCREMENT_JUMP_SPEED_BY;
-					gravity += (INCREMENT_JUMP_TIME_BY * 10);
+					gravity += INCREMENT_GRAVITY_BY;
 					std::cout << "Speed Up! New Speed: " << currentSpeed << std::endl;
 					speedClock.restart();
 				}
