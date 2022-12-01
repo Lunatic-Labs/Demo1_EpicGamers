@@ -4,6 +4,7 @@
 #include "State.h"
 #include "Game.h"
 #include "Hydrant.h"
+#include "Cat.h"
 #include "Ground.h"
 #include "Player.h"
 #include "Collider.h"
@@ -31,6 +32,7 @@ namespace EpicGamers
 		Hydrant *hydrant;
 		Ground *ground;
 		Player *player;
+		Cat *cat;
 		HUD* hud;
 		Collider collider;
 		sf::Clock clock;

@@ -14,11 +14,12 @@ namespace EpicGamers
 
         void SpawnCat( );
         void SpawnScoringCat( );
-        void MoveCats(float dt);
+        void MoveCats(float dt, float currentSpeed);
         void DrawCats( );
         void RandomiseCatOffset( );
 
-        std::vector<sf::Sprite> &GetScoringSprites( );
+    const std::vector<sf::Sprite> &GetSprites( );
+    std::vector<sf::Sprite> &GetScoringSprites();
     private:
         GameDataRef data;
         std::vector<sf::Sprite> catSprites;

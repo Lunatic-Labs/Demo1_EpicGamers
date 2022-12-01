@@ -3,6 +3,7 @@
 #include "../include/GameState.h"
 #include "../include/DEFINITIONS.h"
 #include "../include/Hydrant.h"
+#include "../include/Cat.h"
 #include "../include/GameOverState.h"
 #include <sstream>
 #include <stdlib.h>
@@ -56,6 +57,9 @@ namespace EpicGamers
 
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
 		hydrant = new Hydrant(data);
+
+		data->assets.LoadTexture("Cat", CAT_FILEPATH);
+		cat = new Cat(data);
 
 		data->assets.LoadTexture("Ground", GROUND_FILEPATH);
 		ground = new Ground(data);

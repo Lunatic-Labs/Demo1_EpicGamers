@@ -43,6 +43,7 @@
 #define JUMP_FRAME_10_FILEPATH "Resources/Player/dogRunner 2xJump Frame 10.png"
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
+#define CAT_FILEPATH "Resources/Textures/Cat.png"
 #define BONE_FILEPATH "Resources/Textures/bone.png"
 #define BONE_MOVEMENT_SPEED 800.0f
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
@@ -71,6 +72,11 @@
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
 #define HYDRANT_MIN_SPAWN_TIME 1.4f
 #define HYDRANT_MAX_SPAWN_TIME 1.6f
+
+#define CAT_MOVEMENT_SPEED 200.0f
+#define CAT_SPAWN_FREQUENCY 2.4f
+#define CAT_MIN_SPAWN_TIME 2.8f
+#define CAT_MAX_SPAWN_TIME 3.6f
 
 #define STARTING_SPEED 1.0f				//Starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
 #define INCREMENT_SPEED_BY 0.25f				//Used to gradually increment Speed every TBSI
