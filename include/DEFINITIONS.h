@@ -46,8 +46,6 @@
 #define BONE_FILEPATH "Resources/Textures/bone.png"
 #define BONE_MOVEMENT_SPEED 800.0f
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
-#define HYDRANT_MOVEMENT_SPEED 400.0f
-#define HYDRANT_SPAWN_FREQUENCY 1.7f
 #define BONE_MOVEMENT_SPEED 800.0f
 
 #define SFX_JUMP_FILEPATH "Resources/Sound/jump.wav"
@@ -69,12 +67,14 @@
 
 #define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
+#define HYDRANT_MOVEMENT_SPEED 400.0f
+#define HYDRANT_SPAWN_FREQUENCY 1.7f
 #define HYDRANT_MIN_SPAWN_TIME 1.4f
 #define HYDRANT_MAX_SPAWN_TIME 1.6f
 
 #define STARTING_SPEED 1.0f				//Starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
-#define INCREMENT_SPEED_BY 0.15f				//Used to gradually increment Speed every TBSI
-#define TIME_BEFORE_SPEED_INCREMENT 4.0f		//Time in seconds, TBSI
+#define INCREMENT_SPEED_BY 0.25f				//Used to gradually increment Speed every TBSI
+#define TIME_BEFORE_SPEED_INCREMENT 3.0f		//Time in seconds, TBSI
 #define INCREMENT_JUMP_TIME_BY 0.03f			//Used to gradually decrease Jump time every TBSI
 #define INCREMENT_JUMP_SPEED_BY 11.25f			//Used to gradually increase Jump Speed (compensating for decreased time) every TBSI
 #define INCREMENT_GRAVITY_BY 0.5f				//Used to gradually increase Gravity (countering increased Jump Speed) every TBSI. Approximate number based on (INCREMENT_JUMP_TIME_BY * 15)
