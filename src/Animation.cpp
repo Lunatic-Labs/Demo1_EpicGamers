@@ -2,11 +2,11 @@
 
 Animation::Animation(sf::Texture* texture, sf::Vector2u imageCount, float switchTime)
 {
-	this->imageCount = imageCount;									// !! document variable purpose
-	this->switchTime = switchTime;									// !! document variable purpose
-	totalTime = 0.0f;												// !! document variable purpose
-	currentImage.x = 0;												// !! document variable purpose
-	currentImage.y = 0;												// !! document variable purpose
+	this->imageCount = imageCount;
+	this->switchTime = switchTime;
+	totalTime = 0.0f;
+	currentImage.x = 0;
+	currentImage.y = 0;
 	uvRect.width = texture->getSize().x / float(imageCount.x);
 	uvRect.height = texture->getSize().y / float(imageCount.y);
 }
@@ -21,15 +21,20 @@ void Animation::Update(int row, float deltaTime, bool startJump, float speedMult
 	totalTime += deltaTime;
 
 	// change index on spritesheet
-	if (row == 1 && startJump == true) {
+	if (row == 1 && startJump == true)
+	{
 		currentImage.x = 0;
 	}
-	if (totalTime >= (switchTime*speedMultiplier)) {
+	if (totalTime >= (switchTime*speedMultiplier))
+	{
 		totalTime -= (switchTime * speedMultiplier);
 		currentImage.x++;
 		
 		if (currentImage.x >= imageCount.x)
+		{
 			currentImage.x = 0;
+		}
+			
 	}
 
 	uvRect.left = currentImage.x * uvRect.width;

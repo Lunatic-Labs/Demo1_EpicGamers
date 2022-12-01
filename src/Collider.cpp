@@ -4,6 +4,7 @@ namespace EpicGamers
 {
 	Collider::Collider()
 	{
+
 	}
 
 	bool Collider::CheckSpriteCollider(sf::Sprite sprite1, float scale1, sf::Sprite sprite2, float scale2)

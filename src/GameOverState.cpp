@@ -22,6 +22,7 @@ namespace EpicGamers
 		readFile.open(HIGH_SCORE_FILEPATH);			//Cole #30 Video
 
 		// Cole #30 Video:
+		// read and modify high score, if changed
 		if (readFile.is_open())
 		{
 			while (!readFile.eof())
@@ -41,7 +42,7 @@ namespace EpicGamers
 		}
 		writeFile.close();
 		
-	
+		// load assets for Game Over screen
 		data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 		data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);	//Cole #28 Video
 		data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);		//Cole #28 Video
@@ -77,12 +78,13 @@ namespace EpicGamers
 
 		while (data->window.pollEvent(event))
 		{
+			// close window if exited
 			if (sf::Event::Closed == event.type)
 			{
 				data->window.close();
 			}
 			
-			// Cole #28 Video:
+			// return to GameState when button is clicked
 			if (data->input.isSpriteClicked(retryButton, sf::Mouse::Left, data->window)) 
 			{
 				data->machine.AddState(StateRef(new GameState(data)), true);

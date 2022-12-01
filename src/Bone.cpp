@@ -6,6 +6,7 @@ namespace EpicGamers
 {
 	Bone::Bone(GameDataRef data) : data(data)
 	{
+
 	}
 
 	void Bone::SpawnBone()

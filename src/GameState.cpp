@@ -23,6 +23,7 @@ namespace EpicGamers
 		currentSpeed = STARTING_SPEED;			//initializing speed variables to reset them when game is restart? Maybe?
 		speedClock.restart();
 
+		// load core gameplay assets
 		data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		data->assets.LoadTexture("Player Frame 1", PLAYER_FRAME_1_FILEPATH);	//load filepath for every Player frame given in DEFINTIONS.h
 		data->assets.LoadTexture("Player Frame 2", PLAYER_FRAME_2_FILEPATH);	
@@ -74,10 +75,12 @@ namespace EpicGamers
 
 		while (data->window.pollEvent(event))
 		{
+			// close window if exited
 			if (sf::Event::Closed == event.type)
 			{
 				data->window.close();
 			}
+			// check for jump input and change state accordingly
 			if (sf::Event::KeyPressed == event.type)
 			{
 				if (event.key.code == 57)
@@ -94,6 +97,7 @@ namespace EpicGamers
 
 	void GameState::Update(float dt)
 	{
+		// move the ground and animate the player
 		if (GameStates::eGameOver != gameState)
 		{
 			
