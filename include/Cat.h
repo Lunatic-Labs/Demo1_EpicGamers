@@ -16,7 +16,7 @@ namespace EpicGamers
         void SpawnScoringCat( );
         void MoveCats(float dt, float currentSpeed);
         void DrawCats( );
-        void RandomiseCatOffset( );
+        //void RandomiseCatOffset( );
 
     const std::vector<sf::Sprite> &GetSprites( );
     std::vector<sf::Sprite> &GetScoringSprites();

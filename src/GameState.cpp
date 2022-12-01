@@ -36,7 +36,7 @@ namespace EpicGamers
 	void GameState::Init()
 	{
 		std::cout << "Game State" << std::endl;
-		currentSpeed = STARTING_SPEED;			//initializing speed variables to reset them when game is restart? Maybe?
+		currentSpeed = STARTING_SPEED;			//initializing speed variables to reset them when game is restart
 		speedClock.restart();
 
 		// load core gameplay assets
@@ -58,8 +58,8 @@ namespace EpicGamers
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
 		hydrant = new Hydrant(data);
 
-		data->assets.LoadTexture("Cat", CAT_FILEPATH);
-		cat = new Cat(data);
+		//data->assets.LoadTexture("Cat", CAT_FILEPATH);
+		//cat = new Cat(data);
 
 		data->assets.LoadTexture("Ground", GROUND_FILEPATH);
 		ground = new Ground(data);
@@ -126,26 +126,27 @@ namespace EpicGamers
 			hydrant->MoveHydrants(dt, currentSpeed);
 
 			//same as above, just with cats
-			cat ->MoveCats(dt, currentSpeed);
+			//cat ->MoveCats(dt, currentSpeed);
 
 			//srand(time(0));
 			float spawnFrequency = rand() % 2 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
+				//cat->SpawnCat();
 				hydrant->SpawnHydrant();
 				hydrant->SpawnScoringHydrant();
 				clock.restart();
 			}
 
 			// cats
-			float spawnFrequency = rand() % 2 + randomNumber(CAT_MIN_SPAWN_TIME, CAT_MAX_SPAWN_TIME);
-			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
-			{
-				cat->SpawnCat();
-				cat->SpawnScoringCat();
-				clock.restart();
-			}
+			//float catSpawnFrequency = rand() % 2 + randomNumber(CAT_MIN_SPAWN_TIME, CAT_MAX_SPAWN_TIME);
+			//if (clock.getElapsedTime().asSeconds() > (catSpawnFrequency))
+			//{
+			//	cat->SpawnCat();
+			//	//cat->SpawnScoringCat();
+			//	clock.restart();
+			//}
 
 			// then update the player
 			player->update(dt);
@@ -214,7 +215,7 @@ namespace EpicGamers
 		data->window.draw(background);
 		ground->DrawGround();
 		hydrant->DrawHydrants();
-		cat->DrawCats();
+		//cat->DrawCats();
 		player->draw();
 		hud->Draw(); 
 
