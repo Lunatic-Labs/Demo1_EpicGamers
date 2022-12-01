@@ -146,7 +146,7 @@ namespace EpicGamers
 				cat->SpawnScoringCat();
 				clock.restart();
 			}
-			
+
 			// then update the player
 			player->update(dt);
 
@@ -214,6 +214,7 @@ namespace EpicGamers
 		data->window.draw(background);
 		ground->DrawGround();
 		hydrant->DrawHydrants();
+		cat->DrawCats();
 		player->draw();
 		hud->Draw(); 
 
