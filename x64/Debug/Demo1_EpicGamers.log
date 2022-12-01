@@ -1,4 +1,15 @@
-﻿  AssetManager.cpp
+﻿  Animation.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(11,39): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Animation.cpp(12,40): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+  AssetManager.cpp
   Bone.cpp
 C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Bone.cpp(15,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
@@ -55,4 +66,5 @@ C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Player.cpp(132,59): warning C42
   SplashState.cpp
   Generating Code...
   Source.cpp
+  LINK : C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe not found or not built by the last incremental link; performing full link
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
