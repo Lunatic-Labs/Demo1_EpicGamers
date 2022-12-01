@@ -64,6 +64,8 @@ namespace EpicGamers
 
 		score = 0;
 		hud->UpdateScore( score );
+
+		data->assets.PlayMusic("levelMusic");
 	}
 
 	void GameState::HandleInput()
@@ -130,6 +132,7 @@ namespace EpicGamers
 
 			for ( int i = 0; i < scoringSprites.size( ); i++ )
 			{
+				// score a point
 				if ( collider.CheckSpriteCollider( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) && GameStates::eGameOver != gameState)
 				{
 					score++;
@@ -137,6 +140,8 @@ namespace EpicGamers
 					hud->UpdateScore( score );
 					
 					scoringSprites.erase( scoringSprites.begin( ) + i );
+
+					data->assets.PlaySound("collectible");
 				}
 			}
 			//if totalTime % TIME_BEFORE..., but they're floats so % operator doesn't work
@@ -157,6 +162,10 @@ namespace EpicGamers
 
 		if (GameStates::eGameOver == gameState)
 		{
+			// stop music
+			data->assets.StopMusic("levelMusic");
+
+			// change game state to GameOver
 			if (clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS)
 			{
 				data->machine.AddState(StateRef(new GameOverState(data, score)), true);

@@ -54,7 +54,7 @@
 #define SFX_LAND_FILEPATH "Resources/Sound/land.wav"
 #define SFX_DEATH_FILEPATH "Resources/Sound/death.wav"
 #define SFX_COLLECTIBLE_FILEPATH "Resources/Sound/collectible.wav"
-#define LEVEL_MUSIC_FILEPATH "" // "Resources/Sound/levelMusic.ogg"	-- change this after uploading music file. Don't change this filename.
+#define LEVEL_MUSIC_FILEPATH "Resources/Sound/levelMusic.ogg"
 
 #define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
 

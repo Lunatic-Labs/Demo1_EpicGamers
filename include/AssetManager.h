@@ -24,6 +24,8 @@ namespace EpicGamers
 
 		void PlayMusic(std::string musicName);
 
+		void StopMusic(std::string musicName);
+
 		sf::SoundBuffer _jumpSoundBuffer;
 		sf::SoundBuffer _deathSoundBuffer;
 		sf::SoundBuffer _landSoundBuffer;
