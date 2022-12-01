@@ -124,6 +124,10 @@ namespace EpicGamers
 
 			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
+
+			//same as above, just with cats
+			cat ->MoveCats(dt, currentSpeed);
+
 			//srand(time(0));
 			float spawnFrequency = rand() % 2 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
@@ -134,6 +138,15 @@ namespace EpicGamers
 				clock.restart();
 			}
 
+			// cats
+			float spawnFrequency = rand() % 2 + randomNumber(CAT_MIN_SPAWN_TIME, CAT_MAX_SPAWN_TIME);
+			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
+			{
+				cat->SpawnCat();
+				cat->SpawnScoringCat();
+				clock.restart();
+			}
+			
 			// then update the player
 			player->update(dt);
 
