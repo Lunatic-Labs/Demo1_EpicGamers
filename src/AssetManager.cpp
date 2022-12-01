@@ -63,7 +63,7 @@ namespace EpicGamers
 		if (soundName == "land")
 			_landSound.play();
 		if (soundName == "collectible") {
-			_collectibleSound.setVolume(80);
+			_collectibleSound.setVolume(90);
 			_collectibleSound.setPitch(2);
 			_collectibleSound.play();
 		}

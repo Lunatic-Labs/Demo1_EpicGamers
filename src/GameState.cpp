@@ -97,15 +97,13 @@ namespace EpicGamers
 
 	void GameState::Update(float dt)
 	{
-		// move the ground and animate the player
-		if (GameStates::eGameOver != gameState)
-		{
-			
-			ground->MoveGround(dt, currentSpeed);
-			player->animate(dt);
-		}
 		if (GameStates::ePlaying == gameState)
 		{
+			// move the ground
+			ground->MoveGround(dt, currentSpeed);
+			player->animate(dt);
+
+			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
 			srand(time(0));
 			float spawnFrequency = rand() % 3 + 1.4;
@@ -115,11 +113,15 @@ namespace EpicGamers
 				hydrant->SpawnScoringHydrant();
 				clock.restart();
 			}
+
+			// then update the player
 			player->update(dt);
+
+			// handle collision for the hydrants
 			std::vector<sf::Sprite> hydrantSprites = hydrant->GetSprites();
 			for (int i = 0; i < hydrantSprites.size(); i++)
 			{
-				// collision with obstacle
+				// if player collides with obstacle, then it's Game Over
 				if (collider.CheckSpriteCollider(player->GetSprite(), 0.6f, hydrantSprites.at(i), 0.4f))
 				{
 					data->assets.PlaySound("death");
@@ -127,28 +129,22 @@ namespace EpicGamers
 					clock.restart();
 				}
 			}
-		}
 
-			//Part of score video:
-		if ( GameStates::ePlaying == gameState )
-		{
-			std::vector<sf::Sprite> &scoringSprites = hydrant->GetScoringSprites();
-
-			for ( int i = 0; i < scoringSprites.size( ); i++ )
+			// handle collision for the score-triggering boxes
+			std::vector<sf::Sprite>& scoringSprites = hydrant->GetScoringSprites();
+			for (int i = 0; i < scoringSprites.size(); i++)
 			{
-				// score a point
-				if ( collider.CheckSpriteCollider( player->GetSprite( ), 0.625f, scoringSprites.at( i ), 1.0f ) && GameStates::eGameOver != gameState)
+				// if player collides with scoring box, then increase the score
+				if (collider.CheckSpriteCollider(player->GetSprite(), 0.625f, scoringSprites.at(i), 1.0f) && GameStates::eGameOver != gameState)
 				{
-					score++;
-					
-					hud->UpdateScore( score );
-					
-					scoringSprites.erase( scoringSprites.begin( ) + i );
-
 					data->assets.PlaySound("collectible");
+					score++;
+					hud->UpdateScore(score);
+					scoringSprites.erase(scoringSprites.begin() + i);
 				}
 			}
-			//if totalTime % TIME_BEFORE..., but they're floats so % operator doesn't work
+
+			// increase the speed of the game over time
 			if (speedClock.getElapsedTime().asSeconds() >= TIME_BEFORE_SPEED_INCREMENT)
 			{
 				if (currentSpeed <= MAX_SPEED)
@@ -162,14 +158,13 @@ namespace EpicGamers
 				}
 			}
 		}
-		
 
 		if (GameStates::eGameOver == gameState)
 		{
 			// stop music
 			data->assets.StopMusic("levelMusic");
 
-			// change game state to GameOver
+			// change game state to GameOver after a delay
 			if (clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS)
 			{
 				data->machine.AddState(StateRef(new GameOverState(data, score)), true);
@@ -181,6 +176,7 @@ namespace EpicGamers
 
 	void GameState::Draw(float dt)
 	{
+		// clear the previous frame and draw the new one on screen
 		data->window.clear();
 		data->window.draw(background);
 		ground->DrawGround();

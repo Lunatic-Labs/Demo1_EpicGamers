@@ -1,2 +1,4 @@
-﻿  AssetManager.cpp
+﻿  GameState.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(108,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(109,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
