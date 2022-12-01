@@ -16,6 +16,7 @@ namespace EpicGamers
 
 	void Ground::MoveGround(float dt, float currentSpeed)
 	{
+		// move the ground sprites and reset their position once they move offscreen
 		for (unsigned short int i = 0; i < groundSprites.size(); i++)
 		{
 			float movement = ((HYDRANT_MOVEMENT_SPEED * dt) + currentSpeed) ;

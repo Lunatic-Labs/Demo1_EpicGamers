@@ -37,10 +37,13 @@ namespace EpicGamers
 
 		while (data->window.pollEvent(event))
 		{
+			// close window if exited
 			if (sf::Event::Closed == event.type)
 			{
 				data->window.close();
 			}
+
+			// enter a new game if the play button is clicked
 			if (data->input.isSpriteClicked(playButton, sf::Mouse::Left, data->window))
 			{
 				//std::cout << "Go to Game Screen";

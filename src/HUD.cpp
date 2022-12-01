@@ -13,10 +13,12 @@ namespace EpicGamers
         scoreText.setOrigin( scoreText.getGlobalBounds( ).width / 2, scoreText.getGlobalBounds( ).height / 2);
         scoreText.setPosition( data->window.getSize( ).x / 2, data->window.getSize( ).y / 10 );
     }
+
     void HUD::Draw( )
     {
         data->window.draw( scoreText );
     }
+
     void HUD::UpdateScore( int score )
     {
         scoreText.setString( std::to_string( score ) );

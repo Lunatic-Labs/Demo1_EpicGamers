@@ -5,6 +5,7 @@ namespace EpicGamers
 {
 	Hydrant::Hydrant(GameDataRef data) : data(data)
 	{
+
 	}
 
 	void Hydrant::SpawnHydrant()
@@ -26,6 +27,7 @@ namespace EpicGamers
 
 	void Hydrant::MoveHydrants(float dt, float currentSpeed)
 	{
+		// handle movement or destruction of the hydrants
 		for (unsigned short int i = 0; i < hydrantSprites.size(); i++)
 		{
 			if (hydrantSprites.at(i).getPosition().x < 0 - hydrantSprites.at(i).getGlobalBounds().width)
@@ -39,6 +41,7 @@ namespace EpicGamers
 			}
 		}
 
+		// handle movement or destruction of the scoring hydrants
 		for (unsigned short int i = 0; i < scoringHydrants.size(); i++)
 		{
 			if (scoringHydrants.at(i).getPosition().x < 0 - scoringHydrants.at(i).getGlobalBounds().width)

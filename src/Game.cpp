@@ -12,6 +12,7 @@ namespace EpicGamers
 
 	void Game::Run()
 	{
+		// create time
 		float newTime, frameTime, interpolation;
 		float currentTime = this->clock.getElapsedTime().asSeconds();
 		float accumulator = 0.0f;

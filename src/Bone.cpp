@@ -19,14 +19,13 @@ namespace EpicGamers
 	void Bone::SpawnScoringBone( )
 	{
 		sf::Sprite sprite( data->assets.GetTexture( "Scoring Bone" ) );
-
 		sprite.setPosition( data->window.getSize( ).x, 0 );
-
 		scoringBones.push_back( sprite );
 	}
 
 	void Bone::MoveBones(float dt)
 	{
+		// handle movement or destruction of the bones
 		for (unsigned short int i = 0; i < boneSprites.size(); i++)
 		{
 			if (boneSprites.at(i).getPosition().x < 0 - boneSprites.at(i).getGlobalBounds().width)
@@ -40,6 +39,7 @@ namespace EpicGamers
 			}
 		}
 
+		// handle movement or destruction of the scoring bones
 		for (unsigned short int i = 0; i < scoringBones.size(); i++)
 		{
 			if (scoringBones.at(i).getPosition().x < 0 - scoringBones.at(i).getGlobalBounds().width)
