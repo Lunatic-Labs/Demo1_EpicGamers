@@ -16,6 +16,7 @@ namespace EpicGamers
 	public:
 		GameState(GameDataRef data);
 
+		int RandomNumber(int low, int high);
 		void Init();
 		void HandleInput();
 		void Update(float dt);

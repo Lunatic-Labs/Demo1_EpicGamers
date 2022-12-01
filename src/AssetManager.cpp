@@ -62,7 +62,8 @@ namespace EpicGamers
 			_deathSound.play();
 		if (soundName == "land")
 			_landSound.play();
-		if (soundName == "collectible") {
+		if (soundName == "collectible") 
+		{
 			_collectibleSound.setVolume(70);
 			_collectibleSound.setPitch(2);
 			_collectibleSound.play();
@@ -71,16 +72,18 @@ namespace EpicGamers
 	}		
 
 	void AssetManager::PlayMusic(std::string musicName) {
-		if (musicName == "levelMusic") {
+		if (musicName == "levelMusic")
+		{
 			_levelMusic.setLoop(true);
-			_levelMusic.setVolume(70);
+			_levelMusic.setVolume(60);
 			_levelMusic.play();
 		}
 			
 	}
 
 	void AssetManager::StopMusic(std::string musicName) {
-		if (musicName == "levelMusic") {
+		if (musicName == "levelMusic")
+		{
 			_levelMusic.stop();
 		}
 

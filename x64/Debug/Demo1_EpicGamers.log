@@ -1,4 +1,5 @@
-﻿  Bone.cpp
+﻿  AssetManager.cpp
+  Bone.cpp
 C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Bone.cpp(15,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
@@ -9,11 +10,13 @@ C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Bone.cpp(22,46): warning C4244:
           [
               T=unsigned int
           ]
-  Game.cpp
   GameOverState.cpp
   GameState.cpp
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(108,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(109,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(22,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(115,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(116,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(116,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(116,25): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Ground.cpp
 C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Ground.cpp(26,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
@@ -48,6 +51,8 @@ C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Hydrant.cpp(23,46): warning C42
           ]
   MainMenuState.cpp
   Player.cpp
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Player.cpp(119,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Player.cpp(132,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  SplashState.cpp
   Generating Code...
+  Source.cpp
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe

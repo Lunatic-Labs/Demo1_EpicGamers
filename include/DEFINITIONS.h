@@ -69,6 +69,9 @@
 
 #define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
+#define HYDRANT_MIN_SPAWN_TIME 1.4f
+#define HYDRANT_MAX_SPAWN_TIME 1.6f
+
 #define STARTING_SPEED 1.0f				//Starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
 #define INCREMENT_SPEED_BY 0.15f				//Used to gradually increment Speed every TBSI
 #define TIME_BEFORE_SPEED_INCREMENT 4.0f		//Time in seconds, TBSI

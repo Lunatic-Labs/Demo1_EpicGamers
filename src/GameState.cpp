@@ -17,6 +17,13 @@ namespace EpicGamers
 
 	}
 
+	int GameState::RandomNumber(int low, int high)
+	{
+		srand(time(NULL));
+		int range = (high - low) + 1;
+		return low + (rand() % range);
+	}
+
 	void GameState::Init()
 	{
 		std::cout << "Game State" << std::endl;
@@ -106,7 +113,8 @@ namespace EpicGamers
 			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
 			srand(time(0));
-			float spawnFrequency = rand() % 3 + 1.4;
+			float spawnFrequency = rand() % 2 + GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
 				hydrant->SpawnHydrant();
