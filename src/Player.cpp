@@ -4,7 +4,7 @@
 
 namespace EpicGamers
 {
-	Player::Player(GameDataRef _data) : data(_data)
+	Player::Player(GameDataRef _data, sf::Color currentColor) : data(_data)
 	{
 		// load all of the individual animation frames
 		animationIterator = 0;
@@ -31,10 +31,11 @@ namespace EpicGamers
 		animationFrames.push_back(data->assets.GetTexture("Jump Frame 10"));
 
 		playerSprite.setTexture(animationFrames.at(animationIterator));
+		playerSprite.setColor(currentColor);
 		//playerSprite.setSize(64.0f, 64.0f);
 		playerSprite.setPosition(0.0f,
 			(data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f));
-		
+
 		// initialize location and state
 		playerX = (data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2);
 		playerY = (data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f);
