@@ -71,7 +71,7 @@
 
 #define STARTING_SPEED 1.0f				//Starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
 #define INCREMENT_SPEED_BY 0.15f				//Used to gradually increment Speed every TBSI
-#define TIME_BEFORE_SPEED_INCREMENT 5.0f		//Time in seconds, TBSI
+#define TIME_BEFORE_SPEED_INCREMENT 4.0f		//Time in seconds, TBSI
 #define INCREMENT_JUMP_TIME_BY 0.03f			//Used to gradually decrease Jump time every TBSI
 #define INCREMENT_JUMP_SPEED_BY 11.25f			//Used to gradually increase Jump Speed (compensating for decreased time) every TBSI
 #define INCREMENT_GRAVITY_BY 0.5f				//Used to gradually increase Gravity (countering increased Jump Speed) every TBSI. Approximate number based on (INCREMENT_JUMP_TIME_BY * 15)
