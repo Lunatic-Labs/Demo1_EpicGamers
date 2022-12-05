@@ -48,6 +48,8 @@ namespace EpicGamers
 
 		if (!_levelMusic.openFromFile(LEVEL_MUSIC_FILEPATH))
 			std::cout << "Error loading music." << std::endl;
+		if (!_levelAmbience.openFromFile(LEVEL_AMBIENCE_FILEPATH))
+			std::cout << "Error loading ambience." << std::endl;
 
 		_jumpSound.setBuffer(_jumpSoundBuffer);
 		_landSound.setBuffer(_landSoundBuffer);
@@ -78,6 +80,12 @@ namespace EpicGamers
 			_levelMusic.setVolume(60);
 			_levelMusic.play();
 		}
+		if (musicName == "levelAmbience")
+		{
+			_levelAmbience.setLoop(true);
+			_levelAmbience.setVolume(60);
+			_levelAmbience.play();
+		}
 			
 	}
 
@@ -86,6 +94,9 @@ namespace EpicGamers
 		{
 			_levelMusic.stop();
 		}
-
+		if (musicName == "levelAmbience")
+		{
+			_levelAmbience.stop();
+		}
 	}
 }
