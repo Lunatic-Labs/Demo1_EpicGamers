@@ -63,8 +63,8 @@
 #define PLAYER_STATE_FALLING 2
 #define	PLAYER_STATE_JUMPING 3
 
-#define GRAVITY 10.0f						// value to pull player down during Falling state.
-#define JUMP_SPEED 375.0f					// value to jump up by during Jumping state.
+#define GRAVITY 30.0f						// strength of player gravity
+#define JUMP_SPEED 600.0f					// strength of player jump
 
 #define JUMP_DURATION 1.0f					// length of jump animation. Tutorial used 0.25f
 
@@ -72,21 +72,25 @@
 
 #define HYDRANT_MOVEMENT_SPEED 400.0f
 #define HYDRANT_SPAWN_FREQUENCY 1.7f
-#define HYDRANT_MIN_SPAWN_TIME 1.4f
-#define HYDRANT_MAX_SPAWN_TIME 1.6f
+#define HYDRANT_MIN_SPAWN_TIME 1.1f
+#define HYDRANT_MAX_SPAWN_TIME 1.3f
+#define HYDRANT_MULTIPLIER 1.0f				// directly modifies the hydrant spawn times and decreases over time.
+#define HYDRANT_MULTIPLIER_INTERVAL 0.0115f
+#define HYDRANT_MULTIPLIER_LIMIT 0.1f		// prevents the game from becoming impossible (in theory)
 
 #define CAT_MOVEMENT_SPEED 200.0f
 #define CAT_SPAWN_FREQUENCY 2.4f
 #define CAT_MIN_SPAWN_TIME 2.8f
 #define CAT_MAX_SPAWN_TIME 3.6f
 
+#define TIME_BEFORE_SPEED_INCREMENT 1.0f	// 3.0f	// time in seconds, TBSI
 #define STARTING_SPEED 1.0f					// starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
 #define INCREMENT_SPEED_BY 0.25f			// used to gradually increment Speed every TBSI
-#define TIME_BEFORE_SPEED_INCREMENT 3.0f	// time in seconds, TBSI
-#define INCREMENT_JUMP_TIME_BY 0.03f		// used to gradually decrease Jump time every TBSI
-#define INCREMENT_JUMP_SPEED_BY 11.25f		// used to gradually increase Jump Speed (compensating for decreased time) every TBSI
+#define INCREMENT_JUMP_TIME_BY 0.00f // 0.03		// used to gradually decrease Jump time every TBSI
+#define INCREMENT_JUMP_SPEED_BY 4.0f  // 11.25f		// used to gradually increase Jump Speed (compensating for decreased time) every TBSI
 #define INCREMENT_GRAVITY_BY 0.5f			// used to gradually increase Gravity (countering increased Jump Speed) every TBSI. Approximate number based on (INCREMENT_JUMP_TIME_BY * 15)
-#define MAX_SPEED 9.0f						// max game speed multiplier (should be pretty fast)
+#define MAX_SPEED 20.0f				// 9.0		// max game speed multiplier (should be pretty fast)
+
 
 enum GameStates
 {

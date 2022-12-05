@@ -35,7 +35,10 @@ namespace EpicGamers
 	void GameState::Init()
 	{
 		std::cout << "Game State" << std::endl;
-		currentSpeed = STARTING_SPEED;			//initializing speed variables to reset them when game is restart? Maybe?
+
+		// re-initialize these things each gameplay restart
+		currentSpeed = STARTING_SPEED;
+		hydrantSpawnMultiplier = HYDRANT_MULTIPLIER;
 		speedClock.restart();
 
 		// load core gameplay assets
@@ -121,8 +124,14 @@ namespace EpicGamers
 			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
 			//srand(time(0));
-			float spawnFrequency = rand() % 2 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+			float spawnFrequency = rand() % 3 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+			
+			// apply the speedup for hydrant spawning until it reaches the limit
+			if (hydrantSpawnMultiplier >= HYDRANT_MULTIPLIER_LIMIT)
+				spawnFrequency *= hydrantSpawnMultiplier;
+
+			// spawn the hydrant and reset the timer
 			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
 				hydrant->SpawnHydrant();
@@ -169,6 +178,7 @@ namespace EpicGamers
 					jumpDuration -= INCREMENT_JUMP_TIME_BY;
 					jumpSpeed += INCREMENT_JUMP_SPEED_BY;
 					gravity += INCREMENT_GRAVITY_BY;
+					hydrantSpawnMultiplier -= HYDRANT_MULTIPLIER_INTERVAL;
 					std::cout << "Speed Up! New Speed: " << currentSpeed << std::endl;
 					speedClock.restart();
 				}

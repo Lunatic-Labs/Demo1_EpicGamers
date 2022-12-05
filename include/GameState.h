@@ -39,6 +39,7 @@ namespace EpicGamers
 		int score;
 
 		float currentSpeed = STARTING_SPEED;
+		float hydrantSpawnMultiplier = HYDRANT_MULTIPLIER;
 		float jumpDuration = JUMP_DURATION;
 		float jumpSpeed = JUMP_SPEED;
 		float gravity = GRAVITY;
