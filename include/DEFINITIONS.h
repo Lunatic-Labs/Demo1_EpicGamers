@@ -13,14 +13,14 @@
 #define GAME_TITLE_FILEPATH "Resources/Textures/DogDashTitle.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Textures/PlayButton.png"
 
-#define SCORING_HYDRANT_FILEPATH "Resources/Textures/invisibleScoringPipe.png"    //Part of score video
-#define DOG_FONT_FILEPATH "Resources/Fonts/DogDashNumbers.ttf"                        //Part of score video
-#define HIGH_SCORE_FILEPATH "Resources/Highscore.txt"								//Cole #30 Video
+#define SCORING_HYDRANT_FILEPATH "Resources/Textures/invisibleScoringPipe.png"
+#define DOG_FONT_FILEPATH "Resources/Fonts/DogDashNumbers.ttf"
+#define HIGH_SCORE_FILEPATH "Resources/Highscore.txt"
 #define GAME_OVER_TITLE_FILEPATH "Resources/Textures/GameOverTitle.png"
 #define GAME_OVER_BODY_FILEPATH "Resources/Textures/GameOverBody.png"
 
 
-#define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner 2xFrame1.png"		//Tutorial defined filepaths to each frame of animation separately. Compare methods.
+#define PLAYER_FRAME_1_FILEPATH "Resources/Player/dogRunner 2xFrame1.png"
 #define PLAYER_FRAME_2_FILEPATH "Resources/Player/dogRunner 2xFrame2.png"
 #define PLAYER_FRAME_3_FILEPATH "Resources/Player/dogRunner 2xFrame3.png"
 #define PLAYER_FRAME_4_FILEPATH "Resources/Player/dogRunner 2xFrame4.png"
@@ -43,11 +43,10 @@
 #define JUMP_FRAME_10_FILEPATH "Resources/Player/dogRunner 2xJump Frame 10.png"
 
 #define HYDRANT_FILEPATH "Resources/Textures/hydrantWIP1.png"
+#define CAT_FILEPATH "Resources/Textures/Cat.png"
 #define BONE_FILEPATH "Resources/Textures/bone.png"
 #define BONE_MOVEMENT_SPEED 800.0f
 #define GROUND_FILEPATH "Resources/Textures/landPlusOne.png"
-#define HYDRANT_MOVEMENT_SPEED 400.0f
-#define HYDRANT_SPAWN_FREQUENCY 1.7f
 #define BONE_MOVEMENT_SPEED 800.0f
 
 #define SFX_JUMP_FILEPATH "Resources/Sound/jump.wav"
@@ -55,30 +54,42 @@
 #define SFX_DEATH_FILEPATH "Resources/Sound/death.wav"
 #define SFX_COLLECTIBLE_FILEPATH "Resources/Sound/collectible.wav"
 #define LEVEL_MUSIC_FILEPATH "Resources/Sound/levelMusic.ogg"
+#define LEVEL_AMBIENCE_FILEPATH "Resources/Sound/levelAmbience.ogg"
 
-#define PLAYER_ANIMATION_DURATION 1.0f						//Length of the Player animation
+
+#define PLAYER_ANIMATION_DURATION 1.0f		// length of the Player animation
 
 #define PLAYER_STATE_STILL 1
 #define PLAYER_STATE_FALLING 2
 #define	PLAYER_STATE_JUMPING 3
 
-#define GRAVITY 10.0f			//Value to pull player down during Falling state.
-#define JUMP_SPEED 375.0f		//Value to jump up by during Jumping state.
-
-#define JUMP_DURATION 1.0f		//Length of jump animation. Tutorial used 0.25f
+#define GRAVITY 30.0f						// strength of player gravity
+#define JUMP_SPEED 600.0f					// strength of player jump
+#define JUMP_DURATION 1.0f					// length of jump animation. Tutorial used 0.25f
 
 #define TIME_BEFORE_GAME_OVER_APPEARS 0.4f
 
-#define HYDRANT_MIN_SPAWN_TIME 1.4f
-#define HYDRANT_MAX_SPAWN_TIME 1.6f
+#define HYDRANT_MOVEMENT_SPEED 400.0f
+#define HYDRANT_SPAWN_FREQUENCY 1.7f
+#define HYDRANT_MIN_SPAWN_TIME 1.1f
+#define HYDRANT_MAX_SPAWN_TIME 1.3f
+#define HYDRANT_MULTIPLIER 1.0f				// directly modifies the hydrant spawn times and decreases over time.
+#define HYDRANT_MULTIPLIER_INTERVAL 0.012f	// increase the hydrant spawning by this much
+#define HYDRANT_MULTIPLIER_LIMIT 0.1f		// prevents the game from becoming impossible (in theory)
 
-#define STARTING_SPEED 1.0f				//Starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
-#define INCREMENT_SPEED_BY 0.15f				//Used to gradually increment Speed every TBSI
-#define TIME_BEFORE_SPEED_INCREMENT 4.0f		//Time in seconds, TBSI
-#define INCREMENT_JUMP_TIME_BY 0.03f			//Used to gradually decrease Jump time every TBSI
-#define INCREMENT_JUMP_SPEED_BY 11.25f			//Used to gradually increase Jump Speed (compensating for decreased time) every TBSI
-#define INCREMENT_GRAVITY_BY 0.5f				//Used to gradually increase Gravity (countering increased Jump Speed) every TBSI. Approximate number based on (INCREMENT_JUMP_TIME_BY * 15)
-#define MAX_SPEED 9.0f					//Max game speed multiplier (should be pretty fast)
+#define CAT_MOVEMENT_SPEED 200.0f
+#define CAT_SPAWN_FREQUENCY 2.4f
+#define CAT_MIN_SPAWN_TIME 2.8f
+#define CAT_MAX_SPAWN_TIME 3.6f
+
+#define TIME_BEFORE_SPEED_INCREMENT 1.0f	// time in seconds, TBSI
+#define STARTING_SPEED 1.0f					// starting game speed multiplier. How fast hydrants scroll, player jumps, etc.	
+#define INCREMENT_SPEED_BY 0.25f			// used to gradually increment Speed every TBSI
+#define INCREMENT_JUMP_TIME_BY 0.00f		// used to gradually decrease Jump time every TBSI
+#define INCREMENT_JUMP_SPEED_BY 4.0f  		// used to gradually increase Jump Speed (compensating for decreased time) every TBSI
+#define INCREMENT_GRAVITY_BY 0.5f			// used to gradually increase Gravity (countering increased Jump Speed) every TBSI. Approximate number based on (INCREMENT_JUMP_TIME_BY * 15)
+#define MAX_SPEED 20.0f						// max game speed multiplier (should be pretty fast)
+
 
 enum GameStates
 {

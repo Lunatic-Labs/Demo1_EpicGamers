@@ -37,6 +37,7 @@ namespace EpicGamers
 		sf::Sound _collectibleSound;
 
 		sf::Music _levelMusic;
+		sf::Music _levelAmbience;
 
 	private:
 		std::map<std::string, sf::Texture> textures;

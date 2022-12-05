@@ -9,7 +9,7 @@ namespace EpicGamers
 {
 	class Player {
 	public:
-		Player(GameDataRef _data);
+		Player(GameDataRef _data, sf::Color currentColor);
 		void draw();
 		void animate(float dt);
 		void update(float dt);
@@ -33,7 +33,7 @@ namespace EpicGamers
 		float ySpeed;					//used in Jump movement functionality
 		bool jumping = false;			//used in Jump animation functionality
 		bool playedJumpAnim = false;		//used in Jump animation functionality
-		
+
 		float speed = STARTING_SPEED;	//updated in tap(), incremented in GameState.cpp
 		float jumpHeight = JUMP_DURATION;
 		float jumpSpeed = JUMP_SPEED;

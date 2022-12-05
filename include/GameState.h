@@ -16,7 +16,9 @@ namespace EpicGamers
 	public:
 		GameState(GameDataRef data);
 
-		int RandomNumber(int low, int high);
+		int randomNumber(int low, int high);
+		sf::Color getRandomColor();
+
 		void Init();
 		void HandleInput();
 		void Update(float dt);
@@ -26,9 +28,9 @@ namespace EpicGamers
 		GameDataRef data;
 		sf::Sprite background;
 
-		Hydrant *hydrant;
-		Ground *ground;
-		Player *player;
+		Hydrant* hydrant;
+		Ground* ground;
+		Player* player;
 		HUD* hud;
 		Collider collider;
 		sf::Clock clock;
@@ -37,6 +39,7 @@ namespace EpicGamers
 		int score;
 
 		float currentSpeed = STARTING_SPEED;
+		float hydrantSpawnMultiplier = HYDRANT_MULTIPLIER;
 		float jumpDuration = JUMP_DURATION;
 		float jumpSpeed = JUMP_SPEED;
 		float gravity = GRAVITY;

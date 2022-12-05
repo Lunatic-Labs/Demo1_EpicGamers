@@ -4,7 +4,7 @@
 
 namespace EpicGamers
 {
-	Player::Player(GameDataRef _data) : data(_data)
+	Player::Player(GameDataRef _data, sf::Color currentColor) : data(_data)
 	{
 		// load all of the individual animation frames
 		animationIterator = 0;
@@ -31,10 +31,11 @@ namespace EpicGamers
 		animationFrames.push_back(data->assets.GetTexture("Jump Frame 10"));
 
 		playerSprite.setTexture(animationFrames.at(animationIterator));
+		playerSprite.setColor(currentColor);
 		//playerSprite.setSize(64.0f, 64.0f);
 		playerSprite.setPosition(0.0f,
 			(data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f));
-		
+
 		// initialize location and state
 		playerX = (data->window.getSize().x / 4) - (playerSprite.getGlobalBounds().width / 2);
 		playerY = (data->window.getSize().y - playerSprite.getGlobalBounds().height - 138.0f);
@@ -49,18 +50,18 @@ namespace EpicGamers
 	}
 
 	void Player::animate(float dt)
-	{	
+	{
 		// if more time has passed than the given frame rate (time spent on current frame compared to total duration)
 
 		// if in the air
 		if (PLAYER_STATE_JUMPING == playerState || PLAYER_STATE_FALLING == playerState)
 		{
-			if (clock.getElapsedTime().asSeconds() > (JUMP_DURATION) / (animationFrames.size() / 2) )
+			if (clock.getElapsedTime().asSeconds() > (JUMP_DURATION) / (animationFrames.size() / 2))
 			{
 				if (jumping == false)
 				{
 					// start jump animation
-					animationIterator = 10;	
+					animationIterator = 10;
 					jumping = true;
 				}
 				if (animationIterator < 19)
@@ -68,7 +69,7 @@ namespace EpicGamers
 					// move to next frame
 					animationIterator++;
 				}
-				else if (playerState != PLAYER_STATE_STILL)	
+				else if (playerState != PLAYER_STATE_STILL)
 				{
 					// stay on the last jump frame while still airborne
 					animationIterator = 18;
@@ -86,7 +87,7 @@ namespace EpicGamers
 		}
 
 		// default running animation
-		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / (animationFrames.size() / 2) )
+		if (clock.getElapsedTime().asSeconds() > PLAYER_ANIMATION_DURATION / (animationFrames.size() / 2))
 		{
 			if (animationIterator < 9)
 			{
@@ -98,10 +99,10 @@ namespace EpicGamers
 				// reset to 1st frame
 				animationIterator = 0;
 			}
-				
+
 			// match the displayed texture to the correct frame
 			playerSprite.setTexture(animationFrames.at(animationIterator));
-			clock.restart();	
+			clock.restart();
 		}
 	}
 
@@ -120,7 +121,7 @@ namespace EpicGamers
 		else if (PLAYER_STATE_JUMPING == playerState)
 		{
 			ySpeed = -jumpSpeed;
-			playerSprite.move(0, ySpeed * dt);			
+			playerSprite.move(0, ySpeed * dt);
 
 			data->assets.PlaySound("jump");
 		}
@@ -151,13 +152,13 @@ namespace EpicGamers
 	}
 
 	// updates State Machine when input received
-	void Player::tap(float currentSpeed, float jumpDuration, float speedJump, float speedGravity)	
+	void Player::tap(float currentSpeed, float jumpDuration, float speedJump, float speedGravity)
 	{
 		if (playerState != PLAYER_STATE_JUMPING && playerState != PLAYER_STATE_FALLING)
 		{
 			// update the Player variables with the ones from GameState
 			// movementClock.restart();
-			speed = currentSpeed;		
+			speed = currentSpeed;
 			jumpHeight = jumpDuration;
 			jumpSpeed = speedJump;
 			gravity = speedGravity;
@@ -165,8 +166,8 @@ namespace EpicGamers
 			//animationIterator = 0;	//Attempted to reset the iterator immediately when ground's touched so JumpAnim called again. Caused the RunAnim to play.
 		}
 	}
-	
-	const sf::Sprite &Player::GetSprite() const
+
+	const sf::Sprite& Player::GetSprite() const
 	{
 		return playerSprite;
 	}

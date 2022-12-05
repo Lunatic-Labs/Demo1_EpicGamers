@@ -6,6 +6,7 @@
 #include "../include/GameOverState.h"
 #include <sstream>
 #include <stdlib.h>
+#include <ctime>
 
 
 #include <iostream>
@@ -17,34 +18,44 @@ namespace EpicGamers
 
 	}
 
-	int GameState::RandomNumber(int low, int high)
+	int GameState::randomNumber(int low, int high)
 	{
 		srand(time(NULL));
 		int range = (high - low) + 1;
 		return low + (rand() % range);
 	}
 
+	sf::Color GameState::getRandomColor()	//Used for Player creation, assigns different colors to Dogs
+	{
+		sf::Color colorArray[9]{ sf::Color(255, 255, 255), sf::Color(229, 153, 55), sf::Color(239, 98, 75), sf::Color(152, 92, 79), sf::Color(255, 194, 255), sf::Color(170, 170, 170), sf::Color(153, 229, 80), sf::Color(230, 131, 123), sf::Color(255, 255, 255) };
+		int number = randomNumber(0, 8);
+		return colorArray[number];
+	}
+
 	void GameState::Init()
 	{
 		std::cout << "Game State" << std::endl;
-		currentSpeed = STARTING_SPEED;			//initializing speed variables to reset them when game is restart? Maybe?
+
+		// re-initialize these things each gameplay restart
+		currentSpeed = STARTING_SPEED;
+		hydrantSpawnMultiplier = HYDRANT_MULTIPLIER;
 		speedClock.restart();
 
 		// load core gameplay assets
 		data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		data->assets.LoadTexture("Player Frame 1", PLAYER_FRAME_1_FILEPATH);	//load filepath for every Player frame given in DEFINTIONS.h
-		data->assets.LoadTexture("Player Frame 2", PLAYER_FRAME_2_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 3", PLAYER_FRAME_3_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 4", PLAYER_FRAME_4_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 5", PLAYER_FRAME_5_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 6", PLAYER_FRAME_6_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 7", PLAYER_FRAME_7_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 8", PLAYER_FRAME_8_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 9", PLAYER_FRAME_9_FILEPATH);	
-		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);	
-		
-		data->assets.LoadTexture("Scoring Pipe", SCORING_HYDRANT_FILEPATH);		//Part of score video
-		data->assets.LoadFont("Dog Font", DOG_FONT_FILEPATH );				//Part of score video
+		data->assets.LoadTexture("Player Frame 2", PLAYER_FRAME_2_FILEPATH);
+		data->assets.LoadTexture("Player Frame 3", PLAYER_FRAME_3_FILEPATH);
+		data->assets.LoadTexture("Player Frame 4", PLAYER_FRAME_4_FILEPATH);
+		data->assets.LoadTexture("Player Frame 5", PLAYER_FRAME_5_FILEPATH);
+		data->assets.LoadTexture("Player Frame 6", PLAYER_FRAME_6_FILEPATH);
+		data->assets.LoadTexture("Player Frame 7", PLAYER_FRAME_7_FILEPATH);
+		data->assets.LoadTexture("Player Frame 8", PLAYER_FRAME_8_FILEPATH);
+		data->assets.LoadTexture("Player Frame 9", PLAYER_FRAME_9_FILEPATH);
+		data->assets.LoadTexture("Player Frame 10", PLAYER_FRAME_10_FILEPATH);
+
+		data->assets.LoadTexture("Scoring Hydrant", SCORING_HYDRANT_FILEPATH);		//Part of score video
+		data->assets.LoadFont("Dog Font", DOG_FONT_FILEPATH);				//Part of score video
 
 		data->assets.LoadTexture("Hydrant", HYDRANT_FILEPATH);
 		hydrant = new Hydrant(data);
@@ -63,15 +74,15 @@ namespace EpicGamers
 		data->assets.LoadTexture("Jump Frame 9", JUMP_FRAME_9_FILEPATH);
 		data->assets.LoadTexture("Jump Frame 10", JUMP_FRAME_10_FILEPATH);
 
-		player = new Player(data);
-		hud = new HUD( data );
+		player = new Player(data, getRandomColor());
+		hud = new HUD(data);
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
 
 		gameState = GameStates::ePlaying;
 
 		score = 0;
-		hud->UpdateScore( score );
+		hud->UpdateScore(score);
 
 		data->assets.PlayMusic("levelMusic");
 	}
@@ -112,9 +123,15 @@ namespace EpicGamers
 
 			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
-			srand(time(0));
-			float spawnFrequency = rand() % 2 + GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+			//srand(time(0));
+			float spawnFrequency = rand() % 3 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+			
+			// apply the speedup for hydrant spawning until it reaches the limit
+			if (hydrantSpawnMultiplier >= HYDRANT_MULTIPLIER_LIMIT)
+				spawnFrequency *= hydrantSpawnMultiplier;
+
+			// spawn the hydrant and reset the timer
 			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
 				hydrant->SpawnHydrant();
@@ -161,6 +178,7 @@ namespace EpicGamers
 					jumpDuration -= INCREMENT_JUMP_TIME_BY;
 					jumpSpeed += INCREMENT_JUMP_SPEED_BY;
 					gravity += INCREMENT_GRAVITY_BY;
+					hydrantSpawnMultiplier -= HYDRANT_MULTIPLIER_INTERVAL;
 					std::cout << "Speed Up! New Speed: " << currentSpeed << std::endl;
 					speedClock.restart();
 				}
@@ -179,7 +197,7 @@ namespace EpicGamers
 			}
 		}
 
-		
+
 	}
 
 	void GameState::Draw(float dt)
@@ -190,7 +208,7 @@ namespace EpicGamers
 		ground->DrawGround();
 		hydrant->DrawHydrants();
 		player->draw();
-		hud->Draw(); 
+		hud->Draw();
 
 		data->window.display();
 	}
