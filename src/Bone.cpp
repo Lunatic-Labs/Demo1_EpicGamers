@@ -1,5 +1,6 @@
 /*
 	Bones are collectible items that the player picks up.
+	These are currently not used in the game.
 */
 
 #include "../include/DEFINITIONS.h"

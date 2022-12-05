@@ -1,3 +1,8 @@
+/*
+	The State Machine allows the Game and Player to change between different
+	states, with different behavior for each.
+*/
+
 #pragma once
 
 #include <memory>

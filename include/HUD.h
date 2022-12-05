@@ -1,3 +1,7 @@
+/*
+    The HUD controls the onscreen score display, using a custom font.
+*/
+
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../include/DEFINITIONS.h"

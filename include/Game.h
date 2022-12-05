@@ -1,9 +1,20 @@
+/*
+	The Game contains everything inside, well, the game. Gameplay is primarliy
+	accomplished by switching between the following Game states: SplashState,
+	MainMenuState, GameState, and GameOverState.
+*/
+
 #pragma once
 
 #include <memory>
 #include <string>
-//#include <../External/include/SFML/Graphics.hpp>
 #include <SFML/Graphics.hpp>
+/*
+	The Game contains everything inside, well, the game. Gameplay is primarliy
+	accomplished by switching between the following Game states: SplashState,
+	MainMenuState, GameState, and GameOverState.
+*/
+
 #include <SFML/Audio.hpp>
 #include "StateMachine.h"
 #include "AssetManager.h"

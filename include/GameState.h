@@ -1,3 +1,9 @@
+/*
+	The Game state activates after pressing the Play button, and it functions as
+	the core gameplay loop. The Player is stuck in this gameplay loop until a
+	collision with an obstacle-- then it enters GameOverState.
+*/
+
 #pragma once
 
 #include <SFML/Graphics.hpp>

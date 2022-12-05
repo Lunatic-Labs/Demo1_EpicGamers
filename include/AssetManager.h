@@ -1,3 +1,7 @@
+/*
+	The Asset Manager loads and handles textures, fonts, and audio files.
+*/
+
 #pragma once
 
 #include <map>

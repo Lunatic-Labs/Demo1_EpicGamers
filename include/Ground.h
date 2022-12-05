@@ -1,3 +1,8 @@
+/*
+	The Ground infinitely scrolls across the screen by moving two sprites and
+	resetting their position when offscreen.
+*/
+
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Game.h"

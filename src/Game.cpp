@@ -1,5 +1,7 @@
 /*
-	The Game contains everything inside, well, the game.
+	The Game contains everything inside, well, the game. Gameplay is primarliy
+	accomplished by switching between the following Game states: SplashState,
+	MainMenuState, GameState, and GameOverState.
 */
 
 #include "../include/Game.h"

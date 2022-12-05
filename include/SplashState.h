@@ -1,3 +1,9 @@
+/*
+	The Splash Screen state activates immediately after running the game. It shows
+	a quick screen while assets load, and it then immediately enters the Main Menu
+	state.
+*/
+
 #pragma once
 
 #include <SFML/Graphics.hpp>

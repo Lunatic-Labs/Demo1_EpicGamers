@@ -1,3 +1,8 @@
+/*
+	This DEFINITIONS file contains lots of important filepaths and variables
+	that are referenced throughout the code.
+*/
+
 #pragma once
 
 #define SCREEN_WIDTH 1600

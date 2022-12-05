@@ -1,3 +1,7 @@
+/*
+	The Input Manager... manages the inputs.
+*/
+
 #pragma once
 
 #include <SFML/Graphics.hpp>

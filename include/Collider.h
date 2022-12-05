@@ -1,3 +1,7 @@
+/*
+	The Collider handles the collision detection for sprites.
+*/
+
 #pragma once
 #include <SFML/Graphics.hpp>
 

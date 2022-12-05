@@ -1,3 +1,9 @@
+/*
+	The Main Menu state activates after loading the game and viewing the Spash
+	Screen. This also shows the official logo for the game, functioning as the
+	title screen. After clicking the Play button, the game enters GameState.
+*/
+
 #pragma once
 
 #include <SFML/Graphics.hpp>

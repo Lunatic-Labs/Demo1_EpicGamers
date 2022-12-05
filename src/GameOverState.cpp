@@ -1,5 +1,6 @@
 /*
-	The Game Over state activates after the player dies.
+	The Game Over state activates after the Player dies. It allows the user to
+	restart a new game, re-entering GameState.
 */
 
 #pragma once

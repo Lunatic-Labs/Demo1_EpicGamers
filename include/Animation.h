@@ -1,3 +1,8 @@
+/*
+	The Animation Player iterates through spritesheets to update textures.
+	This functionality is currently handled in GameState instead.
+*/
+
 #pragma once
 #include <SFML/Graphics.hpp>
 
