@@ -10,6 +10,7 @@ C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Bone.cpp(22,46): warning C4244:
           [
               T=unsigned int
           ]
+  Game.cpp
   GameOverState.cpp
   GameState.cpp
 C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(23,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
@@ -49,9 +50,7 @@ C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Hydrant.cpp(23,46): warning C42
               T=unsigned int
           ]
   MainMenuState.cpp
-  Player.cpp
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Player.cpp(133,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   SplashState.cpp
   Generating Code...
-  Source.cpp
+  LINK : C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe not found or not built by the last incremental link; performing full link
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe
