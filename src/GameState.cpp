@@ -18,6 +18,13 @@ namespace EpicGamers
 
 	}
 
+	float GameState::randomFloat(float low, float high)
+	{
+		srand(time(NULL));
+		int range = (high - low) + 1;
+		return low + (rand() % range);
+	}
+
 	int GameState::randomNumber(int low, int high)
 	{
 		srand(time(NULL));
@@ -121,7 +128,7 @@ namespace EpicGamers
 			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
 			//srand(time(0));
-			float spawnFrequency = rand() % 2 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+			float spawnFrequency = randomFloat(0.5, 2) + randomFloat(hydrantMinSpawnTime, hydrantMaxSpawnTime);
 			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
@@ -169,7 +176,14 @@ namespace EpicGamers
 					jumpDuration -= INCREMENT_JUMP_TIME_BY;
 					jumpSpeed += INCREMENT_JUMP_SPEED_BY;
 					gravity += INCREMENT_GRAVITY_BY;
+					if (hydrantMinSpawnTime> 0.5)				//Hydrants get too tight without this check
+						hydrantMinSpawnTime -= (INCREMENT_HYDRANT_SPAWN_BY / 2);
+					else
+						hydrantMinSpawnTime -= (INCREMENT_HYDRANT_SPAWN_BY / 4);
+					hydrantMaxSpawnTime -= INCREMENT_HYDRANT_SPAWN_BY;
 					std::cout << "Speed Up! New Speed: " << currentSpeed << std::endl;
+					std::cout << "  Min Spawn Time:" << hydrantMinSpawnTime << std::endl;
+					std::cout << "  Max Spawn Time:" << hydrantMaxSpawnTime << std::endl;
 					speedClock.restart();
 				}
 			}

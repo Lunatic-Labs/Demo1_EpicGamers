@@ -17,6 +17,7 @@ namespace EpicGamers
 		GameState(GameDataRef data);
 
 		int randomNumber(int low, int high);
+		float randomFloat(float low, float high);
 		sf::Color getRandomColor();
 
 		void Init();
@@ -42,6 +43,8 @@ namespace EpicGamers
 		float jumpDuration = JUMP_DURATION;
 		float jumpSpeed = JUMP_SPEED;
 		float gravity = GRAVITY;
+		float hydrantMinSpawnTime = HYDRANT_MIN_SPAWN_TIME;
+		float hydrantMaxSpawnTime = HYDRANT_MAX_SPAWN_TIME;
 		sf::Clock speedClock;
 	};
 
