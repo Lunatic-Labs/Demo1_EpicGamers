@@ -147,7 +147,7 @@ namespace EpicGamers
 			for (int i = 0; i < hydrantSprites.size(); i++)
 			{
 				// if player collides with obstacle, then it's Game Over
-				if (collider.CheckSpriteCollider(player->GetSprite(), 0.6f, hydrantSprites.at(i), 0.4f))
+				if (collider.CheckSpriteCollider(player->GetSprite(), 0.5f, hydrantSprites.at(i), 0.2f))
 				{
 					data->assets.PlaySound("death");
 					gameState = GameStates::eGameOver;
