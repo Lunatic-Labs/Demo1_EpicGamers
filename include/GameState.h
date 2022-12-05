@@ -4,7 +4,6 @@
 #include "State.h"
 #include "Game.h"
 #include "Hydrant.h"
-#include "Cat.h"
 #include "Ground.h"
 #include "Player.h"
 #include "Collider.h"
@@ -17,7 +16,9 @@ namespace EpicGamers
 	public:
 		GameState(GameDataRef data);
 
-		int RandomNumber(int low, int high);
+		int randomNumber(int low, int high);
+		sf::Color getRandomColor();
+
 		void Init();
 		void HandleInput();
 		void Update(float dt);
@@ -27,10 +28,9 @@ namespace EpicGamers
 		GameDataRef data;
 		sf::Sprite background;
 
-		Hydrant *hydrant;
-		Ground *ground;
-		Player *player;
-		Cat *cat;
+		Hydrant* hydrant;
+		Ground* ground;
+		Player* player;
 		HUD* hud;
 		Collider collider;
 		sf::Clock clock;
