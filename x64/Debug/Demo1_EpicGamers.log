@@ -1,8 +1,78 @@
-﻿  GameOverState.cpp
+﻿  Collider.cpp
   GameState.cpp
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(23,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(139,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(139,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(139,25): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(28,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(144,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(144,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\GameState.cpp(144,25): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Ground.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Ground.cpp(31,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  HUD.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\HUD.cpp(18,89): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\HUD.cpp(18,58): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Hydrant.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Hydrant.cpp(19,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\Hydrant.cpp(28,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  InputManager.cpp
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\InputManager.cpp(14,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\InputManager.cpp(14,29): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\InputManager.cpp(13,69): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\Brett\source\repos\Demo1_EpicGamers\src\InputManager.cpp(13,45): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  MainMenuState.cpp
   Generating Code...
   Demo1_EpicGamers.vcxproj -> C:\Users\Brett\source\repos\Demo1_EpicGamers\x64\Debug\Demo1_EpicGamers.exe

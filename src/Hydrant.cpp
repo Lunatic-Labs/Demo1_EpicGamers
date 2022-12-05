@@ -1,3 +1,8 @@
+/*
+	The Hydrant objects function as both the obstacles and the point scoring 
+	detectors, increasing the score when jumped over.
+*/
+
 #include "../include/Hydrant.h"
 #include <stdlib.h>
 

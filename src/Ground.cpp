@@ -1,3 +1,8 @@
+/*
+	The Ground infinitely scrolls across the screen by moving two sprites and
+	resetting their position when offscreen.
+*/
+
 #include "../include/Ground.h"
 #include "../include/DEFINITIONS.h"
 

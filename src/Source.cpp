@@ -6,7 +6,6 @@
 #include "../include/DEFINITIONS.h"
 int main()
 {
-
     EpicGamers::Game(SCREEN_WIDTH, SCREEN_HEIGHT, "Dog Dash");
-    //return EXIT_SUCCESS;
+    // return EXIT_SUCCESS;
 }

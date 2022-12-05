@@ -1,3 +1,8 @@
+/*
+	The Main Menu state activates after loading the game and viewing the Spash
+	Screen. This also shows the official logo for the game.
+*/
+
 #pragma once
 
 #include <sstream>

@@ -1,3 +1,8 @@
+/*
+	The Player object contains the functions and variables that make the magic 
+	happen. Animation and physics are calculated here.
+*/
+
 #include "../include/Player.h"
 #include "../include/GameState.h"
 #include <iostream>

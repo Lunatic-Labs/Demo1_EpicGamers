@@ -1,3 +1,7 @@
+/*
+	The Input Manager... manages the inputs.
+*/
+
 #include "..\include\InputManager.h"
 
 namespace EpicGamers

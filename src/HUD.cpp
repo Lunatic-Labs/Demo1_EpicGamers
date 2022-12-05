@@ -1,3 +1,7 @@
+/*
+    The HUD controls the onscreen score display, using a custom font.
+*/
+
 #include "../include/HUD.h"
 #include <string>
 
