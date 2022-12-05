@@ -1,3 +1,7 @@
+/*
+	Bones are collectible items that the player picks up.
+*/
+
 #include "../include/DEFINITIONS.h"
 #include "../include/Bone.h"
 #include <stdlib.h>

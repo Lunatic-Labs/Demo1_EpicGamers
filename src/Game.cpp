@@ -1,3 +1,7 @@
+/*
+	The Game contains everything inside, well, the game.
+*/
+
 #include "../include/Game.h"
 #include "../include/SplashState.h"
 
@@ -17,6 +21,7 @@ namespace EpicGamers
 		float currentTime = this->clock.getElapsedTime().asSeconds();
 		float accumulator = 0.0f;
 		
+		// process game states and time
 		while (this->data->window.isOpen())
 		{
 			this->data->machine.ProcessStateChanges();

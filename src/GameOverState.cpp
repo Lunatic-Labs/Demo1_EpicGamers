@@ -1,3 +1,7 @@
+/*
+	The Game Over state activates after the player dies.
+*/
+
 #pragma once
 
 #include <sstream>
@@ -8,8 +12,8 @@
 #include "../include/GameState.h"
 
 namespace EpicGamers
-{				//int score parameter to function call  Cole #29 Video
-	GameOverState::GameOverState(GameDataRef data, int score) : data(data)	//Cole #29 Video
+{
+	GameOverState::GameOverState(GameDataRef data, int score) : data(data)
 	{
 		GameOverState::score = score;
 	}
@@ -18,10 +22,9 @@ namespace EpicGamers
 	{
 		std::cout << "Game Over State" << std::endl;
 		std::cout << "Game Over Score :" << score << std::endl;
-		std::ifstream readFile;						//Cole #30 Video
-		readFile.open(HIGH_SCORE_FILEPATH);			//Cole #30 Video
+		std::ifstream readFile;
+		readFile.open(HIGH_SCORE_FILEPATH);
 
-		// Cole #30 Video:
 		// read and modify high score, if changed
 		if (readFile.is_open())
 		{
@@ -44,32 +47,27 @@ namespace EpicGamers
 		
 		// load assets for Game Over screen
 		data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
-		data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);	//Cole #28 Video
-		data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);		//Cole #28 Video
+		data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
+		data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);
 		background.setTexture(this->data->assets.GetTexture("Game Over Background"));
-		gameOverTitle.setTexture(this->data->assets.GetTexture("Game Over Title"));			//Cole #28 Video
-		gameOverContainer.setTexture(this->data->assets.GetTexture("Game Over Body"));		//Cole #28 Video
-		retryButton.setTexture(this->data->assets.GetTexture("Play Button"));				//Cole #28 Video
-	
-		//gameOverContainer.setPosition((data->window.getSize().x / 2) - (gameOverContainer.getGlobalBounds().width / 2),(data->window.getSize().y / 2) - (gameOverContainer.getGlobalBounds().height / 2));		//Cole #28 Video
-		//gameOverTitle.setPosition((data->window.getSize().x / 2) - (gameOverTitle.getGlobalBounds().width / 2), gameOverContainer.getPosition().y - (gameOverTitle.getGlobalBounds().height * 1.2));			//Cole #28 Video
-		//retryButton.setPosition((data->window.getSize().x / 2) - (retryButton.getGlobalBounds().width / 2), gameOverContainer.getPosition().y + gameOverContainer.getGlobalBounds().height + (retryButton.getGlobalBounds().height * 0.2));	//Cole #28 Video
+		gameOverTitle.setTexture(this->data->assets.GetTexture("Game Over Title"));
+		gameOverContainer.setTexture(this->data->assets.GetTexture("Game Over Body"));
+		retryButton.setTexture(this->data->assets.GetTexture("Play Button"));
 		retryButton.setPosition((SCREEN_WIDTH) / 2 - (retryButton.getGlobalBounds().width / 2), data->window.getSize().y - retryButton.getGlobalBounds().height - 70.0f);
-								//data->window.getSize().y - sprite.getGlobalBounds().height - 130.0f
 
-		scoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
-		scoreText.setString(std::to_string(score));				//Cole #29 Video
-		scoreText.setCharacterSize(56);							//Cole #29 Video
+		scoreText.setFont(data->assets.GetFont("Dog Font"));
+		scoreText.setString(std::to_string(score));
+		scoreText.setCharacterSize(56);
 		scoreText.setFillColor(sf::Color(210, 111, 93));
-		scoreText.setOrigin(scoreText.getGlobalBounds().width / 2, scoreText.getGlobalBounds().height / 2);		//Cole #29 Video
-		scoreText.setPosition(data->window.getSize().x / 16 * 7.25f, data->window.getSize().y / 1.41f);				//Cole #29 Video
+		scoreText.setOrigin(scoreText.getGlobalBounds().width / 2, scoreText.getGlobalBounds().height / 2);
+		scoreText.setPosition(data->window.getSize().x / 16 * 7.25f, data->window.getSize().y / 1.41f);
 	
-		highScoreText.setFont(data->assets.GetFont("Dog Font"));		//Cole #29 Video
-		highScoreText.setString(std::to_string(highScore));				//Cole #29 Video
-		highScoreText.setCharacterSize(56);							//Cole #29 Video
+		highScoreText.setFont(data->assets.GetFont("Dog Font"));
+		highScoreText.setString(std::to_string(highScore));
+		highScoreText.setCharacterSize(56);
 		highScoreText.setFillColor(sf::Color(210, 111, 93));
-		highScoreText.setOrigin(highScoreText.getGlobalBounds().width / 2, highScoreText.getGlobalBounds().height / 2);		//Cole #29 Video
-		highScoreText.setPosition(data->window.getSize().x / 11 * 7.25f, data->window.getSize().y / 1.41f);				//Cole #29 Video
+		highScoreText.setOrigin(highScoreText.getGlobalBounds().width / 2, highScoreText.getGlobalBounds().height / 2);
+		highScoreText.setPosition(data->window.getSize().x / 11 * 7.25f, data->window.getSize().y / 1.41f);
 	}
 
 	void GameOverState::HandleInput()
@@ -101,11 +99,11 @@ namespace EpicGamers
 	{
 		data->window.clear();
 		data->window.draw(background);
-		data->window.draw(gameOverTitle);		//Cole #28 Video
-		data->window.draw(gameOverContainer);	//Cole #28 Video
-		data->window.draw(retryButton);			//Cole #28 Video
-		data->window.draw(scoreText);			//Cole #29 Video
-		data->window.draw(highScoreText);		//Cole #29 Video
+		data->window.draw(gameOverTitle);
+		data->window.draw(gameOverContainer);
+		data->window.draw(retryButton);
+		data->window.draw(scoreText);
+		data->window.draw(highScoreText);
 		data->window.display();
 	}
 }

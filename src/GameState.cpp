@@ -1,3 +1,8 @@
+/*
+	The Game state activates after pressing the Play button, and it functions as
+	the core gameplay loop.
+*/
+
 #pragma once
 
 #include "../include/GameState.h"
@@ -25,9 +30,21 @@ namespace EpicGamers
 		return low + (rand() % range);
 	}
 
-	sf::Color GameState::getRandomColor()	//Used for Player creation, assigns different colors to Dogs
+	// selects a random color from an array to recolor the player sprite
+	sf::Color GameState::getRandomColor()
 	{
-		sf::Color colorArray[9]{ sf::Color(255, 255, 255), sf::Color(229, 153, 55), sf::Color(239, 98, 75), sf::Color(152, 92, 79), sf::Color(255, 194, 255), sf::Color(170, 170, 170), sf::Color(153, 229, 80), sf::Color(230, 131, 123), sf::Color(255, 255, 255) };
+		sf::Color colorArray[9]
+		{
+			sf::Color(255, 255, 255),
+			sf::Color(229, 153, 55),
+			sf::Color(239, 98, 75),
+			sf::Color(152, 92, 79),
+			sf::Color(255, 194, 255),
+			sf::Color(170, 170, 170),
+			sf::Color(153, 229, 80),
+			sf::Color(230, 131, 123),
+			sf::Color(255, 255, 255)
+		};
 		int number = randomNumber(0, 8);
 		return colorArray[number];
 	}

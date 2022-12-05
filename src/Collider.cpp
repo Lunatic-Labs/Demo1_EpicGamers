@@ -1,3 +1,7 @@
+/*
+	The Collider handles the collision detection for sprites.
+*/
+
 #include "../include/Collider.h"
 
 namespace EpicGamers
