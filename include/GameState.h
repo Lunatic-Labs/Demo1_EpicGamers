@@ -17,9 +17,7 @@ namespace EpicGamers
 	public:
 		GameState(GameDataRef data);
 
-		int randomNumber(int low, int high);
-		sf::Color getRandomColor();
-
+		int RandomNumber(int low, int high);
 		void Init();
 		void HandleInput();
 		void Update(float dt);

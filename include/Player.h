@@ -9,7 +9,7 @@ namespace EpicGamers
 {
 	class Player {
 	public:
-		Player(GameDataRef _data, sf::Color currentColor);
+		Player(GameDataRef _data);
 		void draw();
 		void animate(float dt);
 		void update(float dt);

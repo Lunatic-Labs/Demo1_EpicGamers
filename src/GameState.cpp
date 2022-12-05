@@ -7,7 +7,6 @@
 #include "../include/GameOverState.h"
 #include <sstream>
 #include <stdlib.h>
-#include <ctime>
 
 
 #include <iostream>
@@ -19,18 +18,11 @@ namespace EpicGamers
 
 	}
 
-	int GameState::randomNumber(int low, int high)
+	int GameState::RandomNumber(int low, int high)
 	{
 		srand(time(NULL));
 		int range = (high - low) + 1;
 		return low + (rand() % range);
-	}
-
-	sf::Color GameState::getRandomColor()	//Used for Player creation, assigns different colors to Dogs
-	{
-		sf::Color colorArray[9]{ sf::Color(255, 255, 255), sf::Color(229, 153, 55), sf::Color(239, 98, 75), sf::Color(152, 92, 79), sf::Color(255, 194, 255), sf::Color(170, 170, 170), sf::Color(153, 229, 80), sf::Color(230, 131, 123), sf::Color(255, 255, 255) };
-		int number = randomNumber(0, 8);
-		return colorArray[number];
 	}
 
 	void GameState::Init()
@@ -75,7 +67,7 @@ namespace EpicGamers
 		data->assets.LoadTexture("Jump Frame 9", JUMP_FRAME_9_FILEPATH);
 		data->assets.LoadTexture("Jump Frame 10", JUMP_FRAME_10_FILEPATH);
 
-		player = new Player(data, getRandomColor());
+		player = new Player(data);
 		hud = new HUD( data );
 
 		background.setTexture(this->data->assets.GetTexture("Game Background"));
@@ -124,12 +116,17 @@ namespace EpicGamers
 
 			// move the hydrants and randomize their spawn frequency
 			hydrant->MoveHydrants(dt, currentSpeed);
+<<<<<<< HEAD
 
 			//same as above, just with cats
 			cat ->MoveCats(dt, currentSpeed);
 
 			//srand(time(0));
 			float spawnFrequency = rand() % 2 + randomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+=======
+			srand(time(0));
+			float spawnFrequency = rand() % 2 + GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
+>>>>>>> parent of 6a97632 (Colors Working)
 			//float spawnFrequency = GameState::RandomNumber(HYDRANT_MIN_SPAWN_TIME, HYDRANT_MAX_SPAWN_TIME);
 			if (clock.getElapsedTime().asSeconds() > (spawnFrequency))
 			{
