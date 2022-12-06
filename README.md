@@ -24,3 +24,6 @@ To read more about our design and brainstorming phase, and to look at the non-co
 ![image](https://user-images.githubusercontent.com/79927828/205941309-585f5ec5-f7e6-404a-9f3c-d59f04e05bc9.png)
 
 8. Finally, simply open the Visual Studio project and click the "Local Windows Debugger" button at the top to run the code.
+
+### MacOS
+Coming soon. Support for SFML on MacOS is spotty, requiring a more in-depth solution.
