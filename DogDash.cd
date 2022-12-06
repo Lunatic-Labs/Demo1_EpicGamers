@@ -1,135 +1,190 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
   <Class Name="EpicGamers::SplashState" Collapsed="true">
-    <Position X="3" Y="1.5" Width="1.5" />
+    <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAACAAAAAAgAgAAAAAAAAAAAAAAAAAAASAAAAIAA=</HashCode>
       <FileName>include\SplashState.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::State" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQgAACAAAAAAgAAAAAAAAAAAAAAAAAAAAACAAgAAAA=</HashCode>
       <FileName>include\State.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EpicGamers::StateMachine" Collapsed="true">
-    <Position X="5" Y="4" Width="1.5" />
+    <Position X="9.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAARAJAABAAAAABAAAAAAAAAAAACAAAEAIAAAAAACIA=</HashCode>
       <FileName>include\StateMachine.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="newState" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::Animation" Collapsed="true">
-    <Position X="8.5" Y="1.25" Width="1.5" />
+    <Position X="9.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAJAAAgAAAAgAEAAAAAAQAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>include\Animation.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EpicGamers::AssetManager" Collapsed="true">
-    <Position X="6.75" Y="4" Width="1.5" />
+    <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAASAEIgAAAAgAQAAA1AIAgAAAAQAAIAAAAQAAk=</HashCode>
+      <HashCode>AAAEAAASAEIgAAAAgAQAAA1AIAgAAAAQAAIAAAAQEAk=</HashCode>
       <FileName>include\AssetManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EpicGamers::Collider" Collapsed="true">
-    <Position X="10.75" Y="1.25" Width="1.5" />
+    <Position X="1" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>include\Collider.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EpicGamers::Game" Collapsed="true">
-    <Position X="10.5" Y="3.5" Width="1.5" />
+    <Position X="7.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAQSAAAAAAI=</HashCode>
       <FileName>include\Game.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::GameOverState" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+    <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAACAAAAAAwAAAAAoAAAAIgAAAAQAIAAWAAAAIAA=</HashCode>
       <FileName>include\GameOverState.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::GameState" Collapsed="true">
-    <Position X="2.75" Y="2.75" Width="1.5" />
+    <Position X="2.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQQAAiAAAAAAwAAEAAIAAAEAAAAABABAAAyFAAAIAQ=</HashCode>
+      <HashCode>AAQQBAiAAAAAAwAAEACIAAAEAAAAABABAAAyFAAAIAA=</HashCode>
       <FileName>include\GameState.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="hud" />
+      <Field Name="hydrant" />
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::Ground" Collapsed="true">
-    <Position X="11" Y="2.75" Width="1.5" />
+    <Position X="6.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAQQAAAEAA=</HashCode>
       <FileName>include\Ground.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::HUD" Collapsed="true">
-    <Position X="13" Y="2.75" Width="1.5" />
+    <Position X="5.5" Y="5" Width="1.5" />
+    <AssociationLine Name="data" Type="EpicGamers::GameDataRef" FixedToPoint="true">
+      <Path>
+        <Point X="6.562" Y="5" />
+        <Point X="6.562" Y="2.562" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.047" Y="0.115" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAwAAAAAAAAAgACAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>include\HUD.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::Hydrant" Collapsed="true">
-    <Position X="9.5" Y="4.75" Width="1.5" />
+    <Position X="2.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAACAJAAAAQAAQAAAAEAgAAAAABAAAAAAAQQAAAAAA=</HashCode>
       <FileName>include\Hydrant.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::InputManager" Collapsed="true">
-    <Position X="7.75" Y="3.25" Width="1.5" />
+    <Position X="11.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAAIAAAAQA=</HashCode>
       <FileName>include\InputManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EpicGamers::MainMenuState" Collapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="2.75" Y="3" Width="1.5" />
+    <AssociationLine Name="data" Type="EpicGamers::GameDataRef" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="3.346" />
+        <Point X="5.375" Y="3.346" />
+        <Point X="5.375" Y="2.562" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAQAAACAQAAABgAAAAAAAAAAAAAAAAIAAAASAAAAIAA=</HashCode>
       <FileName>include\MainMenuState.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="EpicGamers::Player" Collapsed="true">
-    <Position X="9.5" Y="5.5" Width="1.5" />
+    <Position X="7.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAACgAAAAEEUAAAAIAKAQBAAAEAQAAAAAyAQCEAQA=</HashCode>
       <FileName>include\Player.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="data" />
+    </ShowAsAssociation>
   </Class>
-  <Struct Name="EpicGamers::GameData">
-    <Position X="6" Y="2" Width="1.5" />
+  <Struct Name="EpicGamers::GameData" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAADAIAAAAAAAAAAA=</HashCode>
       <FileName>include\Game.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Field Name="machine" />
       <Field Name="assets" />
       <Field Name="input" />
-      <Field Name="machine" />
     </ShowAsAssociation>
   </Struct>
   <Typedef Name="EpicGamers::GameDataRef" Collapsed="true">
-    <Position X="6" Y="1" Width="1.5" />
+    <Position X="5.25" Y="2" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>include\Game.h</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="EpicGamers::StateRef" Collapsed="true">
-    <Position X="2.25" Y="4" Width="2.5" />
+    <Position X="9.25" Y="3.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>include\StateMachine.h</FileName>
     </TypeIdentifier>
   </Typedef>
+  <Enum Name="GameStates" Collapsed="true">
+    <Position X="1" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAAAQ=</HashCode>
+      <FileName>include\DEFINITIONS.h</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

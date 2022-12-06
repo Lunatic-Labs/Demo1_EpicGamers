@@ -8,7 +8,7 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h" 
 #include <vector>
-#include "../include/DEFINITIONS.h"
+#include "DEFINITIONS.h"
 
 namespace EpicGamers 
 {

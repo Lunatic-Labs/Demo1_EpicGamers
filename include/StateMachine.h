@@ -8,7 +8,7 @@
 #include <memory>
 #include <stack>
 
-#include "../include/State.h"
+#include "State.h"
 
 namespace EpicGamers
 {
