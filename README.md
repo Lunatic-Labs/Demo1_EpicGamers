@@ -5,7 +5,13 @@ Using SFML with C++, this is our game dev project.
 
 To read more about our design and brainstorming phase, and to look at the non-code artifacts for our project, check out our [Wiki](https://github.com/Lunatic-Labs/Demo1_EpicGamers/wiki/Dog-Dash-Design)!
 
-# Build Instructions
+# How to Play Our Game
+## Option 1- Running as an .exe file
+1. Download the [DogDashGame](https://github.com/Lunatic-Labs/Demo1_EpicGamers/raw/AlexBranch/DogDashGame.zip) file
+2. Unzip
+3. Run DogDash.exe
+
+## Option 2- Manually Building the Game
 ### Windows
 1. Download [Visual Studio Community](https://visualstudio.microsoft.com/downloads/)
 2. Run the Visual Studio Community installer, and make sure you select the "Desktop development with C++" add-on from the installation options.
