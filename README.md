@@ -5,6 +5,8 @@ Using SFML with C++, this is our game dev project.
 
 To read more about our design and brainstorming phase, and to look at the non-code artifacts for our project, check out our [Wiki](https://github.com/Lunatic-Labs/Demo1_EpicGamers/wiki/Dog-Dash-Design)!
 
+You can check out our official landing page [here](bit.ly/dog-dash-game)-- see if  you can break the High Score record for Dog Dash!
+
 # How to Play Our Game
 ## Option 1- Running as an .exe file
 1. Download the [DogDashGame](https://github.com/Lunatic-Labs/Demo1_EpicGamers/raw/AlexBranch/DogDashGame.zip) file
